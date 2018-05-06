@@ -5,6 +5,7 @@ namespace Attendify {
         static void Main(string[] args) {
             Console.WriteLine("Please show up to class on time!");
             Console.WriteLine("If you do, maybe you'll learn more!");
+            Console.WriteLine("Congratulations for coming on time!");
         }
     }
 }
