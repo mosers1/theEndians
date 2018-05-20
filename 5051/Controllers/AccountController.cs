@@ -66,7 +66,7 @@ namespace _5051.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginViewModel model, string returnUrl)
+        public ActionResult Login(CredentialsViewModel model, string returnUrl)
         {
             if(model.Username.ToLower() == "admin" || model.Username.ToLower() == "administrator"){
                 return RedirectToAction("Options", "AdminPanel");
