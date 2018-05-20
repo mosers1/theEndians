@@ -50,7 +50,6 @@ namespace _5051.Models
     {
         [Required]
         [Display(Name = "Email")]
-        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
@@ -66,7 +65,6 @@ namespace _5051.Models
     {
         [Required]
         [Display(Name = "Username")]
-        [EmailAddress]
         public string Username { get; set; }
 
         [Required]
