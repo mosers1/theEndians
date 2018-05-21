@@ -20,5 +20,11 @@ namespace _5051.Controllers
         {
             return RedirectToAction("Index", "Kiosk");
         }
+
+        // GET: /AdminPanel/ViewClassReport
+        public ActionResult ViewClassReport()
+        {
+            return RedirectToAction("Index", "ClassReport");
+        }
     }
 }
