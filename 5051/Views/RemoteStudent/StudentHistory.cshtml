@@ -4,5 +4,7 @@
 
 <h2>@ViewBag.Title</h2>
 
+<!-- Sample implementation for a "better" back button. It doesn't hardcode the previous controller. -->
+@Html.ActionLink("Back", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-success" })
 
 <img src="~/Content/images/Student History.png" width="960" height="540" />
