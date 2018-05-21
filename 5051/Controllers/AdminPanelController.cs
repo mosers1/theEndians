@@ -26,5 +26,11 @@ namespace _5051.Controllers
         {
             return RedirectToAction("Index", "ClassReport");
         }
+
+        // GET: /AdminPanel/ViewClassReport
+        public ActionResult ViewStudentReport()
+        {
+            return RedirectToAction("StudentHistory", "RemoteStudent");
+        }
     }
 }
