@@ -273,9 +273,13 @@
     <Content Include="Views\Kiosk\Index.cshtml" />
     <Content Include="Views\AdminPanel\Options.cshtml" />
     <Content Include="Views\RemoteStudent\Report.cshtml" />
+    <Content Include="Views\RemoteStudent\Achievements.cshtml" />
+    <Content Include="Views\RemoteStudent\StudentHistory.cshtml" />
+    <Content Include="Views\RemoteStudent\ChooseAvatar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\StudentPanel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
