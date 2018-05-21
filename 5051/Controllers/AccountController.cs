@@ -68,9 +68,16 @@ namespace _5051.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(CredentialsViewModel model, string returnUrl)
         {
-            if(model.Username.ToLower() == "admin" || model.Username.ToLower() == "administrator"){
+            if (model.Username.ToLower() == "admin" || model.Username.ToLower() == "administrator")
+            {
                 return RedirectToAction("Options", "AdminPanel");
-            } else {
+            }
+            else if (model.Username.ToLower() == "kiosk")
+            {
+                return RedirectToAction("Index", "Kiosk");
+            }
+            else
+            {
                 return RedirectToAction("Report", "RemoteStudent");
             }
         }
