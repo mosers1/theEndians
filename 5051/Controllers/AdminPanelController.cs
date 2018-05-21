@@ -14,5 +14,11 @@ namespace _5051.Controllers
             ViewBag.Message = "Admin Options Panel";
             return View();
         }
+
+        // GET: /AdminPanel/Launch
+        public ActionResult Launch()
+        {
+            return RedirectToAction("Index", "Kiosk");
+        }
     }
 }
