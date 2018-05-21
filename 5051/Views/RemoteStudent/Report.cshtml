@@ -5,5 +5,8 @@
 <h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Placeholder for content</p>
+
+@Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-success" })
 <img src="~/Content/images/Student Interface.png" width="960" height="540" />
+@Html.ActionLink("Attendance History", "StudentHistory", null, new { @class = "btn btn-success" })
+@Html.ActionLink("Achievements List", "Achievements", null, new { @class = "btn btn-success" })
