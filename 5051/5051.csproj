@@ -276,6 +276,10 @@
     <Content Include="Views\AdminPanel\Options.cshtml" />
     <Content Include="Views\RemoteStudent\Report.cshtml" />
     <Content Include="Views\ClassReport\Index.cshtml" />
+    <Content Include="Views\AdminPanel\Achievements.cshtml" />
+    <Content Include="Views\AdminPanel\ChooseAvatar.cshtml" />
+    <Content Include="Views\AdminPanel\Report.cshtml" />
+    <Content Include="Views\AdminPanel\StudentHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
