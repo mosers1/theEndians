@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using _5051.Models;
+using System.Web.Routing;
 
 namespace _5051.Controllers
 {
@@ -74,7 +75,10 @@ namespace _5051.Controllers
             }
             else
             {
-                return RedirectToAction("Report", "RemoteStudent");
+                //return RedirectToAction("Report", "RemoteStudent");
+
+                return RedirectToAction("Report", new RouteValueDictionary(
+                    new { controller = "RemoteStudent", action = "Report", username = model.Username }));
             }
         }
 

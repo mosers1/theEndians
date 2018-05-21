@@ -9,9 +9,10 @@ namespace _5051.Controllers
     public class RemoteStudentController : Controller
     {
         // GET: /AdminPanel/Options
-        public ActionResult Report()
+        public ActionResult Report(String username = null)
         {
-            ViewBag.Message = "View student report online (not via kiosk)";
+            if (username == null) username = "Student"; 
+            ViewBag.Message = "View student report online (not via kiosk) for: " + username;
             return View();
         }
     }
