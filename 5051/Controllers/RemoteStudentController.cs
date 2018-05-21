@@ -15,5 +15,20 @@ namespace _5051.Controllers
             ViewBag.Message = "View student report online (not via kiosk) for: " + username;
             return View();
         }
+
+        public ActionResult Achievements()
+        {
+            return View();
+        }
+
+        public ActionResult ChooseAvatar()
+        {
+            return View();
+        }
+
+        public ActionResult StudentHistory()
+        {
+            return View();
+        }
     }
 }
