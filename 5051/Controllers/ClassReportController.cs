@@ -13,5 +13,12 @@ namespace _5051.Controllers
         {
             return View();
         }
+
+        // Method to Go Back to previous page which is AdminPanel by design
+        // GET: ClassReport
+        public ActionResult GoBack()
+        {
+            return RedirectToAction("Options", "AdminPanel");
+        }
     }
 }
