@@ -191,6 +191,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminPanelController.cs" />
+    <Compile Include="Controllers\ClassReportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KioskController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -210,6 +211,7 @@
     <Content Include="Content\images\Admin Interface.png" />
     <Content Include="Content\images\All Achievements.png" />
     <Content Include="Content\images\Choose Avatar.png" />
+    <Content Include="Content\images\Class Report.png" />
     <Content Include="Content\images\Login Page.png" />
     <Content Include="Content\images\Student History.png" />
     <Content Include="Content\images\Student Interface.png" />
@@ -273,13 +275,10 @@
     <Content Include="Views\Kiosk\Index.cshtml" />
     <Content Include="Views\AdminPanel\Options.cshtml" />
     <Content Include="Views\RemoteStudent\Report.cshtml" />
-    <Content Include="Views\RemoteStudent\Achievements.cshtml" />
-    <Content Include="Views\RemoteStudent\StudentHistory.cshtml" />
-    <Content Include="Views\RemoteStudent\ChooseAvatar.cshtml" />
+    <Content Include="Views\ClassReport\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\StudentPanel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
