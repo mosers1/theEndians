@@ -48,5 +48,10 @@ namespace _5051.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult startLogin()
+        {
+            return RedirectToAction("Options", "AdminPanel");
+        }
     }
 }
