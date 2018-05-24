@@ -23,6 +23,18 @@ namespace _5051.Controllers
             return View();
         }
 
+        public ActionResult SignedIn()
+        {
+            ViewBag.Message = "SignedIn";
+            return View();
+        }
+
+        public ActionResult SignedOut()
+        {
+            ViewBag.Message = "SignedOut";
+            return View();
+        }
+
         // GET: Kiosk/SetLogout/5
         public ActionResult SetLogin(string id)
         {
@@ -52,6 +64,16 @@ namespace _5051.Controllers
         public ActionResult startLogin()
         {
             return RedirectToAction("Options", "AdminPanel");
+        }
+
+        public ActionResult checkIn()
+        {
+            return RedirectToAction("SignedIn", "Kiosk");
+        }
+
+        public ActionResult checkOut()
+        {
+            return RedirectToAction("SignedOut", "Kiosk");
         }
     }
 }

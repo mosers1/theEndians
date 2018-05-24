@@ -4,7 +4,16 @@
 }
 
 <!-- TODO: Add real functionality to this page... -->
+<br />
+<p>
+    @Html.ActionLink("Start Kiosk login", "startLogin", null, new { @class = "btn btn-success" })
+</p>
+
+<p>
+    @Html.ActionLink("Check-in", "checkIn", null, new { @class = "btn btn-success" })
+    @Html.ActionLink("Check-out", "checkOut", null, new { @class = "btn btn-success" })
+</p>
 
 <img src="~/Content/images/Student Sign In.png" width="960" height="540" />
-@Html.ActionLink("Start Kiosk login", "startLogin", null, new { @class = "btn btn-success" })
+
 

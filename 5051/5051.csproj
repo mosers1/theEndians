@@ -279,6 +279,8 @@
     <Content Include="Views\RemoteStudent\Achievements.cshtml" />
     <Content Include="Views\RemoteStudent\ChooseAvatar.cshtml" />
     <Content Include="Views\RemoteStudent\StudentHistory.cshtml" />
+    <Content Include="Views\Kiosk\SignedIn.cshtml" />
+    <Content Include="Views\Kiosk\SignedOut.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -310,7 +312,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59052</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
