@@ -1,13 +1,76 @@
-@{
-    ViewBag.Title = "Admin Home";
-}
+﻿
+<h2 align="center">Admin Home</h2>
 
-<h2>@ViewBag.Title</h2>
-<h3>@ViewBag.Message</h3>
+<div style="text-align: center;">
+    @Html.ActionLink("Class Data Report", "ViewClassReport", null, new { @class = "btn btn-warning" })
+    @Html.ActionLink("Student History (Sample)", "ViewStudentReport", null, new { @class = "btn btn-success" })
+</div>
 
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
 
-@Html.ActionLink("Start Kiosk Session", "Launch", null, new { @class = "btn btn-success" })
-@Html.ActionLink("Class Data Report", "ViewClassReport", null, new { @class = "btn btn-success" })
-@Html.ActionLink("Student History (Sample)", "ViewStudentReport", null, new { @class = "btn btn-success" })
+        <div class="container">
+            <h3>Student Roster</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Time In</th>
+                        <th>Time Out</th>
+                        <th>Daily Status</th>
+                        <th>Archive</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kevin Cushing</td>
+                        <td>8:00 AM</td>
+                        <td>2:00 PM</td>
+                        <td>Present</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Maggie Dong</td>
+                        <td>8:30 AM</td>
+                        <td>2:45 PM</td>
+                        <td>Present</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Scott Moser</td>
+                        <td>9:27 AM</td>
+                        <td>1:17 PM</td>
+                        <td>Tardy</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Andrew Wallace</td>
+                        <td>9:04 AM</td>
+                        <td>3:10 PM</td>
+                        <td>Tardy</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Andrew Croneberger</td>
+                        <td>None</td>
+                        <td>None</td>
+                        <td>Absent</td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
+    </body>
+</html>
+
+<!-- Show the wireframe for now... remove in the future -->
 <img src="~/Content/images/Admin Interface.png" width="960" height="540" />
