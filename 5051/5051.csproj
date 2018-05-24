@@ -191,6 +191,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminPanelController.cs" />
+    <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\ClassReportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KioskController.cs" />
@@ -210,9 +211,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\Admin Interface.png" />
     <Content Include="Content\images\All Achievements.png" />
-    <Content Include="Content\images\avatar4.png" />
-    <Content Include="Content\images\avatar5.png" />
-    <Content Include="Content\images\avatar6.png" />
     <Content Include="Content\images\Choose Avatar.png" />
     <Content Include="Content\images\Class Report.png" />
     <Content Include="Content\images\Login Page.png" />
@@ -276,14 +274,13 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Kiosk\Index.cshtml" />
+    <Content Include="Views\AdminPanel\Calendar.cshtml" />
     <Content Include="Views\AdminPanel\Options.cshtml" />
     <Content Include="Views\RemoteStudent\Report.cshtml" />
     <Content Include="Views\ClassReport\Index.cshtml" />
     <Content Include="Views\RemoteStudent\Achievements.cshtml" />
     <Content Include="Views\RemoteStudent\ChooseAvatar.cshtml" />
     <Content Include="Views\RemoteStudent\StudentHistory.cshtml" />
-    <Content Include="Views\Kiosk\SignedIn.cshtml" />
-    <Content Include="Views\Kiosk\SignedOut.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -315,7 +312,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59052</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
