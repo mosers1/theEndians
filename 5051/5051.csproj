@@ -210,6 +210,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\Admin Interface.png" />
     <Content Include="Content\images\All Achievements.png" />
+    <Content Include="Content\images\avatar4.png" />
+    <Content Include="Content\images\avatar5.png" />
+    <Content Include="Content\images\avatar6.png" />
     <Content Include="Content\images\Choose Avatar.png" />
     <Content Include="Content\images\Class Report.png" />
     <Content Include="Content\images\Login Page.png" />
