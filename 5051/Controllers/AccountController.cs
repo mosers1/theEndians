@@ -34,7 +34,7 @@ namespace _5051.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(CredentialsViewModel model, string returnUrl)
+        public ActionResult Login([Bind(Include="Username,Password")] CredentialsViewModel model)
         {
             if (model.Username.ToLower() == "admin" || model.Username.ToLower() == "administrator")
             {
@@ -42,8 +42,6 @@ namespace _5051.Controllers
             } else if (model.Username.ToLower() == "kiosk"){
                 return RedirectToAction("Index", "Kiosk");
             } else {
-                //return RedirectToAction("Report", "RemoteStudent");
-
                 return RedirectToAction("Report", new RouteValueDictionary(
                     new { controller = "RemoteStudent", action = "Report", username = model.Username }));
             }
