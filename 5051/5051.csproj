@@ -215,6 +215,14 @@
     <Content Include="Content\icons\yellowCircle.png" />
     <Content Include="Content\images\Admin Interface.png" />
     <Content Include="Content\images\All Achievements.png" />
+    <Content Include="Content\images\avatar0.png" />
+    <Content Include="Content\images\avatar1.png" />
+    <Content Include="Content\images\avatar2.png" />
+    <Content Include="Content\images\avatar3.png" />
+    <Content Include="Content\images\avatar7.png" />
+    <Content Include="Content\images\avatar8.png" />
+    <Content Include="Content\images\avatar9.png" />
+    <Content Include="Content\images\cactus.jpg" />
     <Content Include="Content\images\Choose Avatar.png" />
     <Content Include="Content\images\Class Report.png" />
     <Content Include="Content\images\Login Page.png" />

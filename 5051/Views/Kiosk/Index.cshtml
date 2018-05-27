@@ -1,32 +1,75 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Kiosk Check In / Out";
 }
 
 <!-- TODO: Add real functionality to this page... -->
+<h1 class="text-center">Kiosk Check In / Out</h1>
+
 <br />
-<p>
-    @Html.ActionLink("Start Kiosk login", "startLogin", null, new { @class = "btn btn-success" })
-</p>
 
-<p>
-    <img src="~/Content/images/avatar4.png" width="75" height="75" />
-    @Html.ActionLink("Check-in", "checkIn", null, new { @class = "btn btn-success" })
-    @Html.ActionLink("Check-out", "checkOut", null, new { @class = "btn btn-success" })
-</p>
-
-<p>
-    <img src="~/Content/images/avatar5.png" width="75" height="75" />
-    @Html.ActionLink("Check-in", "checkIn", null, new { @class = "btn btn-success" })
-    @Html.ActionLink("Check-out", "checkOut", null, new { @class = "btn btn-success" })
-</p>
-
-<p>
-    <img src="~/Content/images/avatar6.png" width="75" height="75" />
-    @Html.ActionLink("Check-in", "checkIn", null, new { @class = "btn btn-success" })
-    @Html.ActionLink("Check-out", "checkOut", null, new { @class = "btn btn-success" })
-</p>
-
-<img src="~/Content/images/Student Sign In.png" width="960" height="540" />
+<div class="container">
+    <div class="row">
+        <a href="~/RemoteStudent/Report?username=kevinc">
+            <div class="col-sm-2">
+                <span>
+                    Kevin Cushing
+                </span>
+                <br />
+                <img src="~/Content/images/avatar4.png" width="75" height="75" />
+            </div>
+        </a>
+        <a href="~/RemoteStudent/Report?username=maggied">
+            <div class="col-sm-2">
+                <span>
+                    Maggie Dong
+                </span>
+                <br />
+                <img src="~/Content/images/avatar5.png" width="75" height="75" />
+            </div>
+        </a>
+        <a href="~/RemoteStudent/Report?username=andrewc">
+            <div class="col-sm-2">
+                <span>
+                    Andrew Croneberger
+                </span>
+                <br />
+                <img src="~/Content/images/avatar3.png" width="75" height="75" />
+            </div>
+        </a>
+        <a href="~/RemoteStudent/Report?username=scottm">
+            <div class="col-sm-2">
+                <span>
+                    Scott Moser
+                </span>
+                <br />
+                <img src="~/Content/images/avatar7.png" width="75" height="75" />
+            </div>
+        </a>
+     </div>
+    <br />
+    <br />
+    <div class="row">
+        <a href="~/RemoteStudent/Report?username=andreww">
+            <div class="col-sm-2">
+                <span>
+                    Andrew Wallace
+                </span>
+                <br />
+                <img src="~/Content/images/avatar8.png" width="75" height="75" />
+            </div>
+        </a>
+        <a href="~/RemoteStudent/Report?username=stevec">
+            <div class="col-sm-2">
+                <span>
+                    Steve Chester
+                </span>
+                <br />
+                <img src="~/Content/images/avatar9.png" width="75" height="75" />
+            </div>
+        </a>
+    </div>
+    <br />
+</div>
 
 
