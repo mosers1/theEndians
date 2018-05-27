@@ -1,11 +1,11 @@
-﻿
-<!-- TODO: Move to controller/model? -->
+﻿<!-- TODO: Move to controller/model? -->
 <!-- FAKE DATA! -->
 @{
-    string[] members  = { "Kevin Cushing", "Maggie Dong", "Andrew Croneberger", "Scott Moser", "Andrew Wallace" };
-    string[] time_in  = { "8:00AM", "7:53AM", "8:31AM", "8:10AM", "N/A" };
-    string[] time_out = { "2:45PM", "3:00PM", "2:47PM", "1:00PM", "N/A" };
-    string[] status   = { "Present", "Present", "Tardy", "Present", "Absent" };
+    string[] members = { "Kevin Cushing", "Maggie Dong", "Andrew Croneberger", "Scott Moser", "Andrew Wallace", "Steve Chester" };
+    string[] time_in = { "8:00AM", "7:53AM", "8:31AM", "8:10AM", "-----", "TBD" };
+    string[] time_out = { "2:45PM", "3:00PM", "2:47PM", "1:00PM", "-----", "TBD" };
+    string[] status = { "Present", "Present", "Tardy", "Present", "Absent", "TBD" };
+    string[] isActive = { "Yes", "Yes", "Yes", "Yes", "Yes", "No" };
     int len = members.Length;
 }
 
@@ -40,7 +40,7 @@
                     <th>Name</th>
                     <th>Time In</th>
                     <th>Time Out</th>
-                    <th>Daily Status</th>
+                    <th>Status</th>
                     <th>Edit</th>
                 </tr>
             </thead>
@@ -55,23 +55,52 @@
                         <tr>
                             <!-- TODO: Link to specific student page? -->
                             <td>@Html.ActionLink(members[i], "ViewStudentReport", null, new { @class = "text" })</td>
-                            <td>@time_in[i]</td>
-                            <td>@time_out[i]</td>
+
+                            <!-- Check is student is archived. If so, don't try to display data for student. -->
+                            @if (@isActive[i] == "Yes")
+                            {
+                                <td>@time_in[i]</td>
+                                <td>@time_out[i]</td>
+                                <td>
+                                    @if (@status[i] == "Present")
+                                    {
+                                        <img src="~/Content/icons/greenCircle.png" alt="Present :)" height="30" width="30">
+                                    }
+                                    else if (@status[i] == "Tardy")
+                                    {
+                                        <img src="~/Content/icons/yellowCircle.png" alt="Tardy -__-" height="30" width="30">
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Content/icons/redCircle.png" alt="Absent :(" height="30" width="30">
+                                    }
+                                </td>
+                            }
+                            else
+                            {
+                                <!-- Student is archived so display blank columns. -->
+                                <td></td>
+                                <td></td>
+                                <td>Archived</td>
+                            }
                             <td>
-                                @if (@status[i] == "Present")
+                                <!-- Handle icons differently based on student active status -->
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-pencil" data-toggle="tooltip" title="Edit Student"></span>
+                                </a>
+                                @if (@isActive[i] == "Yes")
                                 {
-                                    <img src="~/Content/icons/greenCircle.png" alt="Present :)" height="30" width="30">
-                                }
-                                else if (@status[i] == "Tardy")
-                                {
-                                    <img src="~/Content/icons/yellowCircle.png" alt="Tardy -__-" height="30" width="30">
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-inbox" data-toggle="tooltip" title="Archive Student"></span>
+                                    </a>
                                 }
                                 else
                                 {
-                                    <img src="~/Content/icons/redCircle.png" alt="Absent :(" height="30" width="30">
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-share-alt" data-toggle="tooltip" title="Restore Student"></span>
+                                    </a>
                                 }
                             </td>
-                            <td>No</td>
                         </tr>
                     }
                 }
@@ -95,8 +124,10 @@
 </body>
 </html>
 
-<!-- 
-    TODO: Remove prior to production!   
-    Show the wireframe for now...
--->
-<img src="~/Content/images/Admin Interface.png" width="960" height="540" />
+<!-- TODO: Move to appropriate script file? Is this necessary? -->
+<!-- JQuery for tooltips -->
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
