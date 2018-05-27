@@ -19,37 +19,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <!-- Add Student Modal -->
-    <div class="modal fade" id="AddStudentModal" tabindex="-1" role="dialog" aria-labelledby="AddStudentModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="AddStudentModalHeader">Add Student</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group">
-                        <span class="input-group-addon">Student Name</span>
-                        <input type="text" class="form-control" aria-label="Student First and Last Name">
-                    </div>
-                </div>
-                <!-- TBD: Insert if needed...
-                    <div class="modal-body">
-                        <div class="input-group">
-                            <span class="input-group-addon">Student ID#</span>
-                            <input type="text" class="form-control" aria-label="Student ID">
-                        </div>
-                    </div>
-                -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Display page title -->
     <h2 align="center">Admin Home</h2>
@@ -201,6 +170,39 @@
             </tbody>
         </table>
     </div>
+
+    <!-- Add Student Modal -->
+    <div class="modal fade" id="AddStudentModal" tabindex="-1" role="dialog" aria-labelledby="AddStudentModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="AddStudentModalHeader">Add Student</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">Student Name</span>
+                        <input type="text" class="form-control" aria-label="Student First and Last Name">
+                    </div>
+                </div>
+                <!-- TBD: Insert if needed...
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <span class="input-group-addon">Student ID#</span>
+                            <input type="text" class="form-control" aria-label="Student ID">
+                        </div>
+                    </div>
+                -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
 
