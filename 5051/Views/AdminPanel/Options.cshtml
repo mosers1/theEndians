@@ -5,7 +5,7 @@
     string[] time_in = { "8:00AM", "7:53AM", "8:31AM", "8:10AM", "-----", "TBD" };
     string[] time_out = { "2:45PM", "3:00PM", "2:47PM", "1:00PM", "-----", "TBD" };
     string[] status = { "Present", "Present", "Tardy", "Present", "Absent", "TBD" };
-    string[] isArchived = { "Yes", "Yes", "Yes", "Yes", "Yes", "No" };
+    string[] isActive = { "Yes", "Yes", "Yes", "Yes", "Yes", "No" };
     int len = members.Length;
 }
 
@@ -57,7 +57,7 @@
                             <td>@Html.ActionLink(members[i], "ViewStudentReport", null, new { @class = "text" })</td>
 
                             <!-- Check is student is archived. If so, don't try to display data for student. -->
-                            @if (@isArchived[i] == "Yes")
+                            @if (@isActive[i] == "Yes")
                             {
                                 <td>@time_in[i]</td>
                                 <td>@time_out[i]</td>
@@ -81,16 +81,25 @@
                                 <!-- Student is archived so display blank columns. -->
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                <td>Archived</td>
                             }
                             <td>
+                                <!-- Handle icons differently based on student active status -->
                                 <a href="#">
                                     <span class="glyphicon glyphicon-pencil" data-toggle="tooltip" title="Edit Student"></span>
                                 </a>
-                                <a href="#">
-                                    <!-- TODO: What to show for unarchiving a student? -->
-                                    <span class="glyphicon glyphicon-inbox" data-toggle="tooltip" title="Archive Student"></span>
-                                </a>
+                                @if (@isActive[i] == "Yes")
+                                {
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-inbox" data-toggle="tooltip" title="Archive Student"></span>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-share-alt" data-toggle="tooltip" title="Restore Student"></span>
+                                    </a>
+                                }
                             </td>
                         </tr>
                     }
