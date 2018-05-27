@@ -6,17 +6,23 @@
     <title>@ViewBag.Title Attendify</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Add browser tab favicon for cool factor -->
     <link rel="icon" type="image/png" href="~/Content/favicons/favicon-16x16.png" sizes="16x16" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
+                
+                <!-- DEFERRED: This might need adjustment for mobile devices -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+
+                <!-- Far left product name in navbar -->
                 @Html.ActionLink("Attendify", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
@@ -37,7 +43,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Attendify Enterprise Edition</p>
+            <p>Copyright &copy; @DateTime.Now.Year - Attendify Enterprise Edition</p>
         </footer>
     </div>
 
@@ -46,3 +52,22 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+<!-- Attempt #1 at overriding bootstrap CSS. Should this be moved to a CSS file? -->
+<style>
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar .navbar-brand {
+        text-align: center;
+        color: white;
+        font-style: italic;
+    }
+</style>
