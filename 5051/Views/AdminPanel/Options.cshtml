@@ -1,76 +1,102 @@
 ﻿
-<h2 align="center">Admin Home</h2>
+<!-- TODO: Move to controller/model? -->
+<!-- FAKE DATA! -->
+@{
+    string[] members  = { "Kevin Cushing", "Maggie Dong", "Andrew Croneberger", "Scott Moser", "Andrew Wallace" };
+    string[] time_in  = { "8:00AM", "7:53AM", "8:31AM", "8:10AM", "N/A" };
+    string[] time_out = { "2:45PM", "3:00PM", "2:47PM", "1:00PM", "N/A" };
+    string[] status   = { "Present", "Present", "Tardy", "Present", "Absent" };
+    int len = members.Length;
+}
 
-<div style="text-align: center;">
-    @Html.ActionLink("Class Data Report", "ViewClassReport", null, new { @class = "btn btn-warning" })
-    @Html.ActionLink("Student History (Sample)", "ViewStudentReport", null, new { @class = "btn btn-success" })
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Display page title -->
+    <h2 align="center">Admin Home</h2>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>Bootstrap Example</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    <body>
+    <!-- Create two buttons under title -->
+    <div style="text-align: center;">
+        @Html.ActionLink("Class Data Report", "ViewClassReport", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Upload Calendar", "Calendar", null, new { @class = "btn btn-primary" })
+    </div>
 
-        <div class="container">
-            <h3>Student Roster</h3>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Time In</th>
-                        <th>Time Out</th>
-                        <th>Daily Status</th>
-                        <th>Archive</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Kevin Cushing</td>
-                        <td>8:00 AM</td>
-                        <td>2:00 PM</td>
-                        <td>Present</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>Maggie Dong</td>
-                        <td>8:30 AM</td>
-                        <td>2:45 PM</td>
-                        <td>Present</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>Scott Moser</td>
-                        <td>9:27 AM</td>
-                        <td>1:17 PM</td>
-                        <td>Tardy</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>Andrew Wallace</td>
-                        <td>9:04 AM</td>
-                        <td>3:10 PM</td>
-                        <td>Tardy</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>Andrew Croneberger</td>
-                        <td>None</td>
-                        <td>None</td>
-                        <td>Absent</td>
-                        <td>No</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <!--
+        Generate the student attendance table for the page. This part is a bit tricky and may
+        need modification over time. Trying to keep display-only logic in this file and push
+        back all student/database logic to the controller/model layers.
+    -->
+    <div class="container">
+        <h3>Daily Class Report</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Time In</th>
+                    <th>Time Out</th>
+                    <th>Daily Status</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    <!--
+                        Fill in the table row-by-row using student data. Keep this dynamic so we don't
+                        need to update every time a new student gets added or archived.
+                    -->
+                    for (var i = 0; i < len; ++i)
+                    {
+                        <tr>
+                            <!-- TODO: Link to specific student page? -->
+                            <td>@Html.ActionLink(members[i], "ViewStudentReport", null, new { @class = "text" })</td>
+                            <td>@time_in[i]</td>
+                            <td>@time_out[i]</td>
+                            <td>
+                                @if (@status[i] == "Present")
+                                {
+                                    <img src="~/Content/icons/greenCircle.png" alt="Present :)" height="30" width="30">
+                                }
+                                else if (@status[i] == "Tardy")
+                                {
+                                    <img src="~/Content/icons/yellowCircle.png" alt="Tardy -__-" height="30" width="30">
+                                }
+                                else
+                                {
+                                    <img src="~/Content/icons/redCircle.png" alt="Absent :(" height="30" width="30">
+                                }
+                            </td>
+                            <td>No</td>
+                        </tr>
+                    }
+                }
 
-    </body>
+                <!-- Add final row with button to add a student -->
+                <tr>
+                    <td>
+                        <a href="#" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-plus"></span> Add Student
+                        </a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
 </html>
 
-<!-- Show the wireframe for now... remove in the future -->
+<!-- 
+    TODO: Remove prior to production!   
+    Show the wireframe for now...
+-->
 <img src="~/Content/images/Admin Interface.png" width="960" height="540" />
