@@ -1,7 +1,17 @@
 @{
     ViewBag.Title = "Web Student Report";
 }
+<style>
+th, td {
+    text-align: center;
 
+}
+th {
+    background-color: #435AAF;
+    color: white
+
+}
+</style>
 <h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
 
@@ -9,4 +19,30 @@
 @Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-success" })
 <img src="~/Content/images/Student Interface.png" width="960" height="540" />
 @Html.ActionLink("Attendance History", "StudentHistory", null, new { @class = "btn btn-success" })
-@Html.ActionLink("Achievements List", "Achievements", null, new { @class = "btn btn-success" })
+<h2 class="sub-header">This Week's Attendance</h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td >&#10008</td>
+                <td>&#10004</td>
+                <td>&#10004</td>
+                <td>&#10004</td>
+                <td></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+        </div>
+      </div>
+    </div>
