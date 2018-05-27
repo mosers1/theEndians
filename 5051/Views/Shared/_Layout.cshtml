@@ -21,11 +21,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <!--
+                        Links to internal pages. For prototype/demo, leave unrestricted. For production, check
+                        login status prior to routing student to the requested page.
+                    -->
+                    <li>@Html.ActionLink("Student", "Report", "RemoteStudent")</li>
+                    <li>@Html.ActionLink("Admin", "Options", "AdminPanel")</li>
+                    <li>@Html.ActionLink("Kiosk", "Index", "Kiosk")</li>
+                    <li>@Html.ActionLink("Login", "Index", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
