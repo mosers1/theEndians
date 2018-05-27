@@ -2,24 +2,28 @@
     ViewBag.Title = "Calendar Upload";
 }
 
-<h2 id="tester">@ViewBag.Title</h2>
+<h2 id="successMsg" style="display: none; color: green; font-style: italic; font-weight: bold;">Success - Calendar Sync Complete</h2>
 
-<form>
+<form style="padding-top: 30px">
   <div class="form-group">
     <label for="exampleFormControlFile1">Upload Excel Calendar</label>
     <input type="file" class="form-control-file">
   </div>
 </form>
 <button id="fakeSub">Upload</button>
-<div style="display: none" id="calImage">
-  <p>Calendar Image Goes Here</p>
+<div style="display: none; padding-top: 40px;" id="calImage">
+  <img src="~/Content/images/academicCalendar.png" />
 </div>
 
 <script>
   window.onload = function(){
     var fakeSub = document.getElementById("fakeSub");
-    if(fakeSub){
-      fakeSub.onclick = function(){calImage.style.display = "block"};
+    var successMsg = document.getElementById("successMsg");
+    if(fakeSub && successMsg){
+      fakeSub.onclick = function(){
+          calImage.style.display = "block";
+          successMsg.style.display = "block";
+        };
     }
   }
 </script>
