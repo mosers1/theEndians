@@ -2,23 +2,35 @@
     ViewBag.Title = "Web Student Report";
 }
 <style>
-th, td {
-    text-align: center;
+    h2 {
+        text-align: center;
+    }
 
-}
-th {
-    background-color: #435AAF;
-    color: white
+    th, td {
+        text-align: center;
+    }
 
-}
+    th {
+        background-color: #435AAF;
+        color: white
+    }
 </style>
 <h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
 
-
-@Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-success" })
-<img src="~/Content/images/Student Interface.png" width="960" height="540" />
 @Html.ActionLink("Attendance History", "StudentHistory", null, new { @class = "btn btn-success" })
+@Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-success" })
+<div>
+    <img src="~/Content/images/Student Interface.png" width="960" height="540" />
+</div>
+<span class="show">XP</span>
+<div class="progress progress-striped active">
+    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+        <span class="show">75%</span>
+    </div>
+<span class="show">Next Level</span>
+
+</div>
 <h2 class="sub-header">This Week's Attendance</h2>
 <div class="table-responsive">
     <table class="table table-striped">
@@ -33,16 +45,12 @@ th {
         </thead>
         <tbody>
             <tr>
-                <td >&#10008</td>
-                <td>&#10004</td>
-                <td>&#10004</td>
-                <td>&#10004</td>
+                <td style="color:red;">&#10008</td>
+                <td style="color:green;">&#10004</td>
+                <td style="color:green;">&#10004</td>
+                <td style="color:green;">&#10004</td>
                 <td></td>
-
             </tr>
         </tbody>
     </table>
 </div>
-        </div>
-      </div>
-    </div>
