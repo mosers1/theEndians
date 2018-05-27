@@ -229,6 +229,7 @@
     <Content Include="Content\images\Student History.png" />
     <Content Include="Content\images\Student Interface.png" />
     <Content Include="Content\images\Student Sign In.png" />
+    <Content Include="Content\images\academicCalendar.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
