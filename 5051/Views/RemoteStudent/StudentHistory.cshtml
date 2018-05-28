@@ -1,11 +1,66 @@
 ﻿@{
-    ViewBag.Title = "Student Attendance History";
+    ViewBag.Title = "Student Attendance History: Jim Jimmerson";
 }
-
-<h2>@ViewBag.Title</h2>
+<style>
+th, td {
+        text-align: center;
+    }
+</style>
+<h2 style="text-align:center">@ViewBag.Title</h2>
 
 <!-- Sample implementation for a "better" back button. It doesn't hardcode the previous controller. -->
 @Html.ActionLink("Back", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-success" })
 
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Week</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>This Week</td>
+                <td style="color:red;">&#10008</td>
+                <td style="color:green;">&#10004</td>
+                <td style="color:green;">&#10004</td>
+                <td style="color:green;">&#10004</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Week 3</td>
+                <td style="color:green;">&#10004</td>
+                <td style="color:green;">&#10004</td>
+                <td style="color:red;">&#10008</td>
+                <td style="color:green;">&#10004</td>
+                <td style="color:orange;">!</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Week 2</td>
+                <td style="color:red;">&#10008</td>
+                <td style="color:green;">&#10004</td>
+                <td style="color:green;">&#10004</td>
+                <td style="color:green;">&#10004</td>
+                <td style="color:green;">&#10004</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Week 1</td>
+                <td style="color:green;">&#10004</td>
+                <td style="color:red;">&#10008</td>
+                <td style="color:green;">&#10004</td>
+                <td style="color:orange;">!</td>
+                <td style="color:green;">&#10004</td>
+                <td></td>
+            </tr>
 
+        </tbody>
+    </table>
+</div>
 <img src="~/Content/images/StudentHistory.png" width="960" height="540" />
