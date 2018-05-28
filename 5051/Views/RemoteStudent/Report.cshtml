@@ -22,8 +22,65 @@
 @Html.ActionLink("Attendance History", "StudentHistory", null, new { @class = "btn btn-success" })
 @Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-success" })
 @Html.ActionLink("All Achievements", "Achievements", null, new { @class = "btn btn-success" })
+<div class="panel panel-default" style="text-align:center">
+   <div class="panel-heading">Current Achievements</div>
+   <div class="container">
+       <div class="row">
+           <div class="col-md-1">
+               <div class="thumbnail">
+                   <img src="~/Content/images/cactus.jpg" style="width: 50px; height:50px">
+                   <div class="caption">
+                       <h5>Ach1</h5>
+                   </div>
+               </div>
+           </div>
+           <div class="col-md-1">
+               <div class="thumbnail">
+                   <img src="~/Content/images/cactus.jpg" style="width: 50px; height:50px">
+                   <div class="caption">
+                       <h5>Ach2</h5>
+                   </div>
+               </div>
+           </div>
+           <div class="col-md-1">
+               <div class="thumbnail">
+                   <img src="~/Content/images/cactus.jpg" style="width: 50px; height:50px">
+                   <div class="caption">
+                       <h5>Ach3</h5>
+                   </div>
+               </div>
+           </div>
+           <div class="col-md-1">
+               <div class="thumbnail">
+                   <img src="~/Content/images/cactus.jpg" style="width: 50px; height:50px">
+                   <div class="caption">
+                       <h5>Ach4</h5>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="row">
+           <div class="col-md-1">
+               <div class="thumbnail">
+                   <img src="~/Content/images/cactus.jpg" style="width: 50px; height:50px">
+                   <div class="caption">
+                       <h5>Ach5</h5>
+                   </div>
+               </div>
+           </div>
+           <div class="col-md-1">
+               <div class="thumbnail">
+                   <img src="~/Content/images/cactus.jpg" style="width: 50px; height:50px; opacity:.5">
+                   <div class="caption">
+                       <h5>Ach6</h5>
+                   </div>
+               </div>
+           </div>
+           </div>
+       </div>
+   </div>
 <div>
-    <img src="~/Content/images/StudentInterface.png" width="960" height="540" />
+    <h4 style="text-align:center">Progress to Next Level:</h4>
 </div>
 <div class="container-fluid">
     <div class="row">
@@ -46,7 +103,6 @@
 </div>
 
 
-<span class="show">Next Level</span>
 <h2 class="sub-header">This Week's Attendance</h2>
 <div class="table-responsive">
     <table class="table table-striped">
@@ -69,4 +125,7 @@
             </tr>
         </tbody>
     </table>
+</div>
+<div>
+    <img src="~/Content/images/StudentInterface.png" width="960" height="540" />
 </div>
