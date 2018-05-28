@@ -1,6 +1,7 @@
 @{
-    ViewBag.Title = "Web Student Report For Jim Jimmerson";
+
 }
+
 <style>
     h2 {
         text-align: center;
@@ -15,13 +16,20 @@
         color: white
     }
 </style>
-<h2>@ViewBag.Title</h2>
+
 <!--jumbotron here-->
 
-
+<div class="container">
+    <div class="jumbotron" style="text-align: center">
+        <h2>Welcome Jim Jimmerson!</h2>
+        <p>Friday, May 25 2018 </p>
+    </div>
+</div>
+<div>
 @Html.ActionLink("Attendance History", "StudentHistory", null, new { @class = "btn btn-success" })
 @Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-success" })
 @Html.ActionLink("All Achievements", "Achievements", null, new { @class = "btn btn-success" })
+</div>
 <div class="panel panel-default" style="text-align:center">
    <div class="panel-heading">Current Achievements</div>
    <div class="container">
