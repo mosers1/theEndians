@@ -3,7 +3,7 @@
 }
 
 <style>
-    h2,h3 {
+    h2, h3 {
         text-align: center;
     }
 
@@ -23,7 +23,7 @@
     <div class="jumbotron" style="text-align: center">
         <div class="row">
             <div class="col-md-3">
-                <img src="~/Content/images/cactus.jpg" class="img-responsive" style="width:200px; height:200px" />
+                <img src="~/Content/images/cactus.jpg" class="img-responsive img-rounded" style="width:200px; height:200px" />
                 <p style="text-align:center">JimmyJ</p>
                 @Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-success" })
             </div>
@@ -34,68 +34,66 @@
         </div>
     </div>
 </div>
-<div>
-@Html.ActionLink("Attendance History", "StudentHistory", null, new { @class = "btn btn-success" })
-@Html.ActionLink("All Achievements", "Achievements", null, new { @class = "btn btn-success" })
-</div>
+
 <div class="panel panel-default" style="text-align:center">
-   <div class="panel-heading">Current Achievements</div>
-   <div class="container">
-       <div class="row">
-           <div class="col-md-2">
-               <div class="thumbnail">
-                   <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
-                   <div class="caption">
-                       <h5>Ach1</h5>
-                   </div>
-               </div>
-           </div>
-           <div class="col-md-2">
-               <div class="thumbnail">
-                   <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
-                   <div class="caption">
-                       <h5>Ach2</h5>
-                   </div>
-               </div>
-           </div>
-           <div class="col-md-2">
-               <div class="thumbnail">
-                   <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
-                   <div class="caption">
-                       <h5>Ach3</h5>
-                   </div>
-               </div>
-           </div>
-           <div class="col-md-2">
-               <div class="thumbnail">
-                   <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
-                   <div class="caption">
-                       <h5>Ach4</h5>
-                   </div>
-               </div>
-           </div>
-       </div>
-       <div class="row">
-           <div class="col-md-2">
-               <div class="thumbnail">
-                   <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
-                   <div class="caption">
-                       <h5>Ach5</h5>
-                   </div>
-               </div>
-           </div>
-           <div class="col-md-2">
-               <div class="thumbnail">
-                   <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px; opacity:.5">
-                   <div class="caption">
-                       <h5>Ach6</h5>
-                       <p>+150 XP<br>2 days left!</p>
-                   </div>
-               </div>
-           </div>
-           </div>
-       </div>
-   </div>
+    <div class="panel-heading">Current Achievements</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="thumbnail">
+                    <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
+                    <div class="caption">
+                        <h5>Ach1</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="thumbnail">
+                    <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
+                    <div class="caption">
+                        <h5>Ach2</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="thumbnail">
+                    <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
+                    <div class="caption">
+                        <h5>Ach3</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="thumbnail">
+                    <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
+                    <div class="caption">
+                        <h5>Ach4</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="thumbnail">
+                    <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
+                    <div class="caption">
+                        <h5>Ach5</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="thumbnail">
+                    <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px; opacity:.5">
+                    <div class="caption">
+                        <h5>Ach6</h5>
+                        <p>+150 XP<br>Attend 1 more day<br />to unlock!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.ActionLink("All Achievements", "Achievements", null, new { @class = "btn btn-success" })
 <div>
     <h3>Level <span style="color:darkblue">3 </span>Attender</h3>
 </div>
@@ -147,5 +145,5 @@
     </table>
 </div>
 <div>
-    <img src="~/Content/images/StudentInterface.png" width="960" height="540" />
+    @Html.ActionLink("Attendance History", "StudentHistory", null, new { @class = "btn btn-success" })
 </div>
