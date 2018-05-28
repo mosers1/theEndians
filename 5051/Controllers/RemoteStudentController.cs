@@ -15,17 +15,17 @@ namespace _5051.Controllers
             ViewBag.Message = "Welcome " + username + "!";
             return View();
         }
-
+        //Return Achievements page
         public ActionResult Achievements()
         {
             return View();
         }
-
+        //Returns Avatar select page
         public ActionResult ChooseAvatar()
         {
             return View();
         }
-
+        //Returns student history page
         public ActionResult StudentHistory()
         {
             return View();
