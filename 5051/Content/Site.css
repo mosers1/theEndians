@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: #e2e2e2;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -97,4 +98,14 @@ textarea {
 
 #login-page {
     background: #e2e2e2;
+}
+
+.navbar-inverse, navbar{
+    background-color: #4ba9ef;
+    border-color: #4ba9ef;
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
 }
