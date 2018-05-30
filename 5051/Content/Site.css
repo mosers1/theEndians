@@ -125,3 +125,7 @@ textarea {
 .navbar .navbar-brand {
     font-size: 26px;
 }
+
+.navbar .navbar-nav {
+    margin-left: -115px;
+}
