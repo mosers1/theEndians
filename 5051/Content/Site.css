@@ -122,3 +122,6 @@ textarea {
     padding: 5px 20px;
 }
 
+.navbar .navbar-brand {
+    font-size: 26px;
+}
