@@ -2,24 +2,9 @@
 
 }
 
-<style>
-    h2, h3 {
-        text-align: center;
-    }
-    thumbnail {
-        border: 0 none;
-        box-shadow: none
-    }
 
-    th, td {
-        text-align: center;
-    }
 
-    th {
-        background-color: #435AAF;
-        color: white
-    }
-</style>
+   
 
 <!--jumbotron here-->
 
@@ -43,7 +28,7 @@
     <div class="panel-heading">Current Achievements</div>
     <div class="container">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-1 nopadding">
                 <div class="thumbnail">
                     <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
                     <div class="caption">
@@ -51,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1 nopadding">
                 <div class="thumbnail">
                     <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
                     <div class="caption">
@@ -59,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1 nopadding">
                 <div class="thumbnail">
                     <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
                     <div class="caption">
@@ -67,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1 nopadding">
                 <div class="thumbnail">
                     <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
                     <div class="caption">
@@ -77,15 +62,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-1 nopadding">
                 <div class="thumbnail">
-                    <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px">
+                    <img src="~/Content/images/cactus.jpg" class="img-rounded" style="width: 75px; height:75px">
                     <div class="caption">
                         <h5>Ach5</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1 nopaddin">
                 <div class="thumbnail">
                     <img src="~/Content/images/cactus.jpg" style="width: 75px; height:75px; opacity:.5">
                     <div class="caption">
@@ -99,14 +84,16 @@
 </div>
 @Html.ActionLink("All Achievements", "Achievements", null, new { @class = "btn btn-success" })
 <div>
-    <h3>Level <span style="color:darkblue">3 </span>Attender</h3>
+    <div class="studentheader3">
+        Level <span class="darkBlue">3 </span>Attender
+    </div>
 </div>
 <div>
     <h4 style="text-align:center">Progress to Next Level:</h4>
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2" style="text-align: right">
+        <div class="reportColMd2" style="text-align: right">
             <span class="show">XP</span>
         </div>
         <div class="col-md-8" style="padding:0px 0px">
@@ -116,7 +103,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2" style="text-align: left">
+        <div class="col-md-1 nopadding" style="text-align: left">
             <span class="show">270/360</span>
         </div>
 
@@ -139,7 +126,7 @@
         </thead>
         <tbody>
             <tr>
-                <td style="color:red;">&#10008</td>
+                <td style="color:red;"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></td>
                 <td style="color:green;">&#10004</td>
                 <td style="color:green;">&#10004</td>
                 <td style="color:green;">&#10004</td>

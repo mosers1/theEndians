@@ -22,3 +22,39 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.studentheader2 {
+    text-align: center;
+}
+
+.studentheader3 {
+    text-align: center;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none
+}
+
+.attendTable { 
+    text-align: center;
+}
+
+.attendTableCell {
+    text-align: center;
+}
+.nopadding {
+    padding: 1px;
+    padding-bottom: 5px
+}
+.attendTableHeader{
+    background-color: #435AAF;
+    color: white
+}
+.darkBlue {
+    color: darkblue
+}
+
+.reportColMd2 {
+    text-align: center
+}
