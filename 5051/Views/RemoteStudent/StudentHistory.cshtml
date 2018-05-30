@@ -8,43 +8,6 @@
 <!-- Sample implementation for a "better" back button. It doesn't hardcode the previous controller. -->
 @Html.ActionLink("Back", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-success" })
 
-
-<div id="chartContainer">
-    <script>
-        var a = 8;
-        window.onload = function () {
-            var chart = new CanvasJS.Chart("chartContainer", {
-                theme: "theme2",
-                animationEnabled: true,
-                title: {
-                    text: "Simple Column Chart in ASP.NET MVC"
-                },
-                subtitles: [
-                    { text: "Try Resizing the Browser" }
-                ],
-                data: [
-                    {
-                        type: "column", //change type to bar, line, area, pie, etc
-                        dataPoints: [
-                            { x: 10, y: 71 },
-                            { x: 20, y: 55 },
-                            { x: 30, y: 50 },
-                            { x: 40, y: 65 },
-                            { x: 50, y: 95 },
-                            { x: 60, y: 68 },
-                            { x: 70, y: 28 },
-                            { x: 80, y: 34 },
-                            { x: 90, y: 14 }
-                        ]
-                    }
-                ]
-            });
-            chart.render();
-        };
-    </script>
-</div>
-
-
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
@@ -97,7 +60,37 @@
         </tbody>
     </table>
 </div>
-<div>
-    <p>Still working on implementing CanvasJS for graph element below:</p>
-    <img src="~/Content/images/StudentHistory.png" width="960" height="540" />
+<div id="chartContainer">
+    <script>
+        var a = 8;
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "theme2",
+                animationEnabled: true,
+                title: {
+                    text: "Simple Column Chart in ASP.NET MVC"
+                },
+                subtitles: [
+                    { text: "Try Resizing the Browser" }
+                ],
+                data: [
+                    {
+                        type: "spline", //change type to bar, line, area, pie, etc
+                        dataPoints: [
+                            { x: 10, y: 71 },
+                            { x: 20, y: 55 },
+                            { x: 30, y: 50 },
+                            { x: 40, y: 65 },
+                            { x: 50, y: 95 },
+                            { x: 60, y: 68 },
+                            { x: 70, y: 28 },
+                            { x: 80, y: 34 },
+                            { x: 90, y: 14 }
+                        ]
+                    }
+                ]
+            });
+            chart.render();
+        };
+    </script>
 </div>
