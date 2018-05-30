@@ -4,33 +4,31 @@
     ViewBag.Title = "Attendify";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-10">
+<div id="login-page" class="row">
+    <div id="lgn-form-container" class="col-md-12 full-width">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
             @Html.AntiForgeryToken()
-            <h4>Your Future Is Present</h4>
-            <hr />
+            <h4 id="form-title">Sign In</h4>
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
-                @Html.LabelFor(m => m.Username, new { @class = "col-md-2 control-label" })
+                
                 <div class="col-md-12">
-                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control", @id = "username" })
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control", @id = "username", @placeholder = "Username:" })
                     <!--@Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })-->
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+
                 <div class="col-md-12">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password:" })
                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-12">
-                    <input type="submit" value="Log in" class="btn btn-default" />
+                <div class="col-md-12 full-width">
+                    <input id="login-btn" type="submit" value="login" class="btn btn-default" />
                 </div>
             </div>
             @* Enable this once you have account confirmation enabled for password reset functionality

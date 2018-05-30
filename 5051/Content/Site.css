@@ -58,3 +58,43 @@ textarea {
 .reportColMd2 {
     text-align: center
 }
+
+#lgn-form-container .col-md-12 .full-width {
+    width: 50%;
+    margin: auto;
+    display: block;
+}
+
+#lgn-form-container input {
+    width: 100%;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#lgn-form-container {
+    width: 40%;
+    display: block;
+    margin: auto;
+    background: #4BA9EF;
+    border-radius: 10px;
+    padding: 20px 40px;
+    max-width: 300px;
+    margin-top: 40px;
+}
+#lgn-form-container #form-title {
+    text-align: center;
+    color: white;
+    font-size: 26px;
+}
+
+#lgn-form-container #login-btn {
+    text-align: center;
+    background:#435AAF;
+    color: white;
+    border: none;
+}
+
+#login-page {
+    background: #e2e2e2;
+}
