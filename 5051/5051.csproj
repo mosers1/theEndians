@@ -189,6 +189,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Backend\StudentCheckin.cs" />
+    <Compile Include="Backend\StudentCheckinDataSourceMock.cs" />
+    <Compile Include="Backend\StudentCheckinInterface.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminPanelController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
@@ -203,6 +206,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\StudentCheckinViewModel.cs" />
+    <Compile Include="Models\StudentCheckinModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
