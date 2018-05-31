@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _5051.Backend;
+using _5051.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,12 @@ namespace _5051.Controllers
     public class KioskController : Controller
     {
 
+
+        private StudentCheckinViewModel viewModel = new StudentCheckinViewModel();
+
+        // The Backend Data source
+        private StudentCheckinBackend backend = StudentCheckinBackend.Instance;
+
         /// <summary>
         /// Return the list of students with the status of logged in or out
         /// </summary>
@@ -19,20 +27,8 @@ namespace _5051.Controllers
         // GET: Kiosk
         public ActionResult Index()
         {
-            // TODO: Add logic...
-            return View();
-        }
-
-        public ActionResult SignedIn()
-        {
-            ViewBag.Message = "SignedIn";
-            return View();
-        }
-
-        public ActionResult SignedOut()
-        {
-            ViewBag.Message = "SignedOut";
-            return View();
+            viewModel.CheckinList = backend.Index();
+            return View(viewModel);
         }
 
         // GET: Kiosk/SetLogout/5
@@ -60,20 +56,6 @@ namespace _5051.Controllers
 
             return RedirectToAction("Index");
         }
-
-        public ActionResult startLogin()
-        {
-            return RedirectToAction("Index", "Admin");
-        }
-
-        public ActionResult checkIn()
-        {
-            return RedirectToAction("SignedIn", "Kiosk");
-        }
-
-        public ActionResult checkOut()
-        {
-            return RedirectToAction("SignedOut", "Kiosk");
-        }
+        
     }
 }
