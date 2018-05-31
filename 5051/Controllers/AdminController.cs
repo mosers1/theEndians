@@ -95,17 +95,14 @@ namespace _5051.Controllers
                     // We found the correct student. Toggle their archive status, then
                     // update the student in the backend server.
                     var updatedStudent = new StudentModel(item);
-                    if (item.IsEdit)
-                    {
-                        updatedStudent.IsEdit = false;
-                        //string timeIn = Request.Form["TimeIn"].ToString();
-                        //string timeOut = Request.Form["TimeOut"].ToString();
-                    } else
-                    {
-                        updatedStudent.IsEdit = true;
-                    }
+                    updatedStudent.IsEdit = true;
                     StudentBackend.Update(updatedStudent);
-                    break;
+                } else if (item.IsEdit == true)
+                {
+                    // Force to false -- we do NOT support editing multiple students at once
+                    var updatedStudent = new StudentModel(item);
+                    updatedStudent.IsEdit = false;
+                    StudentBackend.Update(updatedStudent);
                 }
             }
 
