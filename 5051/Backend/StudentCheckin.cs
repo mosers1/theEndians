@@ -54,10 +54,10 @@ namespace _5051.Backend
         }
 
         /// <summary>
-        /// Makes a new Avatar
+        /// Makes a new StudentCheckinn
         /// </summary>
         /// <param name="data"></param>
-        /// <returns>Avatar Passed In</returns>
+        /// <returns>StudentCheckinn Passed In</returns>
         public StudentCheckinModel Create(StudentCheckinModel data)
         {
             DataSource.Create(data);
@@ -116,7 +116,7 @@ namespace _5051.Backend
         /// <summary>
         /// Return the full dataset
         /// </summary>
-        /// <returns>List of Avatars</returns>
+        /// <returns>List of StudentCheckinns</returns>
         public List<StudentCheckinModel> Index()
         {
             var myData = DataSource.Index();
@@ -124,10 +124,10 @@ namespace _5051.Backend
         }
 
         /// <summary>
-        /// Helper that returns the First Avatar ID in the list, this will be used for creating new avatars if no avatarID is specified
+        /// Helper that returns the First StudentCheckinn ID in the list, this will be used for creating new StudentCheckinns if no StudentCheckinnID is specified
         /// </summary>
-        /// <returns>Null, or Avatar ID of the first avatar in the list.</returns>
-        public string GetFirstAvatarId()
+        /// <returns>Null, or StudentCheckinn ID of the first StudentCheckinn in the list.</returns>
+        public string GetFirstStudentCheckinnId()
         {
             string myReturn = null;
 
@@ -141,11 +141,11 @@ namespace _5051.Backend
         }
 
         /// <summary>
-        /// Helper function that returns the Avatar Image URI
+        /// Helper function that returns the StudentCheckinn Image URI
         /// </summary>
-        /// <param name="data">The avatarId to look up</param>
-        /// <returns>null, or the avatar image URI</returns>
-        public string GetAvatarUri(string data)
+        /// <param name="data">The StudentCheckinnId to look up</param>
+        /// <returns>null, or the StudentCheckinn image URI</returns>
+        public string GetStudentCheckinnUri(string data)
         {
             if (string.IsNullOrEmpty(data))
             {
@@ -168,7 +168,7 @@ namespace _5051.Backend
         /// </summary>
         /// <param name="id">optional paramater, of the Item that is currently selected</param>
         /// <returns>List of SelectListItems as a SelectList</returns>
-        public List<SelectListItem> GetAvatarListItem(string id = null)
+        public List<SelectListItem> GetStudentCheckinnListItem(string id = null)
         {
             var myDataList = DataSource.Index();
 

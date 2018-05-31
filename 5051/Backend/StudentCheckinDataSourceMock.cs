@@ -7,7 +7,7 @@ using _5051.Models;
 namespace _5051.Backend
 {
     /// <summary>
-    /// Backend Mock DataSource for Avatars, to manage them
+    /// Backend Mock DataSource for StudentCheckins, to manage them
     /// </summary>
     public class StudentCheckinDataSourceMock : IStudentCheckinInterface
     {
@@ -40,18 +40,18 @@ namespace _5051.Backend
         }
 
         /// <summary>
-        /// The Avatar List
+        /// The StudentCheckin List
         /// </summary>
-        private List<StudentCheckinModel> avatarList = new List<StudentCheckinModel>();
+        private List<StudentCheckinModel> StudentCheckinList = new List<StudentCheckinModel>();
 
         /// <summary>
-        /// Makes a new Avatar
+        /// Makes a new StudentCheckin
         /// </summary>
         /// <param name="data"></param>
-        /// <returns>Avatar Passed In</returns>
+        /// <returns>StudentCheckin Passed In</returns>
         public StudentCheckinModel Create(StudentCheckinModel data)
         {
-            avatarList.Add(data);
+            StudentCheckinList.Add(data);
             return data;
         }
 
@@ -67,7 +67,7 @@ namespace _5051.Backend
                 return null;
             }
 
-            var myReturn = avatarList.Find(n => n.Id == id);
+            var myReturn = StudentCheckinList.Find(n => n.Id == id);
             return myReturn;
         }
 
@@ -82,7 +82,7 @@ namespace _5051.Backend
             {
                 return null;
             }
-            var myReturn = avatarList.Find(n => n.Id == data.Id);
+            var myReturn = StudentCheckinList.Find(n => n.Id == data.Id);
             myReturn.Name = data.Name;
             myReturn.CheckedIn = data.CheckedIn;
             myReturn.Uri = data.Uri;
@@ -102,18 +102,18 @@ namespace _5051.Backend
                 return false;
             }
 
-            var myData = avatarList.Find(n => n.Id == Id);
-            var myReturn = avatarList.Remove(myData);
+            var myData = StudentCheckinList.Find(n => n.Id == Id);
+            var myReturn = StudentCheckinList.Remove(myData);
             return myReturn;
         }
 
         /// <summary>
         /// Return the full dataset
         /// </summary>
-        /// <returns>List of Avatars</returns>
+        /// <returns>List of StudentCheckins</returns>
         public List<StudentCheckinModel> Index()
         {
-            return avatarList;
+            return StudentCheckinList;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace _5051.Backend
         /// </summary>
         public void Reset()
         {
-            avatarList.Clear();
+            StudentCheckinList.Clear();
             Initialize();
         }
 
