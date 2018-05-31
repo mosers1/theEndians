@@ -130,8 +130,10 @@ textarea {
     margin-left: -115px;
 }
 
-.BadgeThumbnail {
-    width: 75px;
-    height: 75px;
-
+.submit-with-icon {
+    background: transparent;
+    color: steelblue;
+    border: 0px;
+    padding: 0;
+    outline: 0;
 }

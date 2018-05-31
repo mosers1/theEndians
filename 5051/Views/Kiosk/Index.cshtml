@@ -1,4 +1,5 @@
-﻿
+﻿@model _5051.Models.StudentCheckinViewModel
+
 @{
     ViewBag.Title = "Kiosk Check In / Out";
 }
@@ -9,67 +10,42 @@
 <br />
 
 <div class="container">
-    <div class="row">
-        <a href="~/RemoteStudent/Report?username=kevinc">
+
+    @foreach (var item in Model.CheckinList)
+    {
+        <a id="@item.Id" href="#"  data-toggle="modal" data-target="#myModal">
             <div class="col-sm-2">
                 <span>
-                    Kevin Cushing
+                    @item.Name
                 </span>
                 <br />
-                <img src="~/Content/images/avatar4.png" width="75" height="75" />
+                <img src="~/Content/images/@item.Uri" width="75" height="75" />
             </div>
         </a>
-        <a href="~/RemoteStudent/Report?username=maggied">
-            <div class="col-sm-2">
-                <span>
-                    Maggie Dong
-                </span>
-                <br />
-                <img src="~/Content/images/avatar5.png" width="75" height="75" />
+     }
+
+</div>
+
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">You have checked in!</h4>
             </div>
-        </a>
-        <a href="~/RemoteStudent/Report?username=andrewc">
-            <div class="col-sm-2">
-                <span>
-                    Andrew Croneberger
-                </span>
-                <br />
-                <img src="~/Content/images/avatar3.png" width="75" height="75" />
+            <div class="modal-body">
+                <p>You have earn 10 points from checking in!</p>
             </div>
-        </a>
-        <a href="~/RemoteStudent/Report?username=scottm">
-            <div class="col-sm-2">
-                <span>
-                    Scott Moser
-                </span>
-                <br />
-                <img src="~/Content/images/avatar7.png" width="75" height="75" />
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
-        </a>
-     </div>
-    <br />
-    <br />
-    <div class="row">
-        <a href="~/RemoteStudent/Report?username=andreww">
-            <div class="col-sm-2">
-                <span>
-                    Andrew Wallace
-                </span>
-                <br />
-                <img src="~/Content/images/avatar8.png" width="75" height="75" />
-            </div>
-        </a>
-        <a href="~/RemoteStudent/Report?username=stevec">
-            <div class="col-sm-2">
-                <span>
-                    Steve Chester
-                </span>
-                <br />
-                <img src="~/Content/images/avatar9.png" width="75" height="75" />
-            </div>
-        </a>
+        </div>
+
     </div>
-    <br />
 </div>
 
 

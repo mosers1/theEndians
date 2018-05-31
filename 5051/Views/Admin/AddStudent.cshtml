@@ -1,0 +1,61 @@
+﻿@model _5051.Models.StudentModel
+
+@{
+    ViewBag.Title = "AddStudent";
+}
+
+<div class="container">
+    <div class="row">
+        <h2>Add Student</h2>
+        <br />
+        <br />
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
+
+            <div class="row">
+                <div class="col-sm-3 text-right">
+                    @Html.DisplayNameFor(m => m.Name)
+                </div>
+                <div class="col-sm-2">
+                    @Html.EditorFor(m => m.Name)
+                    @Html.ValidationMessageFor(m => m.Name)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 text-right">
+                    @Html.DisplayNameFor(m => m.Username)
+                </div>
+                <div class="col-sm-2">
+                    @Html.EditorFor(m => m.Username)
+                    @Html.ValidationMessageFor(m => m.Username)
+                </div>
+            </div>
+
+            <!-- Consider adding when backend is complete. -->
+            @*<div class="row">
+                <div class="col-sm-3 text-right">
+                    @Html.DisplayNameFor(m => m.AvatarId)
+                </div>
+                <div class="col-sm-2">
+                    @Html.DropDownListFor(m => m.AvatarId, _5051.Backend.AvatarBackend.Instance.GetAvatarListItem(Model.AvatarId))
+                    @Html.ValidationMessageFor(m => m.AvatarId)
+                </div>
+            </div>*@
+
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-sm-3 text-right">
+                </div>
+                <div class="col-sm-4">
+                    @Html.ActionLink("Cancel", "Index", new { id = Model.Id }, new { @class = "btn btn-primary" })
+                    <input type="submit" value="Create" class="btn btn-primary">
+                </div>
+            </div>
+        }
+    </div>
+</div>
