@@ -13,8 +13,6 @@ namespace _5051.Controllers
     /// </summary>
     public class KioskController : Controller
     {
-
-
         private StudentCheckinViewModel viewModel = new StudentCheckinViewModel();
 
         // The Backend Data source
@@ -29,6 +27,19 @@ namespace _5051.Controllers
         {
             viewModel.CheckinList = backend.Index();
             return View(viewModel);
+        }
+
+        /// <summary>
+        /// This should check in or out
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        // GET: Kiosk/Update/5
+        public ActionResult Update(string id = null)
+        {
+            var myData = backend.Read(id);
+            myData.CheckedIn = !myData.CheckedIn;
+            return View(myData);
         }
 
         // GET: Kiosk/SetLogout/5

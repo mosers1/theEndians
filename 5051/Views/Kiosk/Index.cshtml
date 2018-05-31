@@ -19,7 +19,11 @@
                     @item.Name
                 </span>
                 <br />
-                <img src="~/Content/images/@item.Uri" width="75" height="75" />
+                @if (item.CheckedIn) {
+                    <img src="~/Content/images/@item.Uri" width="75" height="75" />
+                } else {
+                    <img src="~/Content/images/@item.Uri" width="75" height="75" style="opacity: 0.1" />
+                }
             </div>
         </a>
      }

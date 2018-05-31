@@ -131,11 +131,11 @@ namespace _5051.Backend
         public void Initialize()
         {
             Create(new StudentCheckinModel("person1.png", "Kevin Cushing", true));
-            Create(new StudentCheckinModel("person2.png", "Maggie", false));
-            Create(new StudentCheckinModel("person3.png", "Scott", false));
-            Create(new StudentCheckinModel("person4.png", "Andrew C", true));
-            Create(new StudentCheckinModel("person5.png", "Andrew W", true));
-            Create(new StudentCheckinModel("person6.png", "Steve", false));
+            Create(new StudentCheckinModel("person2.png", "Maggie Dong", false));
+            Create(new StudentCheckinModel("person3.png", "Scott Moser", false));
+            Create(new StudentCheckinModel("person4.png", "Andrew Croneberger", true));
+            Create(new StudentCheckinModel("person5.png", "Andrew Wallace", true));
+            Create(new StudentCheckinModel("person6.png", "Mike Koenig", false));
         }
     }
 }
