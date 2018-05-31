@@ -44,7 +44,7 @@ namespace _5051.Models
         /// The ID of the Avatar the student is associated with, this will convert to an avatar picture
         /// </summary>
         [Display(Name = "AvatarId", Description = "Avatar")]
-        [Required(ErrorMessage = "Avatar is required")]
+        //[Required(ErrorMessage = "Avatar is required")]
         public string AvatarId { get; set; }
 
         /// <summary>
@@ -52,21 +52,21 @@ namespace _5051.Models
         /// they can be brought back.
         /// </summary>
         [Display(Name = "IsActive", Description = "Is student active or archived?")]
-        [Required(ErrorMessage = "Student status is required")]
+        //[Required(ErrorMessage = "Student status is required")]
         public bool IsActive { get; set; }
 
         /// <summary>
         /// The edit-in-progress status set/cleared by the admin used when modifying attendance records.
         /// </summary>
         [Display(Name = "IsEdit", Description = "Is the student being edited?")]
-        [Required(ErrorMessage = "Edit status is required")]
+        //[Required(ErrorMessage = "Edit status is required")]
         public bool IsEdit { get; set; }
 
         /// <summary>
         /// The status of the student, for example currently logged in, out
         /// </summary>
         [Display(Name = "Current Login Status", Description = "Login status of the Student")]
-        [Required(ErrorMessage = "Login status is required")]
+        //[Required(ErrorMessage = "Login status is required")]
         public StudentLoginStatusEnum LoginStatus { get; set; }
 
         // TODO: Move to another model? Leaving here for demo.
@@ -74,7 +74,7 @@ namespace _5051.Models
         /// The daily status of the student, for example currently logged in, out
         /// </summary>
         [Display(Name = "Daily Status", Description = "Daily status of the Student")]
-        [Required(ErrorMessage = "Daily status is required")]
+        //[Required(ErrorMessage = "Daily status is required")]
         public StudentDailyStatusEnum DailyStatus { get; set; }
 
         // TODO: Move to another model? Leaving here for demo.
@@ -82,7 +82,7 @@ namespace _5051.Models
         /// The daily sign-in time of the student.
         /// </summary>
         [Display(Name = "Time In", Description = "Student Sign-in Time")]
-        [Required(ErrorMessage = "Sign-in time is required")]
+        //[Required(ErrorMessage = "Sign-in time is required")]
         public string TimeIn { get; set; }
 
         // TODO: Move to another model? Leaving here for demo.
@@ -90,7 +90,7 @@ namespace _5051.Models
         /// The daily sign-out time of the student.
         /// </summary>
         [Display(Name = "Time Out", Description = "Student Sign-out Time")]
-        [Required(ErrorMessage = "Sign-out time is required")]
+        //[Required(ErrorMessage = "Sign-out time is required")]
         public string TimeOut { get; set; }
 
         /// <summary>

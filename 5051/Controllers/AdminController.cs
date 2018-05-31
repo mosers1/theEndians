@@ -206,19 +206,51 @@ namespace _5051.Controllers
             return RedirectToAction("Index");
         }
 
-        // TODO: Add POST method here for adding a student!
-        // Function shall go here...
-        //
+        // NOTE: This function contains The Endian's official POST method.
         /// <summary>
-        /// Redirects the user to the page where they can add a new student.
+        /// Make a new Student sent in by the create Student screen
         /// </summary>
+        /// <param name="data"></param>
         /// <returns></returns>
-        // POST: /Admin/AddStudent
-        //[HttpPost]
-        //public ActionResult AddStudent(Bind magic...)
-        //{
-        //    return View();
-        //}
+        // POST: Student/Create
+        [HttpPost]
+        public ActionResult AddStudent([Bind(Include=
+                                        "Id,"+
+                                        "Name,"+
+                                        "Username,"+
+                                        "AvatarId,"+
+                                        "IsActive,"+
+                                        "IsEdit,"+
+                                        "LoginStatus,"+
+                                        "DailyStatus,"+
+                                        "TimeIn,"+
+                                        "TimeOut,"+
+                                        "Password,"+
+                                        "")] StudentModel data)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Send back for edit
+                return View(data);
+            }
+
+            if (data == null)
+            {
+                // Send to Error Page
+                return RedirectToAction("Error", new { route = "Home", action = "Error" });
+            }
+
+            if (string.IsNullOrEmpty(data.Id))
+            {
+                // Return back for Edit
+                return View(data);
+            }
+
+            // Make it official
+            StudentBackend.Create(data);
+
+            return RedirectToAction("Index");
+        }
 
         /// <summary>
         /// Redirects the user to the page where they can add a new student.
@@ -227,7 +259,8 @@ namespace _5051.Controllers
         // GET: /Admin/AddStudent
         public ActionResult AddStudent()
         {
-            return View();
+            var myData = new StudentModel();
+            return View(myData);
         }
 
         /// <summary>
