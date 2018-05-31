@@ -63,7 +63,7 @@ namespace _5051.Controllers
 
         public ActionResult startLogin()
         {
-            return RedirectToAction("Options", "AdminPanel");
+            return RedirectToAction("Index", "Admin");
         }
 
         public ActionResult checkIn()

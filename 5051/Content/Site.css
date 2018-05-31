@@ -129,3 +129,11 @@ textarea {
 .navbar .navbar-nav {
     margin-left: -115px;
 }
+
+.submit-with-icon {
+    background: transparent;
+    color: steelblue;
+    border: 0px;
+    padding: 0;
+    outline: 0;
+}

@@ -18,7 +18,7 @@ namespace _5051.Controllers
         // GET: ClassReport
         public ActionResult GoBack()
         {
-            return RedirectToAction("Options", "AdminPanel");
+            return RedirectToAction("Index", "Admin");
         }
     }
 }

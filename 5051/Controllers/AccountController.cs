@@ -38,7 +38,7 @@ namespace _5051.Controllers
         {
             if (model.Username.ToLower() == "admin" || model.Username.ToLower() == "administrator")
             {
-                return RedirectToAction("Options", "AdminPanel");
+                return RedirectToAction("Index", "Admin");
             } else if (model.Username.ToLower() == "kiosk"){
                 return RedirectToAction("Index", "Kiosk");
             } else {
