@@ -6,14 +6,13 @@ using System.Web;
 namespace _5051.Models
 {
     /// <summary>
-    /// View Model for the Student Index, this will have the list of the students in it convered to a StudentDisplayViewModel
+    /// View Model for the Student Index, this will have the list of the students in it convered to a StudentViewModel
     /// </summary>
     public class StudentViewModel
     {
         /// <summary>
         /// The student List to return to the View
         /// </summary>
-        //public List<StudentDisplayViewModel> StudentList = new List<StudentDisplayViewModel>();
         public List<StudentModel> StudentList = new List<StudentModel>();
 
         /// <summary>

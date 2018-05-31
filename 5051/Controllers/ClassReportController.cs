@@ -8,13 +8,20 @@ namespace _5051.Controllers
 {
     public class ClassReportController : Controller
     {
+        /// <summary>
+        /// Directs the user to the page where they can see a class attendance data report.
+        /// </summary>
+        /// <returns></returns>
         // GET: ClassReport
         public ActionResult Index()
         {
             return View();
         }
 
-        // Method to Go Back to previous page which is AdminPanel by design
+        /// <summary>
+        // Method to Go Back to previous page which is Admin by sitemap design
+        /// </summary>
+        /// <returns></returns>
         // GET: ClassReport
         public ActionResult GoBack()
         {

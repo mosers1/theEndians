@@ -113,12 +113,6 @@ namespace _5051.Backend
                 return null;
             }
 
-            //if (myData.Status != data.Status)
-            //{
-            //    // Status Changed, need to process the status change
-            //    ToggleStatus(myData);
-            //}
-
             // Update the record
             var myReturn = DataSource.Update(data);
 
@@ -126,9 +120,9 @@ namespace _5051.Backend
         }
 
         /// <summary>
-        /// Remove the Data item if it is in the list
+        /// Remove the item by ID if it is in the list
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="id"></param>
         /// <returns>True for success, else false</returns>
         public bool Delete(string Id)
         {
@@ -183,59 +177,6 @@ namespace _5051.Backend
 
             // TODO:  Make call to the Attendance Log, to track when the student logged out.
         }
-
-        /// <summary>
-        /// Use the ID to toggle the status
-        /// </summary>
-        /// <param name="id">Id of the student</param>
-        //public void ToggleStatusById(string id)
-        //{
-        //    if (string.IsNullOrEmpty(id))
-        //    {
-        //        return;
-        //    }
-
-        //    var myData = DataSource.Read(id);
-        //    if (myData == null)
-        //    {
-        //        return;
-        //    }
-
-        //    ToggleStatus(myData);
-        //}
-
-        /// <summary>
-        /// Change the Status of the student
-        /// </summary>
-        /// <param name="id">The Student ID</param>
-        //public void ToggleStatus(StudentModel data)
-        //{
-        //    if (data == null)
-        //    {
-        //        return;
-        //    }
-
-        //    switch (data.Status)
-        //    {
-        //        case StudentStatusEnum.In:
-        //            SetLogOut(data);
-        //            break;
-
-        //        case StudentStatusEnum.Out:
-        //            SetLogIn(data);
-        //            break;
-
-        //        case StudentStatusEnum.Hold:
-        //            SetLogOut(data);
-        //            break;
-
-        //    }
-
-        //    DataSource.Update(data);
-
-        //    // TODO:  Make call to the Attendance Log, to track when the student logged out.
-
-        //}
 
         /// <summary>
         /// Helper function that resets the DataSource, and rereads it.

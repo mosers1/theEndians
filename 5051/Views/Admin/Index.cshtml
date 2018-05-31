@@ -1,16 +1,4 @@
-﻿<!-- TODO: Move to controller/model? -->
-<!-- FAKE DATA! -->
-@{
-    <!-- string[] members = { "Kevin Cushing", "Maggie Dong", "Andrew Croneberger", "Scott Moser", "Andrew Wallace", "Steve Chester" }; -->
-    <!-- string[] time_in = { "8:00AM", "7:53AM", "8:31AM", "8:10AM", "-----", "TBD" }; -->
-    <!-- string[] time_out = { "2:45PM", "3:00PM", "2:47PM", "1:00PM", "-----", "TBD" }; -->
-    <!-- string[] status = { "Present", "Present", "Tardy", "Present", "Absent", "TBD" }; -->
-    <!-- string[] isActive = { "Yes", "Yes", "Yes", "Yes", "Yes", "No" }; -->
-    <!-- string[] isEdit = { "No", "No", "No", "Yes", "No", "No" }; -->
-    <!-- int len = members.Length; -->
-}
-
-@model _5051.Models.StudentViewModel
+﻿@model _5051.Models.StudentViewModel
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +20,7 @@
     </div>
 
     @{
+        <!-- Check for a bogus model passed to us. Fail gracefully. -->
         if (Model.StudentList == null || !Model.StudentList.Any())
         {
             <p>No students found in the system. Please add some!</p>
@@ -57,93 +46,95 @@
                     </thead>
                     <tbody>
 
-                    @{
-                        <!-- Begin a form to prepare for a possible POST action down below when editing a student's record -->
-                        using (Html.BeginForm())
-                        {
-                            <!--
-                                Fill in the table row-by-row using student data. Keep this dynamic so we don't
-                                need to update every time a new student gets added or archived.
-                            -->
-                            foreach (var item in Model.StudentList)
+                        @{
+                            <!-- Begin a form to prepare for a possible POST action down below when editing a student's record -->
+                            using (Html.BeginForm())
                             {
-                            <tr>
-                            <!-- TODO: Link to specific student page? -->
-                            <td>@Html.ActionLink(item.Name, "ViewStudentReport", null, new { @class = "text" })</td>
-
-                            <!-- Check is student is archived. If so, don't try to display data for student. -->
-                            @if (item.IsActive == true)
-                            {
-                                <!-- Prototype logic for editing a student. What's best way to handle this? -->
-                                if (item.IsEdit == false)
+                                <!--
+                                    Fill in the table row-by-row using student data. Keep this dynamic so we don't
+                                    need to update every time a new student gets added or archived.
+                                -->
+                                foreach (var item in Model.StudentList)
                                 {
-                                    <td>@item.TimeIn</td>
-                                    <td>@item.TimeOut</td>
-                                }
-                                else
-                                {
-                                    @Html.AntiForgeryToken()
-                                    @Html.Hidden("Id", item.Id);
-                                    <td>
-                                        @Html.DropDownList("TimeIn", ViewBag.myList as SelectList)
-                                    </td>
-                                    <td>
-                                        @Html.DropDownList("TimeOut", ViewBag.myList as SelectList)
-                                    </td>
-                                }
-                                <td>
-                                    @if (item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Present)
-                                    {
-                                        <span class="glyphicon glyphicon-ok" data-toggle="tooltip" title="Present"></span>
-                                    }
-                                    else if (item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Tardy || item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Unknown)
-                                    {
-                                        <span class="glyphicon glyphicon-exclamation-sign" data-toggle="tooltip" title="Unknown"></span>
-                                    }
-                                    else
-                                    {
-                                        <span class="glyphicon glyphicon-remove" data-toggle="tooltip" title="Absent"></span>
-                                    }
-                                </td>
-                            }
-                            else
-                            {
-                                <!-- Student is archived so display blank columns. -->
-                                <td></td>
-                                <td></td>
-                                <td>Archived</td>
-                            }
-                                <td>
-                                    <!-- Handle icons differently based on student edit status -->
-                                    @if (item.IsEdit == false)
-                                    {
-                                        <a href="~/Admin/TriggerEdit/@item.Id">
-                                            <span class="glyphicon glyphicon-pencil" data-toggle="tooltip" title="Edit Record"></span>
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <!-- TODO: How do we want to SAVE the information? Use a POST? -->
-                                        <button type="submit" class="submit-with-icon">
-                                            <span class="glyphicon glyphicon-floppy-disk" data-toggle="tooltip" title="Save Record"></span>
-                                        </button>                                        
-                                    }
+                                    <tr>
+                                        <!-- TODO: Future - Link to specific student page. Leave as-is for demos. -->
+                                        <td>@Html.ActionLink(item.Name, "ViewStudentReport", null, new { @class = "text" })</td>
 
-                                    <!-- Handle icons differently based on student active status -->
-                                    @if (item.IsActive == true)
-                                    {
-                                        <a href="~/Admin/ToggleArchive/@item.Id">
-                                            <span class="glyphicon glyphicon-inbox" data-toggle="tooltip" title="Archive Student"></span>
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a href="~/Admin/ToggleArchive/@item.Id">
-                                            <span class="glyphicon glyphicon-share-alt" data-toggle="tooltip" title="Restore Student"></span>
-                                        </a>
-                                    }
-                                </td>
-                        </tr>
+                                        <!-- Check is student is archived. If so, don't try to display data for student. -->
+                                        @if (item.IsActive == true)
+                                        {
+                                            <!-- Logic for editing a student vs. simply displaying data. -->
+                                            if (item.IsEdit == false)
+                                            {
+                                                <td>@item.TimeIn</td>
+                                                <td>@item.TimeOut</td>
+                                            }
+                                            else
+                                            {
+                                                <!-- Provide two drop down menus so admin can choose times when modifying attendance. -->
+                                                @Html.AntiForgeryToken()
+                                                @Html.Hidden("Id", item.Id);
+                                                <td>
+                                                    @Html.DropDownList("TimeIn", ViewBag.myList as SelectList)
+                                                </td>
+                                                <td>
+                                                    @Html.DropDownList("TimeOut", ViewBag.myList as SelectList)
+                                                </td>
+                                            }
+                                            <td>
+                                                <!-- Display status icon based on student status. -->
+                                                @if (item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Present)
+                                                {
+                                                    <span class="glyphicon glyphicon-ok" data-toggle="tooltip" title="Present"></span>
+                                                }
+                                                else if (item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Tardy || item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Unknown)
+                                                {
+                                                    <span class="glyphicon glyphicon-exclamation-sign" data-toggle="tooltip" title="Unknown"></span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="glyphicon glyphicon-remove" data-toggle="tooltip" title="Absent"></span>
+                                                }
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <!-- Student is archived so display blank columns. -->
+                                            <td></td>
+                                            <td></td>
+                                            <td>Archived</td>
+                                        }
+                                        <td>
+                                            <!-- Handle icons differently based on student edit status -->
+                                            @if (item.IsEdit == false)
+                                            {
+                                                <a href="~/Admin/TriggerEdit/@item.Id">
+                                                    <span class="glyphicon glyphicon-pencil" data-toggle="tooltip" title="Edit Record"></span>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <!-- Implementing this was tricky. See Site.css for styling. -->
+                                                <button type="submit" class="submit-with-icon">
+                                                    <span class="glyphicon glyphicon-floppy-disk" data-toggle="tooltip" title="Save Record"></span>
+                                                </button>
+                                            }
+
+                                            <!-- Handle icons differently based on student active status -->
+                                            @if (item.IsActive == true)
+                                            {
+                                                <a href="~/Admin/ToggleArchive/@item.Id">
+                                                    <span class="glyphicon glyphicon-inbox" data-toggle="tooltip" title="Archive Student"></span>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a href="~/Admin/ToggleArchive/@item.Id">
+                                                    <span class="glyphicon glyphicon-share-alt" data-toggle="tooltip" title="Restore Student"></span>
+                                                </a>
+                                            }
+                                        </td>
+                                    </tr>
                                 }
                             }
                         }
@@ -167,6 +158,8 @@
         }
     }
     <br />
+
+    <!-- TODO: Remove for production. Leave for testing & demos. -->
     <p>Click here to reset class data to factory defaults:</p>
     @Html.ActionLink("Reset Data", "Reset", "Admin", new { @class = "btn btn-primary btn-sm" })
 </body>

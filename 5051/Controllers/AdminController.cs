@@ -16,14 +16,22 @@ namespace _5051.Controllers
         // The Backend Data source
         private StudentBackend StudentBackend = StudentBackend.Instance;
 
-        // GET: /AdminPanel/Calendar
+        /// <summary>
+        /// Direct to page where user can upload a calendar.
+        /// </summary>
+        /// <returns></returns>
+        // GET: /Admin/Calendar
         public ActionResult Calendar()
         {
             ViewBag.Message = "Calendar Upload";
             return View();
         }
-        
-        // GET: /AdminPanel/Options
+
+        /// <summary>
+        /// Main landing page for this controller.
+        /// </summary>
+        /// <returns></returns>
+        // GET: /Admin/Index
         public ActionResult Index()
         {
             ViewBag.Message = "Admin Index";
@@ -32,7 +40,6 @@ namespace _5051.Controllers
             var myDataList = StudentBackend.Index();
             var StudentViewModel = new StudentViewModel(myDataList);
 
-            // TODO: Only send this data if we are editing a student
             // A brute force way of sending a list for modifying student times
             SelectList list = new SelectList(time_list);
             ViewBag.myList = list;
@@ -41,13 +48,21 @@ namespace _5051.Controllers
             return View(StudentViewModel);
         }
 
-        // GET: /AdminPanel/ViewClassReport
+        /// <summary>
+        /// View the class report page.
+        /// </summary>
+        /// <returns></returns>
+        // GET: /Admin/ViewClassReport
         public ActionResult ViewClassReport()
         {
             return RedirectToAction("Index", "ClassReport");
         }
 
-        // GET: /AdminPanel/ViewClassReport
+        /// <summary>
+        /// View the student report page.
+        /// </summary>
+        /// <returns></returns>
+        // GET: /Admin/ViewClassReport
         public ActionResult ViewStudentReport()
         {
             return RedirectToAction("StudentHistory", "RemoteStudent");
@@ -97,6 +112,10 @@ namespace _5051.Controllers
             return RedirectToAction("Index");
         }
 
+        // TODO: Future - Migrate to using Mike's Bind method(). Leaving as-is for demoability.
+        // We will use the _official_ POST method on the student add page. Since this isn't a
+        // coding class, Scott made a judgement call that this would be acceptable.
+        //
         /// <summary>
         /// Find student and save changes made from the admin page. This is currently
         /// limited to adjusting attendance in/out times.
@@ -105,8 +124,6 @@ namespace _5051.Controllers
         /// <returns></returns>
         // POST: Admin/Index
         [HttpPost]
-        // TODO: Migrate to using Mike's Bind method(). Leaving as-is for demoability.
-        // We will use the official POST method on the student add page.
         public ActionResult Index(FormCollection form)
         {
             if (form == null)
@@ -193,15 +210,31 @@ namespace _5051.Controllers
         }
 
         // TODO: Add POST method here for adding a student!
+        // Function shall go here...
+        //
+        /// <summary>
+        /// Redirects the user to the page where they can add a new student.
+        /// </summary>
+        /// <returns></returns>
+        // POST: /Admin/AddStudent
+        //[HttpPost]
+        //public ActionResult AddStudent(Bind magic...)
+        //{
+        //    return View();
+        //}
 
-        // GET: /AdminPanel/AddStudent
+        /// <summary>
+        /// Redirects the user to the page where they can add a new student.
+        /// </summary>
+        /// <returns></returns>
+        // GET: /Admin/AddStudent
         public ActionResult AddStudent()
         {
             return View();
         }
 
         /// <summary>
-        /// Calls the data sources and has them reset to default data
+        /// Calls the data sources and has them reset to default data.
         /// </summary>
         /// <returns></returns>
         // GET: Reset
@@ -211,8 +244,8 @@ namespace _5051.Controllers
             return RedirectToAction("Index", "Admin");
         }
 
-        // A brute force way of making a list of times
-        //var time_list = new List<string>
+        // A brute force way of making a list of times. 
+        // TODO: Clean up for production! Out of scope for 5051 class.
         public string[] time_list = new string[]
         {
             "-----", "7:00AM", "7:01AM", "7:02AM", "7:03AM", "7:04AM", "7:05AM", "7:06AM", "7:07AM", "7:08AM", "7:09AM", "7:10AM", "7:11AM", "7:12AM", "7:13AM", "7:14AM", "7:15AM", "7:16AM", "7:17AM", "7:18AM",

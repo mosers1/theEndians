@@ -89,9 +89,9 @@ namespace _5051.Backend
         }
 
         /// <summary>
-        /// Remove the Data item if it is in the list
+        /// Remove the Data item by ID if it is in the list
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="id"></param>
         /// <returns>True for success, else false</returns>
         public bool Delete(string Id)
         {

@@ -6,15 +6,15 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-// TODO: Implement in the future once a backend is required.
 using _5051.Backend;
 
 namespace _5051.Models
 {
     /// <summary>
-    /// The Student and related information. Other things about the student such
-    /// as their attendance is pulled from the attendance data, or the owned 
-    /// items, from the inventory data
+    /// The Student and related information. At present, this class contains all information related
+    /// to a student: name, ID, attendance status, daily sign-in/out time, avatar, etc.
+    /// TODO: Future - Consider moving parts of data around to other models/modelviews for a cleaner
+    /// design.
     /// </summary>
     public class StudentModel
     {
@@ -34,7 +34,7 @@ namespace _5051.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// The student's self-chosen username
+        /// The student's username.
         /// </summary>
         [Display(Name = "Username", Description = "Student Username")]
         [Required(ErrorMessage = "Username is required")]
@@ -48,14 +48,15 @@ namespace _5051.Models
         public string AvatarId { get; set; }
 
         /// <summary>
-        /// The personal level for the Avatar, the avatar levels up.  switching the avatar ID (picture), does not change the level
+        /// The student archival status. If they leave mid-year, they can be archived. If they return,
+        /// they can be brought back.
         /// </summary>
         [Display(Name = "IsActive", Description = "Is student active or archived?")]
         [Required(ErrorMessage = "Student status is required")]
         public bool IsActive { get; set; }
 
         /// <summary>
-        /// The edit-in-progress status set/cleared by the admin.
+        /// The edit-in-progress status set/cleared by the admin used when modifying attendance records.
         /// </summary>
         [Display(Name = "IsEdit", Description = "Is the student being edited?")]
         [Required(ErrorMessage = "Edit status is required")]
@@ -93,14 +94,14 @@ namespace _5051.Models
         public string TimeOut { get; set; }
 
         /// <summary>
-        /// The student account's password
+        /// The student account's password.
         /// </summary>
         [Display(Name = "Password", Description = "Student Password")]
         [PasswordPropertyText]
         public string Password { get; set; }
 
         /// <summary>
-        /// The defaults for a new student
+        /// Initialize the default values for a new student.
         /// </summary>
         public void Initialize()
         {
@@ -126,7 +127,7 @@ namespace _5051.Models
         }
 
         /// <summary>
-        /// Constructor for Student.  Call this when making a new student
+        /// Overloaded constructor for Student. Call this when making a new student.
         /// </summary>
         /// <param name="name">The Name to call the student</param>
         /// <param name="avatarId">The avatar to use
