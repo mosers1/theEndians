@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using _5051.Models;
 using _5051.Backend;
 
-namespace _5051.Controllers
+namespace _5051.Controllers 
 {
     public class AdminController : Controller
     {
