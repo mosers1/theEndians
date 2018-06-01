@@ -141,3 +141,8 @@ textarea {
 .checked-in {
     opacity: .1;
 }
+
+.badge-small{
+    width: 200px;
+    height: auto;
+}
