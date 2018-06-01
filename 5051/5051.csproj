@@ -189,12 +189,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-
     <Compile Include="Backend\DataSourceBackend.cs" />
     <Compile Include="Backend\StudentBackend.cs" />
     <Compile Include="Backend\StudentDataSourceMock.cs" />
     <Compile Include="Backend\StudentInterface.cs" />
-
     <Compile Include="Backend\StudentCheckin.cs" />
     <Compile Include="Backend\StudentCheckinDataSourceMock.cs" />
     <Compile Include="Backend\StudentCheckinInterface.cs" />
@@ -230,13 +228,6 @@
     <Content Include="Content\icons\yellowCircle.png" />
     <Content Include="Content\images\AdminInterface.png" />
     <Content Include="Content\images\AllAchievements.png" />
-    <Content Include="Content\images\avatar0.png" />
-    <Content Include="Content\images\avatar1.png" />
-    <Content Include="Content\images\avatar2.png" />
-    <Content Include="Content\images\avatar3.png" />
-    <Content Include="Content\images\avatar7.png" />
-    <Content Include="Content\images\avatar8.png" />
-    <Content Include="Content\images\avatar9.png" />
     <Content Include="Content\images\cactus.jpg" />
     <Content Include="Content\images\academicCalendar.png" />
     <Content Include="Content\images\ChooseAvatar.png" />
