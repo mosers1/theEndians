@@ -10,46 +10,34 @@
 <br />
 
 <div class="container">
-
     @foreach (var item in Model.CheckinList)
     {
-        <a id="@item.Id" href="#"  data-toggle="modal" data-target="#myModal">
+        <a id="@item.Id" href="#" >
             <div class="col-sm-2">
                 <span>
                     @item.Name
                 </span>
                 <br />
-                @if (item.CheckedIn) {
-                    <img src="~/Content/images/@item.Uri" width="75" height="75" />
-                } else {
-                    <img src="~/Content/images/@item.Uri" width="75" height="75" style="opacity: 0.1" />
-                }
+                <img src="~/Content/images/@item.Uri" width="75" height="75" class="icons" />
             </div>
         </a>
      }
-
 </div>
 
-
-
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">You have checked in!</h4>
-            </div>
-            <div class="modal-body">
-                <p>You have earn 10 points from checking in!</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
+<script>
+  window.onload = function(){
+    var toggle = "checked-in";
+    var icons = document.getElementsByClassName("icons");
+    if(icons){
+        for (var i = 0; i < icons.length; i++) {
+            icons[i].onclick = function(){
+                if(this.classList.contains(toggle)) {
+                    this.classList.remove(toggle);
+                } else {
+                    this.classList.add(toggle);
+                }
+            }
+        }
+    }
+  }
+</script>

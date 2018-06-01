@@ -137,3 +137,7 @@ textarea {
     padding: 0;
     outline: 0;
 }
+
+.checked-in {
+    opacity: .1;
+}
