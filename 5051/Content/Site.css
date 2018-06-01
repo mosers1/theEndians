@@ -142,7 +142,18 @@ textarea {
     opacity: .1;
 }
 
-.badge-small{
+.badge-small { 
     width: 200px;
-    height: auto;
+    height: 200px;
+}
+
+.panel-background {
+    background:#e2e2e2;
+    border-bottom:0px;
+    border-top:0px;
+    border-left:0px;
+    border-right:0px
+}
+.badge-row-color{
+    background: #e2e2e2;
 }
