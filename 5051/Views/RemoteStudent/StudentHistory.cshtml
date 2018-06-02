@@ -3,6 +3,106 @@
 <!-- Sample implementation for a "better" back button. It doesn't hardcode the previous controller. -->
 @Html.ActionLink("Back", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-primary" })
 
+<script>
+    window.onload = function () {
+        var chart1 = new CanvasJS.Chart("chartContainer1", {
+            theme: "theme2",
+            animationEnabled: true,
+            title: {
+                text: "Cumulative Experience"
+            },
+
+            axisX: {
+                title: "Days",
+                crosshair: {
+                    enabled: true,
+                    snapToDataPoint: true
+                }
+            },
+            axisY: {
+                title: "Hours Attended"
+            },
+            data: [
+                {
+                    type: "line", //change type to bar, line, area, pie, etc
+                    dataPoints: [
+                        { x: 0, y: 0 },
+                        { x: 10, y: 70 },
+                        { x: 30, y: 120 },
+                        { x: 40, y: 150 },
+                        { x: 50, y: 200 },
+                        { x: 60, y: 240 },
+                        { x: 70, y: 270 },
+                        { x: 80, y: 300 },
+                        { x: 90, y: 355 }
+                    ]
+                },
+
+            ]
+        });
+        var chart2 = new CanvasJS.Chart("chartContainer2", {
+            theme: "theme2",
+            animationEnabled: true,
+            title: {
+                text: "Cumulative Experience"
+            },
+
+            axisX: {
+                title: "Days",
+                crosshair: {
+                    enabled: true,
+                    snapToDataPoint: true
+                }
+            },
+            axisY: {
+                title: "Level",
+                minimum: 1,
+                maximum: 5,
+                tickLength: 1,
+                stripLines: [
+                    {
+                        startValue: 2,
+                        endValue: 3,
+                        opacity: .25,
+                        color: "#00e600",
+                    },
+                    {
+                        startValue: 3,
+                        endValue: 4,
+                        opacity: .25,
+                        color: "#0039e6",
+                    },
+                    {
+                        startValue: 4,
+                        endValue: 5,
+                        opacity: .25,
+                        color: "#e60000",
+                    }
+                ],
+            },
+            data: [
+                {
+                    type: "line", //change type to bar, line, area, pie, etc
+                    dataPoints: [
+                        { x: 0, y: 1 },
+                        { x: 10, y: 1.75 },
+                        { x: 30, y: 2 },
+                        { x: 40, y: 2.25 },
+                        { x: 50, y: 2.6 },
+                        { x: 60, y: 2.8 },
+                        { x: 70, y: 3.0 },
+                        { x: 80, y: 3.1 },
+                        { x: 90, y: 3.3 }
+                    ]
+                },
+
+            ]
+        });
+        chart1.render();
+        chart2.render();
+    };
+</script>
+
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
@@ -56,68 +156,14 @@
         </tbody>
     </table>
 </div>
-<div id="chartContainer">
-    <script>
-        window.onload = function () {
-            var chart = new CanvasJS.Chart("chartContainer", {
-                theme: "theme2",
-                animationEnabled: true,
-                title: {
-                    text: "Cumulative Experience"
-                },
-               
-                axisX: {
-                    title: "Days",
-                    crosshair: {
-                        enabled: true,
-                        snapToDataPoint: true
-                    }
-                },
-                axisY: {
-                    title: "Level",
-                    minimum: 1,
-                    maximum: 5,
-                    tickLength: 1,
-                    stripLines: [
-                        {
-                            startValue: 2,
-                            endValue: 3,
-                            opacity: .25,
-                            color: "#00e600",
-                        },
-                        {
-                            startValue: 3,
-                            endValue: 4,
-                            opacity: .25,
-                            color: "#0039e6",
-                        },
-                        {
-                            startValue: 4,
-                            endValue: 5,
-                            opacity: .25,
-                            color: "#e60000",
-                        }
-                    ],
-                },
-                data: [
-                    {
-                        type: "line", //change type to bar, line, area, pie, etc
-                        dataPoints: [
-                            { x: 0, y:1 },
-                            { x: 10, y: 1.75 },
-                            { x: 30, y: 2 },
-                            { x: 40, y: 2.25 },
-                            { x: 50, y: 2.6 },
-                            { x: 60, y: 2.8 },
-                            { x: 70, y: 3.0 },
-                            { x: 80, y: 3.1 },
-                            { x: 90, y: 3.3 }
-                        ]
-                    },
-                    
-                ]
-            });
-            chart.render();
-        };
-    </script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div id="chartContainer1"></div>
+        </div>
+        <div class="col-md-6">
+            <div id="chartContainer2"></div>
+        </div>
+    </div>
 </div>
+
