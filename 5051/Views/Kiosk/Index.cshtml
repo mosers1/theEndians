@@ -17,17 +17,17 @@
                     <div class="kiosk-avatar col-sm-2 icons">
                         @if (@student.LoginStatus == @_5051.Models.StudentLoginStatusEnum.In)
                         {
-                            <span class="checked-in">@student.Username</span>
+                            <span>@student.Username</span>
                         }
                         else
                         {
-                            <span>@student.Username</span>
+                            <span class="checked-in">@student.Username</span>
                         }
                         <br />
                         <!-- Change avatar opacity based on student login status -->
                         @if (@student.LoginStatus == @_5051.Models.StudentLoginStatusEnum.In)
                         {
-                            <img src="~/Content/images/@student.AvatarId" width="75" height="75" alt="No not found image! :("  />
+                            <img src="~/Content/images/@student.AvatarId" width="75" height="75" alt="No not found image! :(" />
                         }
                         else
                         {
