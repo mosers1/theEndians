@@ -17,7 +17,7 @@
     <div class="container">
         @foreach (var avatar in @Model.avatarUri)
         {
-            <img src="~/Content/images/@avatar" width="75" height="75" alt="No not found image! :("  />
+            <img src="~/Content/images/@avatar" avID="@avatar" class="icons" width="75" height="75" alt="No not found image! :("  />
         }
     </div>
 </div>
@@ -27,7 +27,7 @@
             @Html.AntiForgeryToken()
             @Html.HiddenFor(m => m.Id, new {Value = @Model.Id})
             @Html.HiddenFor(m => m.Name, new {Value = @Model.Name})
-            @Html.HiddenFor(m => m.AvatarId, new {Value = "Taco"})
+            @Html.HiddenFor(m => m.AvatarId, new { @id = "avatarID" })
             @Html.HiddenFor(m => m.IsActive, new {Value = @Model.IsActive})
             @Html.HiddenFor(m => m.IsEdit, new {Value = @Model.IsEdit})
             @Html.HiddenFor(m => m.LoginStatus, new {Value = @Model.LoginStatus})
@@ -44,3 +44,22 @@
                 </div>
             </div>
         }
+
+<script>
+  window.onload = function(){
+    var toggle = "checked-in";
+    var icons = document.getElementsByClassName("icons");
+    if(icons){
+        for (var i = 0; i < icons.length; i++) {
+            icons[i].onclick = function(){
+                document.getElementById("avatarID").value = this.getAttribute("avID");
+                if(this.classList.contains(toggle)) {
+                    this.classList.remove(toggle);
+                } else {
+                    this.classList.add(toggle);
+                }
+            }
+        }
+    }
+  }
+</script> 
