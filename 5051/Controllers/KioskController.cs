@@ -58,7 +58,6 @@ namespace _5051.Controllers
                 // TODO: Probably a better way/place to handle this logic.
                 // Deferring any changes to a later release.
                 myStudent.DailyStatus = StudentDailyStatusEnum.Present;
-                myStudent.Username = "happy";
             }
             else
             {
