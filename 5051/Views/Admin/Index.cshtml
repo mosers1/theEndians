@@ -41,17 +41,17 @@
             need modification over time. Trying to keep display-only logic in this file and push
             back all student/database logic to the controller/model layers.
             -->
-
-                <h3 class="admin-font-h3">Daily Class Report</h3>
+                <br />
+                <h4 class="admin-font-h4">Daily Class Report: @DateTime.Now.ToShortDateString()</h4>
                 <div id="admin-table-container">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th class="admin-font">Name</th>
-                                <th class="admin-font">Time In</th>
-                                <th class="admin-font">Time Out</th>
-                                <th class="admin-font">Status</th>
-                                <th class="admin-font">Edit</th>
+                                <th class="admin-font text-center">Time In</th>
+                                <th class="admin-font text-center">Time Out</th>
+                                <th class="admin-font text-center">Status</th>
+                                <th class="admin-font text-center">Edit</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,8 +76,8 @@
                                                 <!-- Logic for editing a student vs. simply displaying data. -->
                                                 if (item.IsEdit == false)
                                                 {
-                                                    <td class="admin-font">@item.TimeIn</td>
-                                                    <td class="admin-font">@item.TimeOut</td>
+                                                    <td class="admin-font text-center">@item.TimeIn</td>
+                                                    <td class="admin-font text-center">@item.TimeOut</td>
                                                 }
                                                 else
                                                 {
@@ -91,7 +91,7 @@
                                                         @Html.DropDownList("TimeOut", ViewBag.myList as SelectList)
                                                     </td>
                                                 }
-                                                    <td>
+                                                    <td class="text-center">
                                                         <!-- Display status icon based on student status. -->
                                                         @if (item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Present)
                                                         {
@@ -116,27 +116,27 @@
                                                 <!-- Student is archived so display blank columns. -->
                                                 <td></td>
                                                 <td></td>
-                                                <td class="admin-font">Archived</td>
+                                                <td class="admin-font text-center">Archived</td>
                                             }
-                                            <td>
-                                                <!-- Handle icons differently based on student edit status -->
-                                                @if (item.IsEdit == false)
-                                                {
-                                                    <a href="~/Admin/TriggerEdit/@item.Id">
-                                                        <span class="glyphicon glyphicon-pencil admin-font" data-toggle="tooltip" title="Edit Record"></span>
-                                                    </a>
-                                                }
-                                                else
-                                                {
-                                                    <!-- Implementing this was tricky. See Site.css for styling. -->
-                                                    <button type="submit" class="submit-with-icon">
-                                                        <span class="glyphicon glyphicon-floppy-disk admin-font" data-toggle="tooltip" title="Save Record"></span>
-                                                    </button>
-                                                }
-
+                                            <td class="text-center">
                                                 <!-- Handle icons differently based on student active status -->
                                                 @if (item.IsActive == true)
                                                 {
+                                                    <!-- Handle icons differently based on student edit status -->
+                                                    if (item.IsEdit == false)
+                                                    {
+                                                        <a href="~/Admin/TriggerEdit/@item.Id">
+                                                            <span class="glyphicon glyphicon-pencil admin-font" data-toggle="tooltip" title="Edit Record"></span>
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <!-- Implementing this was tricky. See Site.css for styling. -->
+                                                        <button type="submit" class="submit-with-icon">
+                                                            <span class="glyphicon glyphicon-floppy-disk admin-font" data-toggle="tooltip" title="Save Record"></span>
+                                                        </button>
+                                                    }
+
                                                     <a href="~/Admin/ToggleArchive/@item.Id">
                                                         <span class="glyphicon glyphicon-inbox admin-font" data-toggle="tooltip" title="Archive Student"></span>
                                                     </a>
