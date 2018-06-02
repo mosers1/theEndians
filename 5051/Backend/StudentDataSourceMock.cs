@@ -10,6 +10,9 @@ namespace _5051.Backend
     /// </summary>
     public class StudentDataSourceMock : IStudentInterface
     {
+        // Gain access to system-wide globals. May be a better way to do this.
+        private SystemGlobals var_g = SystemGlobals.Instance;
+
         /// <summary>
         /// Make into a singleton
         /// </summary>
@@ -148,12 +151,12 @@ namespace _5051.Backend
             var dummy = new StudentModel();
 
             DataSetClear();
-            Create(new StudentModel("Scott Moser", "Agud Boi", dummy.avatarUri[0], StudentLoginStatusEnum.In));
-            Create(new StudentModel("Kevin Cushing", "Hugh Jass", dummy.avatarUri[1], StudentLoginStatusEnum.Out));
-            Create(new StudentModel("Maggie Dong", "Butterfly123", dummy.avatarUri[3], StudentLoginStatusEnum.In));
-            Create(new StudentModel("Andrew Croneberger", "CronenBucks", dummy.avatarUri[2], StudentLoginStatusEnum.In));
-            Create(new StudentModel("Andrew Wallace", "Waldo", dummy.avatarUri[4], StudentLoginStatusEnum.Out));
-            Create(new StudentModel("Mike Koenig", "mikey44", dummy.avatarUri[5], StudentLoginStatusEnum.Out));
+            Create(new StudentModel("Scott Moser", "Agud Boi", dummy.avatarUri[0], StudentLoginStatusEnum.In, "8:20AM", var_g.defaultTime));
+            Create(new StudentModel("Kevin Cushing", "Hugh Jass", dummy.avatarUri[1], StudentLoginStatusEnum.Out, var_g.defaultTime, var_g.defaultTime));
+            Create(new StudentModel("Maggie Dong", "Butterfly123", dummy.avatarUri[3], StudentLoginStatusEnum.In, "7:47AM", var_g.defaultTime));
+            Create(new StudentModel("Andrew Croneberger", "CronenBucks", dummy.avatarUri[2], StudentLoginStatusEnum.In, "8:30AM", var_g.defaultTime));
+            Create(new StudentModel("Andrew Wallace", "Waldo", dummy.avatarUri[4], StudentLoginStatusEnum.Out, var_g.defaultTime, var_g.defaultTime));
+            Create(new StudentModel("Mike Koenig", "mikey44", dummy.avatarUri[5], StudentLoginStatusEnum.Out, var_g.defaultTime, var_g.defaultTime));
         }
 
         /// <summary>
