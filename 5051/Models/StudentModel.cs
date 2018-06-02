@@ -199,7 +199,7 @@ namespace _5051.Models
             "person1.png", "person2.png", "person3.png",
             "person4.png", "person5.png", "person6.png",
             "person7.png", "person8.png", "person9.png",
-            "person10.png"
+            "person10.png", "person11.png", "person12.png"
         };
     }
 
