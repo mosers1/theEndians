@@ -18,6 +18,9 @@ namespace _5051.Models
     /// </summary>
     public class StudentModel
     {
+        // Gain access to system-wide globals. May be a better way to do this.
+        private SystemGlobals var_g = SystemGlobals.Instance;
+
         /// <summary>
         /// The ID for the Student, this is the key, and a required field
         /// </summary>
@@ -105,15 +108,15 @@ namespace _5051.Models
             LoginStatus = StudentLoginStatusEnum.Out;
             DailyStatus = StudentDailyStatusEnum.Absent;
             Username = Name;             // TODO: Better idea here? Leave for now.
-            AvatarId = string.Empty;     // TODO: Enum instead?
+            AvatarId = avatarUri[avatarUri.Length - 1];  // Default to last avatar icon in list
             IsActive = true;
             IsEdit = false;
-            TimeIn = "-----";     
-            TimeOut = "-----"; 
+            TimeIn = var_g.defaultTime;     
+            TimeOut = var_g.defaultTime; 
             Password = string.Empty;
         }
 
-        /// <summary>
+                /// <summary>
         /// Constructor for a student
         /// </summary>
         public StudentModel()
@@ -124,9 +127,13 @@ namespace _5051.Models
         /// <summary>
         /// Overloaded constructor for Student. Call this when making a new student.
         /// </summary>
-        /// <param name="name">The Name to call the student</param>
-        /// <param name="avatarId">The avatar to use
-        public StudentModel(string _name, string _username, string _avatarId, StudentLoginStatusEnum _loginStatus)
+        /// <param name="_name">Student name</param>
+        /// <param name="_username">Student username</param>
+        /// <param name="_avatarId">The avatar to use</param>
+        /// <param name="_loginStatus">Student current log-in status</param>
+        /// <param name="_timeIn">Student sign-in time</param>
+        /// <param name="_timeOut">Student sign-out time</param>
+        public StudentModel(string _name, string _username, string _avatarId, StudentLoginStatusEnum _loginStatus, string _timeIn, string _timeOut)
         {
             Initialize();
 
@@ -134,6 +141,8 @@ namespace _5051.Models
             Username = _username;
             AvatarId = _avatarId;
             LoginStatus = _loginStatus;
+            TimeIn = _timeIn;
+            TimeOut = _timeOut;
         }
 
         /// <summary>
