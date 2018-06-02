@@ -52,10 +52,17 @@ namespace _5051.Controllers
             // Switch the student's login status
             if (myStudent.LoginStatus == StudentLoginStatusEnum.In)
             {
+                // Sign-in the student
                 myStudent.LoginStatus = StudentLoginStatusEnum.Out;
+                myStudent.TimeOut = DateTime.Now.ToString(@"h\:mmtt");
+                // TODO: Probably a better way/place to handle this logic.
+                // Deferring any changes to a later release.
+                myStudent.DailyStatus = StudentDailyStatusEnum.Present;
             } else
             {
+                // Sign-out the student
                 myStudent.LoginStatus = StudentLoginStatusEnum.In;
+                myStudent.TimeIn = DateTime.Now.ToString(@"h\:mmtt");
             }
 
             // Update the backend
