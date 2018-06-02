@@ -168,6 +168,10 @@ textarea {
     width: 65%;
     height: auto;
 }
+.badge-small-special {
+    width: 42%;
+    height: auto;
+}
 
 .panel-background {
     background:#e2e2e2;
