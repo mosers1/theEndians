@@ -138,19 +138,26 @@ textarea {
     outline: 0;
 }
 
-#kiosk-container {
+.attendify-panel {
     display: block;
     margin: auto;
     background: #4BA9EF;
     border-radius: 10px;
-    padding: 20px 40px;
     margin-top: 40px;
 }
 
-#kiosk-container #kiosk-title {
+.attendify-panel-title {
     text-align: center;
     color: white;
     font-size: 26px;
+}
+
+#choose-avatar-container {
+    padding: 20px 40px;
+}
+
+#kiosk-container {
+    padding: 20px 40px;
 }
 
 .kiosk-avatar {
