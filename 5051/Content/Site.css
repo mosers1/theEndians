@@ -305,6 +305,15 @@ textarea {
     padding-left: 15px;
 }
 
+.admin-student-link:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.add-student-btn {
+    padding: 0px;
+}
+
 .student-report-graph {
     width: 450px;
     height: 400px;
