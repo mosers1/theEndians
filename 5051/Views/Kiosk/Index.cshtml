@@ -1,36 +1,44 @@
-﻿@model _5051.Models.StudentViewModel
+﻿@model _5051.Models.StudentCheckinViewModel
 
 @{
     ViewBag.Title = "Kiosk Check In / Out";
 }
 
-<!-- TODO: Add real functionality to this page... -->
-<h1 class="text-center">Kiosk Check In / Out</h1>
+<div id="kiosk-container">
+    <h1 id="kiosk-title" class="text-center">Kiosk Check In / Out</h1>
 
-<br />
+    <br />
 
-<div class="container">
-    @foreach (var student in Model.StudentList)
-    {
-        if (student.IsActive == true)
+    <div class="container">
+        @foreach (var item in Model.CheckinList)
         {
-        <a id="@student.Name" href="~/Kiosk/Update/@student.Id">
+        <a id="@item.Id" href="#">
             <div class="col-sm-2 icons">
                 <span>
-                    @student.Name
+                    @item.Name
                 </span>
                 <br />
-                <!-- Change avatar opacity based on student login status -->
-                @if(@student.LoginStatus == @_5051.Models.StudentLoginStatusEnum.In)
-                {
-                <img src="~/Content/images/@student.AvatarId" width="75" height="75" alt="No not found image! :(" class="checked-in" />
-                } else
-                {
-                <img src="~/Content/images/@student.AvatarId" width="75" height="75" alt="No not found image! :(" />
-                }
-
+                <img src="~/Content/images/@item.Uri" width="75" height="75" />
             </div>
         </a>
         }
-    }
+    </div>
 </div>
+
+<script>
+  window.onload = function(){
+    var toggle = "checked-in";
+    var icons = document.getElementsByClassName("icons");
+    if(icons){
+        for (var i = 0; i < icons.length; i++) {
+            icons[i].onclick = function(){
+                if(this.classList.contains(toggle)) {
+                    this.classList.remove(toggle);
+                } else {
+                    this.classList.add(toggle);
+                }
+            }
+        }
+    }
+  }
+</script>
