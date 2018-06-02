@@ -83,21 +83,25 @@
                                                         @Html.DropDownList("TimeOut", ViewBag.myList as SelectList)
                                                     </td>
                                                 }
-                                                <td>
-                                                    <!-- Display status icon based on student status. -->
-                                                    @if (item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Present)
-                                                    {
-                                                        <span class="glyphicon glyphicon-ok admin-font" data-toggle="tooltip" title="Present"></span>
-                                                    }
-                                                    else if (item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Tardy || item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Unknown)
-                                                    {
-                                                        <span class="glyphicon glyphicon-exclamation-sign admin-font" data-toggle="tooltip" title="Unknown"></span>
-                                                    }
-                                                    else
-                                                    {
-                                                        <span class="glyphicon glyphicon-remove admin-font" data-toggle="tooltip" title="Absent"></span>
-                                                    }
-                                                </td>
+                                                    <td>
+                                                        <!-- Display status icon based on student status. -->
+                                                        @if (item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Present)
+                                                        {
+                                                            <span class="glyphicon glyphicon-ok admin-font" data-toggle="tooltip" title="Present"></span>
+                                                        }
+                                                        else if (item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Tardy)
+                                                        {
+                                                            <span class="glyphicon glyphicon-exclamation-sign admin-font" data-toggle="tooltip" title="Tardy"></span>
+                                                        }
+                                                        else if (item.DailyStatus == _5051.Models.StudentDailyStatusEnum.Unknown)
+                                                        {
+                                                            <span class="glyphicon glyphicon-question-sign admin-font" data-toggle="tooltip" title="Unknown"></span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="glyphicon glyphicon-remove admin-font" data-toggle="tooltip" title="Absent"></span>
+                                                        }
+                                                    </td>
                                             }
                                             else
                                             {

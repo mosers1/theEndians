@@ -63,6 +63,10 @@ namespace _5051.Controllers
                 // Sign-out the student
                 myStudent.LoginStatus = StudentLoginStatusEnum.In;
                 myStudent.TimeIn = DateTime.Now.ToString(@"h\:mmtt");
+                // TODO: Probably a better way/place to handle this logic.
+                // Once a student logs in, mark them as present right away.
+                // Deferring any changes for tardiness to a later release.
+                myStudent.DailyStatus = StudentDailyStatusEnum.Present;
             }
 
             // Update the backend
