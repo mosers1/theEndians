@@ -219,3 +219,11 @@ textarea {
     color:green;
     text-align:center;
 }
+
+/* Override bootstrap buttons */
+.btn {
+    text-align: center;
+    background: #435AAF;
+    color: white;
+    border: none;
+}
