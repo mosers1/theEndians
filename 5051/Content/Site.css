@@ -197,3 +197,7 @@ textarea {
     font-weight: bold;
 }
 
+.badge-locked {
+    opacity: .4;
+}
+
