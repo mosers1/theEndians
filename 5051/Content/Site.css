@@ -153,8 +153,15 @@ textarea {
     font-size: 26px;
 }
 
+.kiosk-avatar {
+    background: #E8E8E8;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+}
+
 .checked-in {
-    opacity: .1;
+    opacity: .25;
 }
 
 .badge-small { 

@@ -14,10 +14,15 @@
             if (student.IsActive == true)
             {
                 <a id="@student.Name" href="~/Kiosk/Update/@student.Id">
-                    <div class="col-sm-2 icons">
-                        <span>
-                            @student.Name
-                        </span>
+                    <div class="kiosk-avatar col-sm-2 icons">
+                        @if (@student.LoginStatus == @_5051.Models.StudentLoginStatusEnum.In)
+                        {
+                            <span class="checked-in">@student.Name</span>
+                        }
+                        else
+                        {
+                            <span>@student.Name</span>
+                        }
                         <br />
                         <!-- Change avatar opacity based on student login status -->
                         @if (@student.LoginStatus == @_5051.Models.StudentLoginStatusEnum.In)
