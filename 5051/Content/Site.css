@@ -184,5 +184,12 @@ textarea {
     padding-bottom: 25px;
 }
 .badge-panel-padding {
-    padding-bottom:10px;
+    padding-bottom:50px;
+}
+.badge-panel-padding-alt {
+    padding-bottom: 44px
+}
+.badge-header-bold {
+    font-weight: bold;
+    font-size: 20px;
 }
