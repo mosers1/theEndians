@@ -3,94 +3,44 @@
 <!--need to fix the image spacing -->
 
 @{
-    ViewBag.Title = "Avatar Selection";
     <p>Name = @Model.Name</p>
 }
+
 <style>
     caption {
         text-align: center;
     }
 </style>
-
-<h2>@ViewBag.Title</h2>
+<h2>Avatar Selection</h2>
 <h2 style="text-align: center">Choose Your Avatar</h2>
-<div class="panel panel-default"
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-3 col-md-2">
-            <div class="thumbnail">
-                <img src="~/Content/images/@ViewBag.avatar_names[0]" style="width: 150px; height:150px">
-                <div class="caption">
-                    <h3>Avatar1</h3>
-                    <p><a href="#" class="btn btn-primary" role="button">Pick Me!</a> </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="~/Content/images/cactus.jpg" style="width: 150px; height:150px">
-                <div class="caption">
-                    <h3>Avatar2</h3>
-                    <p><a href="#" class="btn btn-primary" role="button">Pick Me!</a> </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="~/Content/images/cactus.jpg" style="width: 150px; height:150px">
-                <div class="caption">
-                    <h3>Avatar3</h3>
-                    <p><a href="#" class="btn btn-primary" role="button">Pick Me!</a> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-offset-3 col-md-2">
-            <div class="thumbnail">
-                <img src="~/Content/images/cactus.jpg" style="width: 150px; height:150px">
-                <div class="caption">
-                    <h3>Avatar4</h3>
-                    <p><a href="#" class="btn btn-primary" role="button">Pick Me!</a> </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="~/Content/images/cactus.jpg" style="width: 150px; height:150px">
-                <div class="caption">
-                    <h3>Avatar5</h3>
-                    <p><a href="#" class="btn btn-primary" role="button">Pick Me!</a> </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="thumbnail">
-                <img src="~/Content/images/cactus.jpg" style="width: 150px; height:150px">
-                <div class="caption">
-                    <h3>Avatar6</h3>
-                    <p><a href="#" class="btn btn-primary" role="button">Pick Me!</a> </p>
-                </div>
-            </div>
-        </div>
+<div class="panel panel-default">
+    <div class="container">
+        @foreach (var avatar in @Model.avatarUri)
+        {
+            <img src="~/Content/images/@avatar" width="75" height="75" alt="No not found image! :("  />
+        }
     </div>
 </div>
-</div>
 
-@{ 
-    foreach (var item in ViewBag.avatar_names)
-    {
-       <p>@item</p>
-    }
-}
-<nav aria-label="More Avatars" style="text-align: center">
-    <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#"><<</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">>></a></li>
-    </ul>
-</nav>
-
-
+@using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id, new {Value = @Model.Id})
+            @Html.HiddenFor(m => m.Name, new {Value = @Model.Name})
+            @Html.HiddenFor(m => m.AvatarId, new {Value = "Taco"})
+            @Html.HiddenFor(m => m.IsActive, new {Value = @Model.IsActive})
+            @Html.HiddenFor(m => m.IsEdit, new {Value = @Model.IsEdit})
+            @Html.HiddenFor(m => m.LoginStatus, new {Value = @Model.LoginStatus})
+            @Html.HiddenFor(m => m.DailyStatus, new {Value = @Model.DailyStatus})
+            @Html.HiddenFor(m => m.TimeIn, new {Value = @Model.TimeIn})
+            @Html.HiddenFor(m => m.TimeOut, new {Value = @Model.TimeOut})
+            
+            <div class="row">
+                <div class="col-sm-3 text-right">
+                </div>
+                <div class="col-sm-4">
+                    @Html.ActionLink("Cancel", "Index", new { id = Model.Id }, new { @class = "btn btn-primary" })
+                    <input type="submit" value="Create" class="btn btn-primary">
+                </div>
+            </div>
+        }

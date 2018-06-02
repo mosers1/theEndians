@@ -30,11 +30,6 @@ namespace _5051.Controllers
         {
             return View();
         }
-        public string[] avatar_names = new string[]
-        {
-            "person1.png", "person2.png", "person3.png",
-            "person4.png", "person5.png", "person6.png"
-        };
         
         //Returns Avatar select page
         public ActionResult ChooseAvatar()
@@ -44,11 +39,57 @@ namespace _5051.Controllers
             var myDataList = StudentBackend.Index();
             var StudentViewModel = new StudentViewModel(myDataList);
             var StudentModel = new StudentModel(StudentViewModel.StudentList[0]);
-            ViewBag.avatar_names = avatar_names;
             
             return View(StudentModel);
         }
 
+                         // NOTE: Scott, thanks for the code
+        /// <summary>
+        /// Choose avatar and update the student model
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        // POST: Student/ChooseAvatar
+        [HttpPost]
+        public ActionResult ChooseAvatar([Bind(Include=
+                                        "Id,"+
+                                        "Name,"+
+                                        "AvatarId,"+
+                                        "IsActive,"+
+                                        "IsEdit,"+
+                                        "LoginStatus,"+
+                                        "DailyStatus,"+
+                                        "TimeIn,"+
+                                        "TimeOut,"+
+                                        "Username,"+
+                                        "")] StudentModel data)
+        {
+            
+            if (!ModelState.IsValid)
+            {
+                // Send back for edit
+                return View(data);
+            }
+
+            if (data == null)
+            {
+                // Send to Error Page
+                return RedirectToAction("Error", new { route = "Home", action = "Error" });
+                
+            }
+
+            if (string.IsNullOrEmpty(data.Id))
+            {
+                // Return back for Edit
+                return View(data);
+            }
+
+            // Make it official
+            StudentBackend.Update(data);
+
+            return RedirectToAction("Report");
+        }
+ 
         //public ActionResult ChooseAvatar()
        // {
          //   

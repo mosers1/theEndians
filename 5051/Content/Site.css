@@ -187,9 +187,13 @@ textarea {
     padding-bottom:50px;
 }
 .badge-panel-padding-alt {
-    padding-bottom: 44px
+    padding-bottom: 64px
 }
 .badge-header-bold {
     font-weight: bold;
     font-size: 20px;
 }
+.bold-caption {
+    font-weight: bold;
+}
+
