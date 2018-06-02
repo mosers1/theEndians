@@ -12,13 +12,13 @@
 <div class="container">
     @foreach (var item in Model.CheckinList)
     {
-        <a id="@item.Id" href="#" >
-            <div class="col-sm-2">
+        <a id="@item.Id" href="#">
+            <div class="col-sm-2 icons">
                 <span>
                     @item.Name
                 </span>
                 <br />
-                <img src="~/Content/images/@item.Uri" width="75" height="75" class="icons" />
+                <img src="~/Content/images/@item.Uri" width="75" height="75" />
             </div>
         </a>
      }
