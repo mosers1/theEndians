@@ -207,12 +207,15 @@ textarea {
 
 .red-x {
     color:red;
+    text-align: center;
 
 }
 .orange-alert {
     color:orange;
+    text-align: center;
 }
 
 .green-check {
     color:green;
+    text-align:center;
 }
