@@ -165,7 +165,7 @@ textarea {
 }
 
 .badge-small { 
-    width: 50%;
+    width: 65%;
     height: auto;
 }
 
@@ -182,4 +182,7 @@ textarea {
 
 .badge-panel-row-padding{
     padding-bottom: 25px;
+}
+.badge-panel-padding {
+    padding-bottom:10px;
 }
