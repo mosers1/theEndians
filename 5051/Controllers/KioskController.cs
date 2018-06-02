@@ -13,10 +13,11 @@ namespace _5051.Controllers
     /// </summary>
     public class KioskController : Controller
     {
-        private StudentCheckinViewModel viewModel = new StudentCheckinViewModel();
+        // A ViewModel used for the Student that contains the StudentList
+        private StudentViewModel StudentViewModel = new StudentViewModel();
 
         // The Backend Data source
-        private StudentCheckinBackend backend = StudentCheckinBackend.Instance;
+        private StudentBackend StudentBackend = StudentBackend.Instance;
 
         /// <summary>
         /// Return the list of students with the status of logged in or out
@@ -25,48 +26,43 @@ namespace _5051.Controllers
         // GET: Kiosk
         public ActionResult Index()
         {
-            viewModel.CheckinList = backend.Index();
-            return View(viewModel);
+            // Query backend to refresh every time Index() is called
+            var myDataList = StudentBackend.Index();
+            var StudentViewModel = new StudentViewModel(myDataList);
+            return View(StudentViewModel);
         }
 
         /// <summary>
-        /// This should check in or out
+        /// This function toggles the student's checkin status (from in->out or out->in).
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         // GET: Kiosk/Update/5
         public ActionResult Update(string id = null)
         {
-            var myData = backend.Read(id);
-            myData.CheckedIn = !myData.CheckedIn;
-            return View(myData);
-        }
-
-        // GET: Kiosk/SetLogout/5
-        public ActionResult SetLogin(string id)
-        {
+            // Verify parameter integrity
             if (string.IsNullOrEmpty(id))
             {
                 return RedirectToAction("Error", "Home", "Invalid Data");
             }
 
-            // TODO: Do something...
+            // Query backend for student data
+            StudentModel myStudent = StudentBackend.Read(id);
 
-            return RedirectToAction("Index");
-        }
-
-        // GET: Kiosk/SetLogout/5
-        public ActionResult SetLogout(string id)
-        {
-            if (string.IsNullOrEmpty(id))
+            // Switch the student's login status
+            if (myStudent.LoginStatus == StudentLoginStatusEnum.In)
             {
-                return RedirectToAction("Error", "Home", "Invalid Data");
+                myStudent.LoginStatus = StudentLoginStatusEnum.Out;
+            } else
+            {
+                myStudent.LoginStatus = StudentLoginStatusEnum.In;
             }
 
-            // TODO: Do something...
+            // Update the backend
+            StudentBackend.Update(myStudent);
 
+            // Call the index
             return RedirectToAction("Index");
-        }
-        
+        }        
     }
 }

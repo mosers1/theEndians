@@ -143,14 +143,17 @@ namespace _5051.Backend
         /// </summary>
         private void DataSetDefault()
         {
+            // Using this dummy student purely so we can access avatarUri below. Again,
+            // there's got a be a cleaner way to do this in C#.
+            var dummy = new StudentModel();
+
             DataSetClear();
-            // TODO: Set default avatar IDs once things are set up and working...
-            Create(new StudentModel("Scott Moser", "Test"));
-            Create(new StudentModel("Kevin Cushing", "Test"));
-            Create(new StudentModel("Maggie Dong", "Test"));
-            Create(new StudentModel("Andrew Croneberger", "Test"));
-            Create(new StudentModel("Andrew Wallace", "Test"));
-            Create(new StudentModel("Mike Koenig", "Test"));
+            Create(new StudentModel("Scott Moser", dummy.avatarUri[0], StudentLoginStatusEnum.In));
+            Create(new StudentModel("Kevin Cushing", dummy.avatarUri[1], StudentLoginStatusEnum.Out));
+            Create(new StudentModel("Maggie Dong", dummy.avatarUri[3], StudentLoginStatusEnum.In));
+            Create(new StudentModel("Andrew Croneberger", dummy.avatarUri[2], StudentLoginStatusEnum.In));
+            Create(new StudentModel("Andrew Wallace", dummy.avatarUri[4], StudentLoginStatusEnum.Out));
+            Create(new StudentModel("Mike Koenig", dummy.avatarUri[5], StudentLoginStatusEnum.Out));
         }
 
         /// <summary>

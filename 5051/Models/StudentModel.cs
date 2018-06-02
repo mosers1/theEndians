@@ -59,14 +59,12 @@ namespace _5051.Models
         /// The edit-in-progress status set/cleared by the admin used when modifying attendance records.
         /// </summary>
         [Display(Name = "IsEdit", Description = "Is the student being edited?")]
-        //[Required(ErrorMessage = "Edit status is required")]
         public bool IsEdit { get; set; }
 
         /// <summary>
         /// The status of the student, for example currently logged in, out
         /// </summary>
         [Display(Name = "Current Login Status", Description = "Login status of the Student")]
-        //[Required(ErrorMessage = "Login status is required")]
         public StudentLoginStatusEnum LoginStatus { get; set; }
 
         // TODO: Move to another model? Leaving here for demo.
@@ -74,7 +72,6 @@ namespace _5051.Models
         /// The daily status of the student, for example currently logged in, out
         /// </summary>
         [Display(Name = "Daily Status", Description = "Daily status of the Student")]
-        //[Required(ErrorMessage = "Daily status is required")]
         public StudentDailyStatusEnum DailyStatus { get; set; }
 
         // TODO: Move to another model? Leaving here for demo.
@@ -82,7 +79,6 @@ namespace _5051.Models
         /// The daily sign-in time of the student.
         /// </summary>
         [Display(Name = "Time In", Description = "Student Sign-in Time")]
-        //[Required(ErrorMessage = "Sign-in time is required")]
         public string TimeIn { get; set; }
 
         // TODO: Move to another model? Leaving here for demo.
@@ -90,7 +86,6 @@ namespace _5051.Models
         /// The daily sign-out time of the student.
         /// </summary>
         [Display(Name = "Time Out", Description = "Student Sign-out Time")]
-        //[Required(ErrorMessage = "Sign-out time is required")]
         public string TimeOut { get; set; }
 
         /// <summary>
@@ -131,12 +126,13 @@ namespace _5051.Models
         /// </summary>
         /// <param name="name">The Name to call the student</param>
         /// <param name="avatarId">The avatar to use
-        public StudentModel(string name, string avatarId)
+        public StudentModel(string _name, string _avatarId, StudentLoginStatusEnum _loginStatus)
         {
             Initialize();
 
-            Name = name;
-            AvatarId = avatarId;
+            Name = _name;
+            AvatarId = _avatarId;
+            LoginStatus = _loginStatus;
         }
 
         /// <summary>
@@ -183,6 +179,15 @@ namespace _5051.Models
 
             return true;
         }
+
+        // Holds the list of avatarURI for this website
+        public string[] avatarUri = new string[]
+        {
+            "person1.png", "person2.png", "person3.png",
+            "person4.png", "person5.png", "person6.png",
+            "person7.png", "person8.png", "person9.png",
+            "person10.png"
+        };
     }
 
     /// <summary>
