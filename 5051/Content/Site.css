@@ -196,6 +196,7 @@ textarea {
 .badge-header-bold {
     font-weight: bold;
     font-size: 20px;
+    color: white
 }
 .bold-caption {
     font-weight: bold;
@@ -276,4 +277,7 @@ textarea {
     border: 2px solid white;
     border-radius:3px;
 
+}
+.badge-panel-color {
+    background: #435AAF;
 }
