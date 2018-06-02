@@ -165,6 +165,10 @@ textarea {
     padding: 20px;
 }
 
+.add-student-form {
+    max-width: 100%;
+}
+
 .kiosk-avatar {
     background: #E8E8E8;
     border-radius: 10px;
@@ -264,7 +268,6 @@ textarea {
     display: block;
     margin: auto;
     background: #435AAF;
-    
     margin: 10px;
 }
 

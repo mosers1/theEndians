@@ -6,44 +6,40 @@
     <div class="container">
         @using (Html.BeginForm())
         {
-        @Html.AntiForgeryToken()
-        @Html.HiddenFor(m => m.Id)
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
 
-        <div class="form-group">
-            <div class="col-sm-3 text-right">
-                @Html.DisplayNameFor(m => m.Name)
+            <!-- Create user entry forms/boxes. -->
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control add-student-form", @id = "newName", @placeholder = "Name" })
+                    @Html.ValidationMessageFor(m => m.Name)
+                </div>
             </div>
-            <div class="col-md-12">
-                @Html.EditorFor(m => m.Name)
-                @Html.ValidationMessageFor(m => m.Name)
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control add-student-form", @id = "newUsername", @placeholder = "Username" })
+                    @Html.ValidationMessageFor(m => m.Username)
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-3 text-right">
-                @Html.DisplayNameFor(m => m.Username)
-            </div>
-            <div class="col-md-12">
-                @Html.EditorFor(m => m.Username)
-                @Html.ValidationMessageFor(m => m.Username)
-            </div>
-        </div>
 
+            <!-- TODO: Consider adding when backend is complete. Deferred to a future release. -->
+            @*<div class="row">
+                <div class="col-sm-3 text-right">
+                    @Html.DisplayNameFor(m => m.AvatarId)
+                </div>
+                <div class="col-sm-2">
+                    @Html.DropDownListFor(m => m.AvatarId, _5051.Backend.AvatarBackend.Instance.GetAvatarListItem(Model.AvatarId))
+                    @Html.ValidationMessageFor(m => m.AvatarId)
+                </div>
+            </div>*@
 
-        <!-- Consider adding when backend is complete. -->
-        @*<div class="row">
-            <div class="col-sm-3 text-right">
-                @Html.DisplayNameFor(m => m.AvatarId)
+            <!-- Add user control buttons. -->
+            <br />
+            <div class="row text-center">
+                @Html.ActionLink("Cancel", "Index", new { id = Model.Id }, new { @class = "btn btn-primary" })
+                <input type="submit" value="Create" class="btn btn-primary">
             </div>
-            <div class="col-sm-2">
-                @Html.DropDownListFor(m => m.AvatarId, _5051.Backend.AvatarBackend.Instance.GetAvatarListItem(Model.AvatarId))
-                @Html.ValidationMessageFor(m => m.AvatarId)
-            </div>
-        </div>*@
-
-        <div class="row text-center">
-            @Html.ActionLink("Cancel", "Index", new { id = Model.Id }, new { @class = "btn btn-primary" })
-            <input type="submit" value="Create" class="btn btn-primary">
-        </div>
         }
     </div>
 </div>
