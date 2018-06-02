@@ -116,7 +116,7 @@ namespace _5051.Models
             Password = string.Empty;
         }
 
-                /// <summary>
+        /// <summary>
         /// Constructor for a student
         /// </summary>
         public StudentModel()
@@ -131,9 +131,11 @@ namespace _5051.Models
         /// <param name="_username">Student username</param>
         /// <param name="_avatarId">The avatar to use</param>
         /// <param name="_loginStatus">Student current log-in status</param>
+        /// <param name="_dailyStatus">Student current daily status</param>
         /// <param name="_timeIn">Student sign-in time</param>
         /// <param name="_timeOut">Student sign-out time</param>
-        public StudentModel(string _name, string _username, string _avatarId, StudentLoginStatusEnum _loginStatus, string _timeIn, string _timeOut)
+        public StudentModel(string _name, string _username, string _avatarId, StudentLoginStatusEnum _loginStatus,
+            StudentDailyStatusEnum _dailyStatus, string _timeIn, string _timeOut)
         {
             Initialize();
 
@@ -141,6 +143,7 @@ namespace _5051.Models
             Username = _username;
             AvatarId = _avatarId;
             LoginStatus = _loginStatus;
+            DailyStatus = _dailyStatus;
             TimeIn = _timeIn;
             TimeOut = _timeOut;
         }
@@ -223,10 +226,10 @@ namespace _5051.Models
         // Unknown
         Unknown = 0,
         
-        // Present - fyull day
+        // Present - full day
         Present = 1,
 
-        // Late or left earl
+        // Late or left early
         Tardy = 2,
 
         // Absent all day
