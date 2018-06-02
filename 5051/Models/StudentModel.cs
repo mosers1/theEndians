@@ -126,11 +126,12 @@ namespace _5051.Models
         /// </summary>
         /// <param name="name">The Name to call the student</param>
         /// <param name="avatarId">The avatar to use
-        public StudentModel(string _name, string _avatarId, StudentLoginStatusEnum _loginStatus)
+        public StudentModel(string _name, string _username, string _avatarId, StudentLoginStatusEnum _loginStatus)
         {
             Initialize();
 
             Name = _name;
+            Username = _username;
             AvatarId = _avatarId;
             LoginStatus = _loginStatus;
         }

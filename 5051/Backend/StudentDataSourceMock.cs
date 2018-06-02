@@ -148,12 +148,12 @@ namespace _5051.Backend
             var dummy = new StudentModel();
 
             DataSetClear();
-            Create(new StudentModel("Scott Moser", dummy.avatarUri[0], StudentLoginStatusEnum.In));
-            Create(new StudentModel("Kevin Cushing", dummy.avatarUri[1], StudentLoginStatusEnum.Out));
-            Create(new StudentModel("Maggie Dong", dummy.avatarUri[3], StudentLoginStatusEnum.In));
-            Create(new StudentModel("Andrew Croneberger", dummy.avatarUri[2], StudentLoginStatusEnum.In));
-            Create(new StudentModel("Andrew Wallace", dummy.avatarUri[4], StudentLoginStatusEnum.Out));
-            Create(new StudentModel("Mike Koenig", dummy.avatarUri[5], StudentLoginStatusEnum.Out));
+            Create(new StudentModel("Scott Moser", "Agud Boi", dummy.avatarUri[0], StudentLoginStatusEnum.In));
+            Create(new StudentModel("Kevin Cushing", "Hugh Jass", dummy.avatarUri[1], StudentLoginStatusEnum.Out));
+            Create(new StudentModel("Maggie Dong", "Butterfly123", dummy.avatarUri[3], StudentLoginStatusEnum.In));
+            Create(new StudentModel("Andrew Croneberger", "CronenBucks", dummy.avatarUri[2], StudentLoginStatusEnum.In));
+            Create(new StudentModel("Andrew Wallace", "Waldo", dummy.avatarUri[4], StudentLoginStatusEnum.Out));
+            Create(new StudentModel("Mike Koenig", "mikey44", dummy.avatarUri[5], StudentLoginStatusEnum.Out));
         }
 
         /// <summary>
