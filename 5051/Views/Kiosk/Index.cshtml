@@ -4,14 +4,14 @@
     ViewBag.Title = "Kiosk Check In / Out";
 }
 
-<!-- TODO: Add real functionality to this page... -->
-<h1 class="text-center">Kiosk Check In / Out</h1>
+<div id="kiosk-container">
+    <h1 id="kiosk-title" class="text-center">Kiosk Check In / Out</h1>
 
-<br />
+    <br />
 
-<div class="container">
-    @foreach (var item in Model.CheckinList)
-    {
+    <div class="container">
+        @foreach (var item in Model.CheckinList)
+        {
         <a id="@item.Id" href="#">
             <div class="col-sm-2 icons">
                 <span>
@@ -21,7 +21,8 @@
                 <img src="~/Content/images/@item.Uri" width="75" height="75" />
             </div>
         </a>
-     }
+        }
+    </div>
 </div>
 
 <script>
