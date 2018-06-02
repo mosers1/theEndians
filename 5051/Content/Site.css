@@ -261,9 +261,28 @@ textarea {
     /*font-family: 'Tw Cen MT'; Need to move to a better location */
 }
 
+.admin-font-center {
+    color: white;
+    text-align: center;
+    /*font-family: 'Tw Cen MT'; Need to move to a better location */
+}
+
+.admin-font-left {
+    color: white;
+    text-align: left;
+    /*font-family: 'Tw Cen MT'; Need to move to a better location */
+}
+
+.admin-glyphicon {
+    color: white;
+    display: block;
+    text-align: center
+}
+
 .admin-font-h2 {
     color: white;
     padding-bottom: 15px;
+    text-align: center;
 }
 
 .admin-font-h3 {
