@@ -165,8 +165,8 @@ textarea {
 }
 
 .badge-small { 
-    width: 200px;
-    height: 200px;
+    width: 65%;
+    height: auto;
 }
 
 .panel-background {
@@ -178,4 +178,18 @@ textarea {
 }
 .badge-row-color{
     background: #e2e2e2;
+}
+
+.badge-panel-row-padding{
+    padding-bottom: 25px;
+}
+.badge-panel-padding {
+    padding-bottom:50px;
+}
+.badge-panel-padding-alt {
+    padding-bottom: 44px
+}
+.badge-header-bold {
+    font-weight: bold;
+    font-size: 20px;
 }
