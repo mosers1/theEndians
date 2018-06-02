@@ -15,11 +15,13 @@
                         @if (@student.LoginStatus == @_5051.Models.StudentLoginStatusEnum.In)
                         {
                             <span>@student.Username</span>
+                            <br />
                             <img src="~/Content/images/@student.AvatarId" width="75" height="75" alt="No not found image! :(" />
                         }
                         else
                         {
                             <span class="checked-out">@student.Username</span>
+                            <br />
                             <img class="checked-out" src="~/Content/images/@student.AvatarId" width="75" height="75" alt="No not found image! :(" />
                         }
                     </div>
