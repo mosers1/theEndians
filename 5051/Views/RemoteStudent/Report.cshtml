@@ -10,7 +10,7 @@
             <div class="col-md-3">
                 <img src="~/Content/images/cactus.jpg" class="img-responsive img-rounded" style="width:200px; height:200px" />
                 <p style="text-align:center">@Model.Username</p>
-                @Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-success" })
+                @Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-primary" })
             </div>
             <div class="col-md-9">
                 <h2>Welcome @Model.Name</h2>
@@ -78,7 +78,7 @@
         </div>
     </div>
 </div>
-@Html.ActionLink("All Achievements", "Achievements", null, new { @class = "btn btn-success" })
+@Html.ActionLink("All Achievements", "Achievements", null, new { @class = "btn btn-primary" })
 <div>
     <div class="studentheader3">
         Level <span class="darkBlue">3 </span>Attender
@@ -132,5 +132,5 @@
     </table>
 </div>
 <div>
-    @Html.ActionLink("Attendance History", "StudentHistory", null, new { @class = "btn btn-success" })
+    @Html.ActionLink("Attendance History", "StudentHistory", null, new { @class = "btn btn-primary" })
 </div>

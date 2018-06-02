@@ -219,3 +219,32 @@ textarea {
     color:green;
     text-align:center;
 }
+
+/* Override bootstrap buttons */
+.btn {
+    text-align: center;
+    background: #435AAF;
+    color: white;
+    border: none;
+}
+
+#admin-container {
+    display: block;
+    margin: auto;
+    background: #4BA9EF;
+    border-radius: 10px;
+    padding: 20px 20px;
+    margin-top: 60px;
+}
+
+#admin-table-container {
+    display: block;
+    margin: auto;
+    background: #435AAF;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.admin-font {
+    color: white;
+}
