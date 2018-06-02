@@ -12,12 +12,20 @@
 
     <div id="admin-container">
         <!-- Display page title -->
-        <h2 align="center" class="admin-font">Admin Home</h2>
+        <h2 align="center" class="admin-font-h2">Admin Home</h2>
 
         <!-- Create two buttons under title -->
-        <div style="text-align: center;">
-            @Html.ActionLink("Class Data Report", "ViewClassReport", null, new { @class = "btn btn-primary" })
-            @Html.ActionLink("Upload Calendar", "Calendar", null, new { @class = "btn btn-primary" })
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    @Html.ActionLink("Class Data Report", "ViewClassReport", null, new { @class = "btn btn-primary btn-admin-wide-right" } )
+                </div>
+
+                <div class="col-md-5">
+                    @Html.ActionLink("Upload Calendar", "Calendar", null, new { @class = "btn btn-primary btn-admin-wide-left" })</div>
+                <div class="col-md-1"></div>
+            </div>
         </div>
 
         @{
@@ -34,9 +42,9 @@
             back all student/database logic to the controller/model layers.
             -->
 
-                <h3 class="admin-font">Daily Class Report</h3>
+                <h3 class="admin-font-h3">Daily Class Report</h3>
                 <div id="admin-table-container">
-                    <table class="table table">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th class="admin-font">Name</th>
