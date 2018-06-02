@@ -18,37 +18,37 @@
         <tbody>
             <tr>
                 <td>This Week</td>
-                <td style="color:red;">&#10008</td>
-                <td style="color:green;">&#10004</td>
-                <td style="color:green;">&#10004</td>
-                <td style="color:green;">&#10004</td>
+                <td class="red-x">&#10008</td>
+                <td class="green-check">&#10004</td>
+                <td class="green-check">&#10004</td>
+                <td class="green-check">&#10004</td>
                 <td></td>
             </tr>
             <tr>
                 <td>Week 3</td>
-                <td style="color:green;">&#10004</td>
-                <td style="color:green;">&#10004</td>
-                <td style="color:red;">&#10008</td>
-                <td style="color:green;">&#10004</td>
-                <td style="color:orange;">!</td>
+                <td class="green-check">&#10004</td>
+                <td class="green-check">&#10004</td>
+                <td class="red-x">&#10008</td>
+                <td class="green-check">&#10004</td>
+                <td class="orange-alert">!</td>
                 <td></td>
             </tr>
             <tr>
                 <td>Week 2</td>
-                <td style="color:red;">&#10008</td>
-                <td style="color:green;">&#10004</td>
-                <td style="color:green;">&#10004</td>
-                <td style="color:green;">&#10004</td>
-                <td style="color:green;">&#10004</td>
+                <td class="red-x">&#10008</td>
+                <td class="green-check">&#10004</td>
+                <td class="green-check">&#10004</td>
+                <td class="green-check">&#10004</td>
+                <td class="green-check">&#10004</td>
                 <td></td>
             </tr>
             <tr>
                 <td>Week 1</td>
-                <td style="color:green;">&#10004</td>
-                <td style="color:red;">&#10008</td>
-                <td style="color:green;">&#10004</td>
-                <td style="color:orange;">!</td>
-                <td style="color:green;">&#10004</td>
+                <td class="green-check">&#10004</td>
+                <td class="red-x">&#10008</td>
+                <td class="green-check">&#10004</td>
+                <td class="orange-alert">!</td>
+                <td class="green-check">&#10004</td>
                 <td></td>
             </tr>
 
@@ -57,7 +57,6 @@
 </div>
 <div id="chartContainer">
     <script>
-        var a = 8;
         window.onload = function () {
             var chart = new CanvasJS.Chart("chartContainer", {
                 theme: "theme2",

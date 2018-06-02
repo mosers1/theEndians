@@ -205,3 +205,14 @@ textarea {
     opacity: .4;
 }
 
+.red-x {
+    color:red;
+
+}
+.orange-alert {
+    color:orange;
+}
+
+.green-check {
+    color:green;
+}
