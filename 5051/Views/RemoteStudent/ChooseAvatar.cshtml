@@ -8,7 +8,7 @@
         {
             <div class="kiosk-avatar col-sm-2 icons">
                 <!-- Change avatar opacity based on student login status -->
-                <img src="~/Content/images/@avatar" avID="@avatar" class="icons" width="75" height="75" alt="No not found image! :(" />
+                <img src="~/Content/images/@avatar" avID="@avatar" class="iconPic" width="75" height="75" alt="No not found image! :(" />
             </div>
         }
     </div>
@@ -34,7 +34,7 @@
 <script>
     window.onload = function () {
         var toggle = "checked-out";
-        var icons = document.getElementsByClassName("icons");
+        var icons = document.getElementsByClassName("iconPic");
         var selection = false;
         if (icons) {
             for (var i = 0; i < icons.length; i++) {
