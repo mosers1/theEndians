@@ -15,7 +15,12 @@ namespace _5051.Controllers
 
         // The Backend Data source
         private StudentBackend StudentBackend = StudentBackend.Instance;
-        // GET: /AdminPanel/Options/someName
+        /// <summary>
+        /// Render page of student report with the first student in student list
+        /// queried for student data on page
+        /// </summary>
+        /// <returns>Report Page</returns>
+        // GET: /RemoteStudent/Report
         public ActionResult Report()
         {
             // Query backend to refresh every time Index() is called
