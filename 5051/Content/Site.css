@@ -169,10 +169,14 @@ textarea {
     max-width: 100%;
 }
 
+/* TODO: What's best way to ensure these avatars are centered for all screen sizes? */
 .kiosk-avatar {
     background: #E8E8E8;
     border-radius: 10px;
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
     text-align: center;
 }
 
