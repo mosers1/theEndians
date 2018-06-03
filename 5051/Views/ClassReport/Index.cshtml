@@ -1,9 +1,146 @@
 ﻿<!-- TODO: Add real functionality to this page... -->
 
 <!-- Probably a brute-force way of implementing this... -->
+<br />
+<br />
 <div class="row">
     @Html.ActionLink("Back", "GoBack", null, new { @class = "btn btn-primary" })
 </div>
 
-<!-- TODO: Remove wireframe. -->
-<img src="~/Content/images/ClassReport.png" width="960" height="540" />
+<br />
+
+<script>
+    window.onload = function () {
+        var chart1 = new CanvasJS.Chart("chartContainer1", {
+            theme: "theme2",
+            width: 1000,
+            animationEnabled: true,
+            title: {
+                text: "Class Report",
+                fontSize: 18
+            },
+
+            axisX: {
+                title: "Days",
+                titleFontSize: 18,
+                crosshair: {
+                    enabled: true,
+                    snapToDataPoint: true
+                }
+            },
+            axisY: {
+                title: "Hours Attended",
+                titleFontSize: 18
+            },
+            legend: {
+                horizontalAlign: "left", // "center" , "right"
+                verticalAlign: "center",  // "top" , "bottom"
+                fontSize: 15
+            },
+            data: [
+                {
+                    type: "line", //change type to bar, line, area, pie, etc
+                    showInLegend: true,
+                    legendText: "Scott",
+                    dataPoints: [
+                        { x: 0, y: 0 },
+                        { x: 10, y: 60 },
+                        { x: 30, y: 90 },
+                        { x: 40, y: 100 },
+                        { x: 50, y: 130 },
+                        { x: 60, y: 160 },
+                        { x: 70, y: 200 },
+                        { x: 80, y: 225 },
+                        { x: 90, y: 250 }
+                    ]
+                },
+                {
+                    type: "line", //change type to bar, line, area, pie, etc
+                    showInLegend: true,
+                    legendText: "Maggie",
+                    dataPoints: [
+                        { x: 0, y: 0 },
+                        { x: 10, y: 50 },
+                        { x: 30, y: 80 },
+                        { x: 40, y: 110 },
+                        { x: 50, y: 150 },
+                        { x: 60, y: 150 },
+                        { x: 70, y: 180 },
+                        { x: 80, y: 200 },
+                        { x: 90, y: 225 }
+                    ]
+                },
+                {
+                    type: "line", //change type to bar, line, area, pie, etc
+                    showInLegend: true,
+                    legendText: "Kevin",
+                    dataPoints: [
+                        { x: 0, y: 0 },
+                        { x: 10, y: 40 },
+                        { x: 30, y: 45 },
+                        { x: 40, y: 50 },
+                        { x: 50, y: 70 },
+                        { x: 60, y: 75 },
+                        { x: 70, y: 95 },
+                        { x: 80, y: 100 },
+                        { x: 90, y: 133 }
+                    ]
+                },
+                {
+                    type: "line", //change type to bar, line, area, pie, etc
+                    showInLegend: true,
+                    legendText: "Andrew W",
+                    dataPoints: [
+                        { x: 0, y: 0 },
+                        { x: 10, y: 35 },
+                        { x: 30, y: 72 },
+                        { x: 40, y: 83 },
+                        { x: 50, y: 99 },
+                        { x: 60, y: 132 },
+                        { x: 70, y: 152 },
+                        { x: 80, y: 179 },
+                        { x: 90, y: 200 }
+                    ]
+                },
+                {
+                    type: "line", //change type to bar, line, area, pie, etc
+                    showInLegend: true,
+                    legendText: "Andrew C",
+                    dataPoints: [
+                        { x: 0, y: 0 },
+                        { x: 10, y: 30 },
+                        { x: 30, y: 55 },
+                        { x: 40, y: 75 },
+                        { x: 50, y: 99 },
+                        { x: 60, y: 114 },
+                        { x: 70, y: 135 },
+                        { x: 80, y: 167 },
+                        { x: 90, y: 187 }
+                    ]
+                },
+                {
+                    type: "line", //change type to bar, line, area, pie, etc
+                    showInLegend: true,
+                    legendText: "Mike",
+                    dataPoints: [
+                        { x: 0, y: 0 },
+                        { x: 10, y: 50 },
+                        { x: 30, y: 80 },
+                        { x: 40, y: 120 },
+                        { x: 50, y: 155 },
+                        { x: 60, y: 185 },
+                        { x: 70, y: 200 },
+                        { x: 80, y: 220 },
+                        { x: 90, y: 230 }
+                    ]
+                }
+            ]
+        });
+        chart1.render();
+    };
+</script>
+
+
+<div class="container-responsive">
+    <div id="chartContainer1" class="student-report-graph"></div>
+</div>
