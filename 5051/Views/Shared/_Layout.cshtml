@@ -29,13 +29,22 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <!--
-                        Links to internal pages. For prototype/demo, leave unrestricted. For production, check
-                        login status prior to routing student to the requested page.
+                    Links to internal pages. For prototype/demo, leave unrestricted. For production, check
+                    login status prior to routing student to the requested page.
                     -->
                     <li>@Html.ActionLink("Student", "Report", "RemoteStudent")</li>
                     <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
                     <li>@Html.ActionLink("Kiosk", "Index", "Kiosk")</li>
-                    <li>@Html.ActionLink("Login", "Index", "Home")</li>
+
+                    <!-- HACK: Toggle button name based on which page we are on. Acceptable for demo. -->                    
+                   @if(Request.RawUrl == "/")
+                   {
+                       <li>@Html.ActionLink("Login", "Index", "Home")</li>
+                   } else
+                   {
+                       <li>@Html.ActionLink("Logout", "Index", "Home")</li>
+                   }
+                   
                 </ul>
             </div>
         </div>

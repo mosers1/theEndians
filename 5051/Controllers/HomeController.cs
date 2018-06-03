@@ -8,22 +8,13 @@ namespace _5051.Controllers
 {
     public class HomeController : Controller
     {
+        /// <summary>
+        /// This function gets called by default when the website is accessed.
+        /// </summary>
+        /// <returns></returns>
+        // GET: Home/Index/
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
