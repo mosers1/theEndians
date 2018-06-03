@@ -17,6 +17,7 @@
     @Html.AntiForgeryToken()
     @Html.HiddenFor(m => m.Id, new {Value = @Model.Id})
     @Html.HiddenFor(m => m.Name, new {Value = @Model.Name})
+    @Html.HiddenFor(m => m.Username, new {Value = @Model.Username})
     @Html.HiddenFor(m => m.AvatarId, new { @id = "avatarID" })
     @Html.HiddenFor(m => m.IsActive, new {Value = @Model.IsActive})
     @Html.HiddenFor(m => m.IsEdit, new {Value = @Model.IsEdit})
@@ -25,10 +26,7 @@
     @Html.HiddenFor(m => m.TimeIn, new {Value = @Model.TimeIn})
     @Html.HiddenFor(m => m.TimeOut, new {Value = @Model.TimeOut})
 
-    
-    
-    @Html.ActionLink("Cancel", "Report", null, new { @class = "text-center btn btn-primary" })
-    <input type="submit" value="Create" class="text-center btn btn-primary">
+    <input type="submit" value="Change Avatar" class="text-center btn btn-primary">
     
     
     }
