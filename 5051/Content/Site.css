@@ -24,6 +24,18 @@ textarea {
     max-width: 280px;
 }
 
+/* Set all non-header text site-wide to this */
+* {
+    font-size: 100%;
+    font-family: "Tw Cen MT";
+}
+
+/* Set all headers site-wide to this */
+h1, h2, h3, h4, h5, h6 
+{
+    font-family: "Tw Cen MT";
+}
+
 .studentheader2 {
     text-align: center;
 }
