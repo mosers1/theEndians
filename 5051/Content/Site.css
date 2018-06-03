@@ -340,3 +340,7 @@ h1, h2, h3, h4, h5, h6
 .badge-panel-color {
     background: #435AAF;
 }
+.avatar-student-profile {
+    width: 200px;
+    height: auto;
+}
