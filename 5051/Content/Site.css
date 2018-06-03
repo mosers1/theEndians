@@ -354,3 +354,7 @@ h1, h2, h3, h4, h5, h6
     width: 75%;
     text-align: right
 }
+
+#chartContainer1 {
+    width: 100%;
+}
