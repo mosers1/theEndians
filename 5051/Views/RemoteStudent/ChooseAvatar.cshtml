@@ -38,15 +38,14 @@
     window.onload = function () {
         var toggle = "checked-out";
         var icons = document.getElementsByClassName("icons");
+        var selection = false;
         if (icons) {
             for (var i = 0; i < icons.length; i++) {
                 icons[i].onclick = function () {
                     document.getElementById("avatarID").value = this.getAttribute("avID");
-                    if (this.classList.contains(toggle)) {
-                        this.classList.remove(toggle);
-                    } else {
-                        this.classList.add(toggle);
-                    }
+                    this.classList.add(toggle);
+                    if(selection) selection.classList.remove(toggle);
+                    selection = this;
                 }
             }
         }
