@@ -3,11 +3,11 @@
 <!-- Display a valid student name if we have one. -->
 @if (Model != null)
 {
-    <h2 style="text-align:center"> Attendance History: @Model.Name</h2>
+    <h2 class="text-center"> Attendance History: @Model.Name</h2>
 } else
 {
     <!-- For demo purposes, default to this guy in case we don't get a valid model. -->
-    <h2 style="text-align:center"> Attendance History: Jim Jimmerson</h2>
+    <h2 class="text-center"> Attendance History: Jim Jimmerson</h2>
 }
 
 <!-- Sample implementation for a "better" back button. It doesn't hardcode the previous controller. -->

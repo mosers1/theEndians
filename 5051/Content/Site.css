@@ -32,6 +32,7 @@ textarea {
 
 /* Set all headers site-wide to this */
 h1, h2, h3, h4, h5, h6 
+
 {
     font-family: "Tw Cen MT";
 }
@@ -42,6 +43,7 @@ h1, h2, h3, h4, h5, h6
 
 .studentheader3 {
     text-align: center;
+    font-size: 24px;
 }
 
 .thumbnail {
@@ -347,4 +349,8 @@ h1, h2, h3, h4, h5, h6
 .badge-medium {
     width: 85%;
     height: auto;
+}
+.progress-bar-default {
+    width: 75%;
+    text-align: right
 }
