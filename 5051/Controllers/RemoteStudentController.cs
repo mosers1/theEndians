@@ -89,14 +89,35 @@ namespace _5051.Controllers
 
             return RedirectToAction("Report");
         }
- 
-        //public ActionResult ChooseAvatar()
-       // {
-         //   
-        //}
-        //Returns student history page
-        public ActionResult StudentHistory()
+
+
+        /// <summary>
+        /// Looks up a student in the backend and sends to the view to render 
+        /// the student history report.
+        /// </summary>
+        /// <param name="id"></param> Student ID
+        /// <returns></returns>
+        // GET: RemoteStudent/StudentHistory/5
+        public ActionResult StudentHistory(string id = null)
         {
+            // Query our backend backend
+            var myDataList = StudentBackend.Index();
+            var StudentViewModel = new StudentViewModel(myDataList);
+
+            // Attempt to lookup student if we received an ID
+            if (!string.IsNullOrEmpty(id))
+            {
+                foreach (var item in StudentViewModel.StudentList)
+                {
+                    if (id == item.Id)
+                    {
+                        // We found the correct student so send up the model
+                        return View(item);
+                    }
+                }
+            }
+
+            // Default to sending up no model
             return View();
         }
     }

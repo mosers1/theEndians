@@ -67,8 +67,8 @@
                                     foreach (var item in Model.StudentList)
                                     {
                                         <tr>
-                                            <!-- TODO: Future - Link to specific student page. Leave as-is for demos. -->
-                                            <td>@Html.ActionLink(item.Name, "ViewStudentReport", null, new { @class = "text, admin-font admin-student-link" })</td>
+                                            <!-- Link to a specific student page. -->
+                                            <td>@Html.ActionLink(item.Name, "ViewStudentReport/"+item.Id, null, new { @class = "text, admin-font admin-student-link" })</td>
 
                                             <!-- Check is student is archived. If so, don't try to display data for student. -->
                                             @if (item.IsActive == true)

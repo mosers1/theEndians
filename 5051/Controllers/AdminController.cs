@@ -61,11 +61,12 @@ namespace _5051.Controllers
         /// <summary>
         /// View the student report page.
         /// </summary>
+        /// <param name="id"></param> Student ID
         /// <returns></returns>
         // GET: /Admin/ViewClassReport
-        public ActionResult ViewStudentReport()
+        public ActionResult ViewStudentReport(string id = null)
         {
-            return RedirectToAction("StudentHistory", "RemoteStudent");
+            return RedirectToAction("StudentHistory", "RemoteStudent", new { id });
         }
 
         /// <summary>
