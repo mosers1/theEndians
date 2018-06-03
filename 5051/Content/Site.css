@@ -355,6 +355,16 @@ h1, h2, h3, h4, h5, h6
     text-align: right
 }
 
+#classReportChart {
+    width: 100%;
+}
 #chartContainer1 {
     width: 100%;
+}
+#chartContainer2 {
+    width: 100%
+}
+.class-report-graph {
+    border: 2px solid white;
+    border-radius: 3px;
 }
