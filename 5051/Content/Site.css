@@ -197,7 +197,7 @@ h1, h2, h3, h4, h5, h6
 }
 
 .badge-small { 
-    width: 65%;
+    width: 85%;
     height: auto;
 }
 .badge-small-special {
@@ -342,5 +342,9 @@ h1, h2, h3, h4, h5, h6
 }
 .avatar-student-profile {
     width: 200px;
+    height: auto;
+}
+.badge-medium {
+    width: 85%;
     height: auto;
 }
