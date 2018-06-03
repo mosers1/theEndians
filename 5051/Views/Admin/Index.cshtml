@@ -84,10 +84,10 @@
                                                     <!-- Provide two drop down menus so admin can choose times when modifying attendance. -->
                                                     @Html.AntiForgeryToken()
                                                     @Html.Hidden("Id", item.Id);
-                                                    <td>
+                                                    <td class="text-center">
                                                         @Html.DropDownList("TimeIn", ViewBag.myList as SelectList)
                                                     </td>
-                                                    <td>
+                                                    <td class="text-center">
                                                         @Html.DropDownList("TimeOut", ViewBag.myList as SelectList)
                                                     </td>
                                                 }
