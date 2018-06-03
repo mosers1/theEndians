@@ -1,17 +1,18 @@
 ﻿@model _5051.Models.StudentModel
 
-<!--need to fix the image spacing -->
-
-<div id="choose-avatar-container" class="attendify-panel">
-    <h1 class="attendify-panel-title">Choose Your Avatar</h1>
-    <div class="panel panel-default">
-        <div class="container">
-            @foreach (var avatar in @Model.avatarUri)
-            {
-            <img src="~/Content/images/@avatar" avID="@avatar" class="icons" width="75" height="75" alt="No not found image! :(" />
-            }
-        </div>
+<div id="kiosk-container" class="attendify-panel">
+    <h1 id="kiosk-title" class="attendify-panel-title">Choose Avatar</h1>
+    <br />
+    <div class="container">
+        @foreach (var avatar in @Model.avatarUri)
+        {
+            <div class="kiosk-avatar col-sm-2 icons">
+                <!-- Change avatar opacity based on student login status -->
+                <img src="~/Content/images/@avatar" avID="@avatar" class="icons" width="75" height="75" alt="No not found image! :(" />
+            </div>
+        }
     </div>
+    
     @using (Html.BeginForm())
     {
     @Html.AntiForgeryToken()
@@ -27,8 +28,6 @@
     @Html.HiddenFor(m => m.TimeOut, new {Value = @Model.TimeOut})
 
     <input type="submit" value="Change Avatar" class="text-center btn btn-primary">
-    
-    
     }
 </div>
 
