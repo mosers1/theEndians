@@ -1,11 +1,13 @@
 ﻿<!-- Probably a brute-force way of implementing this... -->
-<br />
-<br />
-<div class="row">
-    @Html.ActionLink("Back", "GoBack", null, new { @class = "btn btn-primary" })
-</div>
 
-<br />
+<div class="container-responsive">
+    <br />
+    <br />
+    @Html.ActionLink("Back", "GoBack", null, new { @class = "btn btn-primary" })
+    <br />
+    <br />
+    <div id="classReportChart" class="class-report-graph"></div>
+</div>
 
 <script>
     window.onload = function () {
@@ -181,8 +183,3 @@
         chart1.render();
     };
 </script>
-
-
-<div class="container-responsive">
-    <div id="classReportChart" class="class-report-graph"></div>
-</div>
