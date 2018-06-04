@@ -263,14 +263,8 @@ h1, h2, h3, h4, h5, h6
     border: none;
 }
 
-.btn-admin-wide-left {
-    width: 60%;
-    float: left;
-}
-
-.btn-admin-wide-right {
-    width: 60%;
-    float: right;
+.btn-admin {
+    width: 80%;
 }
 
 #admin-container {

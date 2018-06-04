@@ -328,6 +328,7 @@
     <Content Include="Views\RemoteStudent\ChooseAvatar.cshtml" />
     <Content Include="Views\RemoteStudent\StudentHistory.cshtml" />
     <Content Include="Views\Admin\AddStudent.cshtml" />
+    <Content Include="Views\Admin\Goals.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

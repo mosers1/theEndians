@@ -16,16 +16,17 @@
 
         <!-- Create two buttons under title -->
         <div class="container">
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-5">
-                    @Html.ActionLink("Class Data Report", "ViewClassReport", null, new { @class = "btn btn-primary btn-admin-wide-right" } )
-                </div>
-
-                <div class="col-md-5">
-                    @Html.ActionLink("Upload Calendar", "Calendar", null, new { @class = "btn btn-primary btn-admin-wide-left" })</div>
-                <div class="col-md-1"></div>
+            <div class="col-md-4 text-center">
+                @Html.ActionLink("Class Data Report", "ViewClassReport", null, new { @class = "btn btn-primary btn-admin" })
             </div>
+
+            <div class="col-md-4 text-center">
+                @Html.ActionLink("Class Goals", "Goals", null, new { @class = "btn btn-primary btn-admin" })
+            </div>
+
+            <div class="col-md-4 text-center">
+                @Html.ActionLink("Upload Calendar", "Calendar", null, new { @class = "btn btn-primary btn-admin" })
+            </div>        
         </div>
 
         @{

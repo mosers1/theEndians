@@ -265,6 +265,16 @@ namespace _5051.Controllers
         }
 
         /// <summary>
+        /// Redirects the admin to the goals page where they can set class goals.
+        /// </summary>
+        /// <returns></returns>
+        // GET: /Admin/Goals
+        public ActionResult Goals()
+        {
+            return View();
+        }
+
+        /// <summary>
         /// Calls the data sources and has them reset to default data.
         /// </summary>
         /// <returns></returns>
