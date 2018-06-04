@@ -1,11 +1,65 @@
-﻿
-<div class="class-report-button">
-    <br />
-    <br />
-    @Html.ActionLink("Back", "Index", null, new { @class = "btn btn-primary" })
-</div>
+﻿<!-- 
+    TODO: Add real functionality. Would require model modification/creation to save the goals and track progress. Out of scope for 5051.
+-->
 
 <div id="goals-container">
-    <h2 class="admin-font-h2">Class Goals</h2>
-    <p>Page under construction!</p>
+    <h2 class="goals-font-h2">Class Attendance Goals</h2>
+
+    <div class="row">
+        <h3 class="goals-font-h3">Weekly</h3>
+        <span class="input-group-addon goal-checkbox">
+            <input type="checkbox" aria-label="...">   Attend at least 3 days in a row during the same week.
+        </span>
+    </div>
+    <div class="row">
+        <span class="input-group-addon goal-checkbox">
+            <input type="checkbox" aria-label="...">   Show up to class on time every day this week.
+        </span>
+    </div>
+    <div class="row">
+        <span class="input-group-addon goal-checkbox">
+            <input type="checkbox" aria-label="...">   Stay for the entire day at least twice this week.
+        </span>
+    </div>
+
+    <div class="row">
+        <h3 class="goals-font-h3">Quarterly</h3>
+        <span class="input-group-addon goal-checkbox">
+            <input type="checkbox" aria-label="...">   Earn at least 300 community hours by coming to class.
+        </span>
+    </div>
+    <div class="row">
+        <span class="input-group-addon goal-checkbox">
+            <input type="checkbox" aria-label="...">   Achieve at least two weeks of perfect attendance.
+        </span>
+    </div>
+    <div class="row">
+        <span class="input-group-addon goal-checkbox">
+            <input type="checkbox" aria-label="...">   Earn 3 new achievements badges for signing in and out of class.
+        </span>
+    </div>
+
+    <div class="row">
+        <h3 class="goals-font-h3">Yearly</h3>
+        <span class="input-group-addon goal-checkbox">
+            <input type="checkbox" aria-label="...">   Earn at least 900 community service hours by coming to class.
+        </span>
+    </div>
+    <div class="row">
+        <span class="input-group-addon goal-checkbox">
+            <input type="checkbox" aria-label="...">   Earn all of the achievements badges visible in the "All Achievements" collection.
+        </span>
+    </div>
+    <div class="row">
+        <span class="input-group-addon goal-checkbox">
+            <input type="checkbox" aria-label="...">   Max out your XP points by consistently attending class on-time.
+        </span>
+    </div>
+    <br />
+
+    <!-- Give user option to discard changes or save them. -->
+    <div class="row text-center">
+        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Submit", "Index", null, new { @class = "btn btn-primary" })
+    </div>
 </div>
