@@ -13,7 +13,7 @@ namespace _5051.Controllers
     /// </summary>
     public class KioskController : Controller
     {
-        // A ViewModel used for the Student that contains the StudentList
+        // A ViewModel that contains list of student details
         private StudentViewModel StudentViewModel = new StudentViewModel();
 
         // The Backend Data source
@@ -55,8 +55,6 @@ namespace _5051.Controllers
                 // Sign-in the student
                 myStudent.LoginStatus = StudentLoginStatusEnum.Out;
                 myStudent.TimeOut = DateTime.Now.ToString(@"h\:mmtt");
-                // TODO: Probably a better way/place to handle this logic.
-                // Deferring any changes to a later release.
                 myStudent.DailyStatus = StudentDailyStatusEnum.Present;
             }
             else
@@ -64,9 +62,6 @@ namespace _5051.Controllers
                 // Sign-out the student
                 myStudent.LoginStatus = StudentLoginStatusEnum.In;
                 myStudent.TimeIn = DateTime.Now.ToString(@"h\:mmtt");
-                // TODO: Probably a better way/place to handle this logic.
-                // Once a student logs in, mark them as present right away.
-                // Deferring any changes for tardiness to a later release.
                 myStudent.DailyStatus = StudentDailyStatusEnum.Present;
             }
 
