@@ -1,11 +1,13 @@
 ﻿<!-- Probably a brute-force way of implementing this... -->
 
-<div class="container-responsive">
+<div class="class-report-button">
     <br />
     <br />
     @Html.ActionLink("Back", "GoBack", null, new { @class = "btn btn-primary" })
-    <br />
-    <br />
+</div>
+
+<div class="container-responsive" id="class-report-container">
+    <h2 class="text-center admin-font-h2">Quarterly Class Attendance Report</h2>
     <div id="classReportChart" class="class-report-graph"></div>
 </div>
 
@@ -14,10 +16,6 @@
         var chart1 = new CanvasJS.Chart("classReportChart", {
             theme: "theme2",
             animationEnabled: true,
-            title: {
-                text: "Class Report",
-                fontSize: 18
-            },
 
             axisX: {
                 title: "Days",
@@ -56,7 +54,7 @@
                     color: "#FF0000",
                     legendText: "Expected",
                     markerType: "none",
-                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}", 
+                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}",
                     dataPoints: [
                         { x: 0, y: 0 },
                         { x: 10, y: 33.333 },
@@ -74,7 +72,7 @@
                     type: "line", //change type to bar, line, area, pie, etc
                     showInLegend: true,
                     legendText: "Scott",
-                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}", 
+                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}",
                     dataPoints: [
                         { x: 0, y: 0 },
                         { x: 10, y: 25 },
@@ -92,7 +90,7 @@
                     type: "line", //change type to bar, line, area, pie, etc
                     showInLegend: true,
                     legendText: "Maggie",
-                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}", 
+                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}",
                     dataPoints: [
                         { x: 0, y: 0 },
                         { x: 10, y: 20 },
@@ -110,7 +108,7 @@
                     type: "line", //change type to bar, line, area, pie, etc
                     showInLegend: true,
                     legendText: "Kevin",
-                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}", 
+                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}",
                     dataPoints: [
                         { x: 0, y: 0 },
                         { x: 10, y: 15 },
@@ -128,7 +126,7 @@
                     type: "line", //change type to bar, line, area, pie, etc
                     showInLegend: true,
                     legendText: "Andrew W",
-                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}", 
+                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}",
                     dataPoints: [
                         { x: 0, y: 0 },
                         { x: 10, y: 10 },
@@ -146,7 +144,7 @@
                     type: "line", //change type to bar, line, area, pie, etc
                     showInLegend: true,
                     legendText: "Andrew C",
-                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}", 
+                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}",
                     dataPoints: [
                         { x: 0, y: 0 },
                         { x: 10, y: 30 },
@@ -164,7 +162,7 @@
                     type: "line", //change type to bar, line, area, pie, etc
                     showInLegend: true,
                     legendText: "Mike",
-                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}", 
+                    toolTipContent: "{legendText} <br/> Days: {x} <br/>  Hours: {y}",
                     dataPoints: [
                         { x: 0, y: 0 },
                         { x: 10, y: 30 },

@@ -362,3 +362,22 @@ h1, h2, h3, h4, h5, h6
     border: 2px solid white;
     border-radius: 3px;
 }
+
+#class-report-container {
+    display: block;
+    margin: auto;
+    background: #4BA9EF;
+    border-radius: 10px;
+    padding: 15px 25px 25px 25px;
+    margin-top: 35px;
+    height: 525px;
+}
+
+#goals-container {
+    display: block;
+    margin: auto;
+    background: #4BA9EF;
+    border-radius: 10px;
+    padding: 5px 15px 10px 15px;
+    margin-top: 35px;
+}
