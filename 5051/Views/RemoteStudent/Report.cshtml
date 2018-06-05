@@ -1,17 +1,19 @@
 @model _5051.Models.StudentModel
 <div class="student-report-container">
     <div class="jumbotron text-center jumbotron-padding">
-        <div class="row">
-            <div class="col-md-3">
-                <img src="~/Content/images/@Model.AvatarId" class="img-responsive" />
-                <p class="text-center">@Model.Username</p>
-                @Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-primary" })
-            </div>
-            <div class="col-md-9">
-                <h2>Welcome, @Model.Name!</h2>
-                <p>Tuesday, June 5 2018 </p>
-                <div class="studentheader3">
-                    Level <span class="darkBlue">3 </span>Attender
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="~/Content/images/@Model.AvatarId" class="img-responsive" />
+                    <p class="text-center">@Model.Username</p>
+                    @Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-primary" })
+                </div>
+                <div class="col-md-9">
+                    <h2>Welcome, @Model.Name!</h2>
+                    <p>Tuesday, June 5 2018 </p>
+                    <div class="studentheader3">
+                        Level <span class="darkBlue">3 </span>Attender
+                    </div>
                 </div>
             </div>
         </div>
@@ -19,70 +21,72 @@
 
     <div class="badge-panel-container text-center">
         <span class="report-header-white text-center">Achievements</span>
-        <div class="row">
-            <div class="col-md-3 ">
-                <div class="badge-report-padding badge-white-bg-rounded">
-                    <img src="~/Content/images/level_1_resized.png" class="badge-medium">
-                    <div class="caption bold-caption">Level 1</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 ">
+                    <div class="badge-report-padding badge-white-bg-rounded">
+                        <img src="~/Content/images/level_1_resized.png" class="badge-medium">
+                        <div class="caption bold-caption">Level 1</div>
+                    </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="badge-report-padding badge-white-bg-rounded">
+                        <img src="~/Content/images/level_2_resized.png" class="badge-medium">
+                        <div class="caption bold-caption">Level 2</div>
+                    </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="badge-report-padding badge-white-bg-rounded">
+                        <img src="~/Content/images/level_3_resized.png" class="badge-medium">
+                        <div class="caption bold-caption">Level 3</div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 ">
-                <div class="badge-report-padding badge-white-bg-rounded">
-                    <img src="~/Content/images/level_2_resized.png" class="badge-medium">
-                    <div class="caption bold-caption">Level 2</div>
+            <div class="row">
+                <div class="col-md-3 ">
+                    <div class="badge-report-padding badge-white-bg-rounded">
+                        <img src="~/Content/images/25_hours_resized.png" class="badge-medium">
+                        <div class="caption bold-caption">25 Hours!</div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="badge-report-padding badge-white-bg-rounded">
-                    <img src="~/Content/images/level_3_resized.png" class="badge-medium">
-                    <div class="caption bold-caption">Level 3</div>
+                <div class="col-md-3">
+                    <div class="badge-report-padding badge-white-bg-rounded">
+                        <img src="~/Content/images/50_hours_resized.png" class="badge-medium">
+                        <div class="caption bold-caption">50 Hours!</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 ">
-                <div class="badge-report-padding badge-white-bg-rounded">
-                    <img src="~/Content/images/25_hours_resized.png" class="badge-medium">
-                    <div class="caption bold-caption">25 Hours!</div>
+                <div class="col-md-3 ">
+                    <div class="badge-report-padding badge-white-bg-rounded">
+                        <img src="~/Content/images/100_hours_resized.png" class="badge-medium">
+                        <div class="caption bold-caption">100 Hours!</div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="badge-report-padding badge-white-bg-rounded">
-                    <img src="~/Content/images/50_hours_resized.png" class="badge-medium">
-                    <div class="caption bold-caption">50 Hours!</div>
+                <div class="col-md-3 ">
+                    <div class="badge-report-padding badge-white-bg-rounded">
+                        <img src="~/Content/images/200_hours_resized.png" class="badge-medium">
+                        <div class="caption bold-caption">200 Hours!</div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="badge-report-padding badge-white-bg-rounded">
-                    <img src="~/Content/images/100_hours_resized.png" class="badge-medium">
-                    <div class="caption bold-caption">100 Hours!</div>
-                </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="badge-report-padding badge-white-bg-rounded">
-                    <img src="~/Content/images/200_hours_resized.png" class="badge-medium">
-                    <div class="caption bold-caption">200 Hours!</div>
-                </div>
-            </div>
 
-        </div>
-        <div class="row">
-            <div class="col-md-3 ">
-                <div class="badge-report-padding badge-white-bg-rounded">
-                    <img src="~/Content/images/2_day_streak_resized.png" class="badge-medium">
-                    <div class="caption bold-caption">2 Day Streak!</div>
-                </div>
             </div>
-            <div class="col-md-3 ">
-                <div class="badge-report-padding badge-white-bg-rounded">
-                    <img src="~/Content/images/3_day_streak_resized.png" class="badge-medium">
-                    <div class="caption bold-caption">3 Day Streak!</div>
+            <div class="row">
+                <div class="col-md-3 ">
+                    <div class="badge-report-padding badge-white-bg-rounded">
+                        <img src="~/Content/images/2_day_streak_resized.png" class="badge-medium">
+                        <div class="caption bold-caption">2 Day Streak!</div>
+                    </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="badge-report-padding badge-white-bg-rounded">
+                        <img src="~/Content/images/3_day_streak_resized.png" class="badge-medium">
+                        <div class="caption bold-caption">3 Day Streak!</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <div>
+    <div class="report-button-container">
         @Html.ActionLink("All Achievements", "Achievements", null, new { @class = "btn btn-primary" })
     </div>
 
@@ -113,15 +117,15 @@
 
     <h2 class="report-header-white">This Week's Attendance</h2>
     <div class="table-responsive">
-        <div class="panel panel-default">
+        <div class="panel report-attendance-panel">
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="text-center">Monday</th>
-                        <th class="text-center">Tuesday</th>
-                        <th class="text-center">Wednesday</th>
-                        <th class="text-center">Thursday</th>
-                        <th class="text-center">Friday</th>
+                        <th class="report-attendance-text">Monday</th>
+                        <th class="report-attendance-text">Tuesday</th>
+                        <th class="report-attendance-text">Wednesday</th>
+                        <th class="report-attendance-text">Thursday</th>
+                        <th class="report-attendance-text">Friday</th>
                     </tr>
                 </thead>
                 <tbody>

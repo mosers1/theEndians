@@ -199,7 +199,7 @@ h1, h2, h3, h4, h5, h6
 }
 
 .badge-small { 
-    width: 85%;
+    width: 100%;
     height: auto;
 }
 .badge-small-special {
@@ -525,4 +525,22 @@ h1, h2, h3, h4, h5, h6
 .report-header-white {
     color:white;
     font-size: 32px;
+}
+.report-button-container {
+    margin-top: 20px;
+}
+.report-attendance-panel {
+    border: 0;
+    background: #435AAF;
+}
+.report-attendance-text {
+    color: white;
+    text-align: center
+    
+}
+.low-gutter {
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
