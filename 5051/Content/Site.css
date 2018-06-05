@@ -352,7 +352,7 @@ h1, h2, h3, h4, h5, h6
     height: auto;
 }
 .badge-medium {
-    width: 85%;
+    width: 100%;
     height: auto;
 }
 .progress-bar-default {
@@ -501,4 +501,21 @@ h1, h2, h3, h4, h5, h6
 .badge-report-padding {
     margin: 8px;
     padding-top: 4px;
+}
+.student-report-container {
+    display: block;
+    margin: auto;
+    background: #4BA9EF;
+    border-radius: 10px;
+    padding: 30px 30px 30px 30px;
+    margin-top: 30px;
+}
+.badge-panel-container {
+    background: #435AAF;
+    border-radius: 10px;
+    padding: 30px;
+}
+.jumbotron-padding {
+    padding-left: 30px;
+    padding-right: 30px;
 }
