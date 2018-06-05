@@ -500,7 +500,7 @@ h1, h2, h3, h4, h5, h6
 }
 
 .badge-report-padding {
-    margin: 8px;
+    margin: 10px;
     padding-top: 4px;
     padding-left: 8px;
     padding-right: 8px;
@@ -529,10 +529,18 @@ h1, h2, h3, h4, h5, h6
 }
 .report-button-container {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 .report-attendance-panel {
     border: 0;
     background: #435AAF;
+    border-radius: 10px;
+}
+.report-experience-panel {
+    border: 0;
+    background: #435AAF;
+    color:white;
+    border-radius: 10px;
 }
 .report-attendance-text {
     color: white;
@@ -544,4 +552,7 @@ h1, h2, h3, h4, h5, h6
     margin-right: 4px;
     padding-left: 0px;
     padding-right: 0px;
+}
+.borderless td, .borderless th{
+    border: none;
 }
