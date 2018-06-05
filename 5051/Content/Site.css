@@ -501,6 +501,9 @@ h1, h2, h3, h4, h5, h6
 .badge-report-padding {
     margin: 8px;
     padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
 }
 .student-report-container {
     display: block;
@@ -518,4 +521,8 @@ h1, h2, h3, h4, h5, h6
 .jumbotron-padding {
     padding-left: 30px;
     padding-right: 30px;
+}
+.report-header-white {
+    color:white;
+    font-size: 32px;
 }
