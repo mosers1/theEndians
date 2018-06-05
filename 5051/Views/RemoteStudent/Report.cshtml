@@ -1,22 +1,50 @@
 @model _5051.Models.StudentModel
 <div class="student-report-container">
-    <div class="jumbotron text-center jumbotron-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="~/Content/images/@Model.AvatarId" class="img-responsive" />
-                    <p class="text-center">@Model.Username</p>
-                    @Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-primary" })
+    <div class="container report-header">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="~/Content/images/@Model.AvatarId" class="avatar-student-profile" />
+                <p class="text-center">@Model.Username</p>
+                <div class="studentheader3">
+                    Level <span class="darkBlue">3 </span>Attender
                 </div>
-                <div class="col-md-9">
-                    <h2>Welcome, @Model.Name!</h2>
-                    <p>Tuesday, June 5, 2018 </p>
+                @Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-primary" })
+            </div>
+            <div class="col-md-6">
+                <h2>Welcome, @Model.Name!</h2>
                     <div class="studentheader3">
-                        Level <span class="darkBlue">3 </span>Attender
+                        You've Earned <span class="darkBlue">15 </span>XP Today!
+                    </div>
+                <p>Tuesday, June 5, 2018 </p>
+            </div>
+            <div></div>
+        </div>
+        <div class="row">
+            
+            
+                <div class="report-experience-panel">
+                    <h4 class="text-center">Progress to Next Level:</h4>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="text-center">Experience</span>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar progress-bar-default" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="show">75%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="text-center">270/360</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+            
         </div>
+    
+
     </div>
 
     <div class="badge-panel-container text-center">
@@ -85,59 +113,41 @@
             </div>
         </div>
     </div>
-    
+
     <div class="report-button-container">
         @Html.ActionLink("All Achievements", "Achievements", null, new { @class = "btn btn-primary" })
     </div>
 
 
-        
-    <div class="container report-experience-panel">
-        <h4 class="text-center">Progress to Next Level:</h4>
-        <div class="row">
-            <div class="col-md-1">
-                <span class="text-center">Experience</span>
-            </div>
-            <div class="col-md-10">
-                <div class="progress progress-striped active">
-                    <div class="progress-bar progress-bar-default" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                        <span class="show">75%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-                <span class="text-center">270/360</span>
-            </div>
 
-        </div>
 
-    </div>
 
 
     <h2 class="report-header-white">This Week's Attendance</h2>
-    
-        <div class="panel report-attendance-panel">
-            <table class="table borderless">
-                <thead>
-                    <tr>
-                        <th class="report-attendance-text">Monday</th>
-                        <th class="report-attendance-text">Tuesday</th>
-                        <th class="report-attendance-text">Wednesday</th>
-                        <th class="report-attendance-text">Thursday</th>
-                        <th class="report-attendance-text">Friday</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="text-center"><img class="red-x" src="~/Content/images/x.png" title="Absent"></td>
-                        <td class="text-center"><img class="blue-check" src="~/Content/images/check.png" title="Present"></td>
-                        <td class="text-center"><img class="blue-check" src="~/Content/images/check.png" title="Present"></td>
-                        <td class="text-center"><img class="blue-check" src="~/Content/images/check.png" title="Present"></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    
+
+    <div class="panel report-attendance-panel">
+        <table class="table borderless">
+            <thead>
+                <tr>
+                    <th class="report-attendance-text">Monday</th>
+                    <th class="report-attendance-text">Tuesday</th>
+                    <th class="report-attendance-text">Wednesday</th>
+                    <th class="report-attendance-text">Thursday</th>
+                    <th class="report-attendance-text">Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center"><img class="red-x" src="~/Content/images/x.png" title="Absent"></td>
+                    <td class="text-center"><img class="blue-check" src="~/Content/images/check.png" title="Present"></td>
+                    <td class="text-center"><img class="blue-check" src="~/Content/images/check.png" title="Present"></td>
+                    <td class="text-center"><img class="blue-check" src="~/Content/images/check.png" title="Present"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
     @Html.ActionLink("Attendance History", "StudentHistory/" + Model.Id, null, new { @class = "btn btn-primary" })
+
 </div>

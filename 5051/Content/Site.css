@@ -349,7 +349,7 @@ h1, h2, h3, h4, h5, h6
     background: #435AAF;
 }
 .avatar-student-profile {
-    width: 200px;
+    width: 150px;
     height: auto;
 }
 .badge-medium {
@@ -519,9 +519,12 @@ h1, h2, h3, h4, h5, h6
     border-radius: 10px;
     padding: 30px;
 }
-.jumbotron-padding {
-    padding-left: 30px;
-    padding-right: 30px;
+.report-header {
+    color: white;
+    background: #4BA9EF;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 .report-header-white {
     color:white;
@@ -541,6 +544,9 @@ h1, h2, h3, h4, h5, h6
     background: #435AAF;
     color:white;
     border-radius: 10px;
+    margin-bottom:20px;
+    margin-top:20px;
+
 }
 .report-attendance-text {
     color: white;
