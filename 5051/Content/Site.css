@@ -414,3 +414,54 @@ h1, h2, h3, h4, h5, h6
     border-radius: 30px;
     
 }
+
+#student-history-container {
+    display: block;
+    margin: auto;
+    background: #4BA9EF;
+    border-radius: 10px;
+    padding: 5px 30px 30px 30px;
+    margin-top: 60px;
+}
+
+#student-history-calendar {
+    display: block;
+    margin: auto;
+    background: #435AAF;
+    border-radius: 0px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 0px;
+}
+
+.student-font-h1 {
+    color: white;
+    text-align: center;
+    padding: 0px;
+    margin: 1%;
+}
+
+.student-font-h2 {
+    color: white;
+    text-align: center;
+}
+
+.student-font-h3 {
+    color: white;
+    text-align: center;
+}
+
+.student-font-h4 {
+    color: white;
+    text-align: center;
+}
+
+.student-font {
+    color: white;
+}
+
+#student-btn-back {
+    display: block;
+    margin-top: 25px;
+    padding-left: 0px;
+}
