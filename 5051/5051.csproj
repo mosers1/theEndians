@@ -218,9 +218,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\favicons\favicon-16x16.png" />
-    <Content Include="Content\icons\greenCircle.png" />
-    <Content Include="Content\icons\redCircle.png" />
-    <Content Include="Content\icons\yellowCircle.png" />
     <Content Include="Content\images\10 day streak_resized.png" />
     <Content Include="Content\images\100 hours_resized.png" />
     <Content Include="Content\images\14 day streak_resized.png" />
@@ -233,13 +230,9 @@
     <Content Include="Content\images\50 hours_resized.png" />
     <Content Include="Content\images\500 hours_resized.png" />
     <Content Include="Content\images\7 day streak_resized.png" />
-    <Content Include="Content\images\AdminInterface.png" />
-    <Content Include="Content\images\AllAchievements.png" />
     <Content Include="Content\images\cactus.jpg" />
     <Content Include="Content\images\academicCalendar.png" />
     <Content Include="Content\images\check.png" />
-    <Content Include="Content\images\ChooseAvatar.png" />
-    <Content Include="Content\images\ClassReport.png" />
     <Content Include="Content\images\level 1_resized.png" />
     <Content Include="Content\images\level 2_resized.png" />
     <Content Include="Content\images\level 3_resized.png" />
@@ -247,7 +240,6 @@
     <Content Include="Content\images\level 5_resized.png" />
     <Content Include="Content\images\level 6_resized.png" />
     <Content Include="Content\images\locked_resized.png" />
-    <Content Include="Content\images\LoginPage.png" />
     <Content Include="Content\images\person1.png" />
     <Content Include="Content\images\person12.png" />
     <Content Include="Content\images\person2.png" />
@@ -264,9 +256,6 @@
     <Content Include="Content\images\Achieve5day.png" />
     <Content Include="Content\images\AchieveLevel3.png" />
     <Content Include="Content\images\AchieveLocked.png" />
-    <Content Include="Content\images\StudentHistory.png" />
-    <Content Include="Content\images\StudentInterface.png" />
-    <Content Include="Content\images\StudentSignIn.png" />
     <Content Include="Content\images\triangle.png" />
     <Content Include="Content\images\x.png" />
     <Content Include="favicon.ico" />
