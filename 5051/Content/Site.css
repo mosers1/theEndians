@@ -243,18 +243,20 @@ h1, h2, h3, h4, h5, h6
 }
 
 .red-x {
-    color:red;
     text-align: center;
-
+    height: 15%;
+    width: auto;
 }
 .orange-alert {
-    color:orange;
     text-align: center;
+    height: 15%;
+    width: auto;
 }
 
 .green-check {
-    color:green;
-    text-align:center;
+    text-align: center;
+    height: 15%;
+    width: auto;
 }
 
 /* Override bootstrap buttons */
