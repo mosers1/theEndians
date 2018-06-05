@@ -497,3 +497,8 @@ h1, h2, h3, h4, h5, h6
     margin-left: 0px;
     padding-left: 0px;
 }
+
+.badge-report-padding {
+    margin: 8px;
+    padding-top: 4px;
+}
