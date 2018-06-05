@@ -571,3 +571,14 @@ h1, h2, h3, h4, h5, h6
     margin-top: 20px;
 }
 
+.top-margin-adjust {
+    margin-top: 3px;
+}
+
+.badge-top{
+   padding: 0px 0px 0px 0 px;
+}
+.student-font-darkBlue {
+    color: darkblue;
+    font-size: 20px;
+}
