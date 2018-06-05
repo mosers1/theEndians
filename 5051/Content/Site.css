@@ -405,3 +405,8 @@ h1, h2, h3, h4, h5, h6
     text-align:left;
     border-radius:0;
 }
+.badge-white-bg-rounded {
+    background: white;
+    border-radius: 30px;
+    
+}
