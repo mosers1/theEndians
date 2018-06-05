@@ -1,6 +1,18 @@
 ﻿
-<h1 class="text-center">Achievements</h1>
-    <div class="container-fluid ">
+<div id="student-report-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2" id="student-report-btn-back">
+                @Html.ActionLink("Back", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-primary btn-sm" })
+            </div>
+            <div class="col-sm-8">
+                <h1 class="text-center student-report-font-h1">Achievements</h1>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
         <div class="row badge-panel-row-padding badge-panel-color img-rounded">
             <div class="col-md-4 ">
                 <h2 class="badge-header-bold text-center">Level</h2>
@@ -64,7 +76,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>       
+                        </div>
                     </div>
                 </div>
             </div>
@@ -202,8 +214,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-
+</div>
