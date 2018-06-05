@@ -1,13 +1,17 @@
 ﻿<!-- Probably a brute-force way of implementing this... -->
 
-<div class="class-report-button">
-    <br />
-    <br />
-    @Html.ActionLink("Back", "GoBack", null, new { @class = "btn btn-primary" })
-</div>
-
 <div class="container-responsive" id="class-report-container">
-    <h2 class="text-center admin-font-h2">Quarterly Class Attendance Report</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2" id="class-report-btn-back">
+                @Html.ActionLink("Back", "GoBack", null, new { @class = "btn btn-primary btn-sm" })
+            </div>
+            <div class="col-sm-8">
+                <h2 class="text-center admin-font-h2">Class Attendance Report</h2>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
     <div id="classReportChart" class="class-report-graph"></div>
 </div>
 
