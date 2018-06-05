@@ -4,46 +4,64 @@
         <div class="row">
             <div class="col-md-3">
                 <img src="~/Content/images/@Model.AvatarId" class="avatar-student-profile" />
-                <p class="text-center">@Model.Username</p>
-                <div class="studentheader3">
-                    Level <span class="darkBlue">3 </span>Attender
-                </div>
-                @Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-primary" })
+                <span class="text-center student-font-medium">@Model.Username</span>
+                
+               
             </div>
             <div class="col-md-6">
                 <h2>Welcome, @Model.Name!</h2>
-                    <div class="studentheader3">
-                        You've Earned <span class="darkBlue">15 </span>XP Today!
-                    </div>
-                <p>Tuesday, June 5, 2018 </p>
+                <div class="studentheader3">
+                    You've Earned <span class="darkBlue">15 </span>XP Today!
+                </div>
+                <span class="student-font-medium">Tuesday, June 5, 2018 </span>
             </div>
-            <div></div>
+            <div class="col-md-3">
+                <div class="badge-report-padding">
+                    <img src="~/Content/images/level_3_resized.png" class="badge-medium">
+                </div>
+                <div class="student-font-medium">
+                    <span>Level</span> <span class="darkBlue">3 </span>Attender
+                </div>
+            </div>
         </div>
         <div class="row">
-            
-            
-                <div class="report-experience-panel">
-                    <h4 class="text-center">Progress to Next Level:</h4>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <span class="text-center">Experience</span>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="progress progress-striped active">
-                                <div class="progress-bar progress-bar-default" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                    <span class="show">75%</span>
-                                </div>
+            <div class="col-md-3">
+                @Html.ActionLink("Choose Avatar", "ChooseAvatar", null, new { @class = "btn btn-primary" })
+            </div>
+            <div class="col-md-6">
+                @Html.ActionLink("All Achievements", "Achievements", null, new { @class = "btn btn-primary" })
+
+            </div>
+            <div class="col-md-3">
+                @Html.ActionLink("Attendance History", "StudentHistory/" + Model.Id, null, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+        <div class="row student-font student-font-medium">
+            <span></span>
+             </div>
+        <div class="row row-top-extended">
+            <div class="report-experience-panel">
+                <h4 class="student-font-medium">Progress to Next Level:</h4>
+                <div class="row">
+                    <div class="col-md-2">
+                        <span class="text-center">Experience</span>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-default" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <span class="show">75%</span>
                             </div>
                         </div>
-                        <div class="col-md-2">
-                            <span class="text-center">270/360</span>
-                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <span class="text-center">270/360</span>
                     </div>
                 </div>
+            </div>
 
-            
+
         </div>
-    
+
 
     </div>
 
@@ -68,6 +86,13 @@
                         <img src="~/Content/images/level_3_resized.png" class="badge-medium">
                         <div class="caption bold-caption">Level 3</div>
                     </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="badge-report-padding badge-white-bg-rounded badge-locked">
+                        <img src="~/Content/images/level_4_resized.png" class="badge-medium">
+                        <div class="caption bold-caption">Almost There!</div>
+                    </div>
+
                 </div>
             </div>
             <div class="row">
@@ -110,20 +135,23 @@
                         <div class="caption bold-caption">3 Day Streak!</div>
                     </div>
                 </div>
+                <div class="col-md-3 ">
+                    <div class="badge-report-padding badge-white-bg-rounded badge-locked">
+                        <img src="~/Content/images/5_day_streak_resized.png" class="badge-medium">
+                        <div class="caption bold-caption">2 More Days!</div>
+                    </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="badge-report-padding badge-white-bg-rounded badge-locked">
+                        <img src="~/Content/images/locked_resized.png" class="badge-medium">
+                        <div class="caption bold-caption">????</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="report-button-container">
-        @Html.ActionLink("All Achievements", "Achievements", null, new { @class = "btn btn-primary" })
-    </div>
-
-
-
-
-
-
-    <h2 class="report-header-white">This Week's Attendance</h2>
+    <h2 class="report-header-white text-center">This Week's Attendance</h2>
 
     <div class="panel report-attendance-panel">
         <table class="table borderless">
@@ -148,6 +176,6 @@
         </table>
     </div>
 
-    @Html.ActionLink("Attendance History", "StudentHistory/" + Model.Id, null, new { @class = "btn btn-primary" })
+   
 
 </div>

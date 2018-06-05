@@ -562,3 +562,12 @@ h1, h2, h3, h4, h5, h6
 .borderless td, .borderless th{
     border: none;
 }
+.student-font-medium {
+    color: white;
+    font-size: 20px;
+}
+
+.row-top-extended {
+    margin-top: 20px;
+}
+
