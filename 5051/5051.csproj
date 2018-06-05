@@ -237,6 +237,7 @@
     <Content Include="Content\images\AllAchievements.png" />
     <Content Include="Content\images\cactus.jpg" />
     <Content Include="Content\images\academicCalendar.png" />
+    <Content Include="Content\images\check.png" />
     <Content Include="Content\images\ChooseAvatar.png" />
     <Content Include="Content\images\ClassReport.png" />
     <Content Include="Content\images\level 1_resized.png" />
@@ -266,6 +267,8 @@
     <Content Include="Content\images\StudentHistory.png" />
     <Content Include="Content\images\StudentInterface.png" />
     <Content Include="Content\images\StudentSignIn.png" />
+    <Content Include="Content\images\triangle.png" />
+    <Content Include="Content\images\x.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
