@@ -1,11 +1,10 @@
 ﻿@model _5051.Models.StudentModel
 
-<!-- Sample implementation for a "better" back button. It doesn't hardcode the previous controller. -->
-
 <div id="student-history-container">
     <div class="container">
         <div class="row">
             <div class="col-sm-2" id="student-history-btn-back">
+                <!-- Sample implementation for a "better" back button. It doesn't hardcode the previous controller. -->
                 @Html.ActionLink("Back", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-primary btn-sm" })
             </div>
             <div class="col-sm-8">
@@ -27,7 +26,7 @@
         </div>
     </div>
 
-    <div class="table-responsive table-bordered" id="student-history-calendar">
+    <div class="table-responsive" id="student-history-calendar">
         <table class="table">
             <thead>
                 <tr>
