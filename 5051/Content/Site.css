@@ -349,7 +349,7 @@ h1, h2, h3, h4, h5, h6
     background: #435AAF;
 }
 .avatar-student-profile {
-    width: 150px;
+    width: 180px;
     height: auto;
 }
 .badge-medium {
@@ -581,4 +581,8 @@ h1, h2, h3, h4, h5, h6
 .student-font-darkBlue {
     color: darkblue;
     font-size: 20px;
+}
+
+.badge-medium-top {
+    margin-bottom: 30px;
 }
