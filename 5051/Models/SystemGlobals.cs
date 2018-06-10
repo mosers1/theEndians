@@ -18,6 +18,7 @@ namespace _5051.Models
 
         private SystemGlobals() { }
 
+        // Attach to existing instance, otherwise create a new one
         public static SystemGlobals Instance
         {
             get
@@ -41,6 +42,7 @@ namespace _5051.Models
         // Default to Mock
         public DataSourceEnum DataSourceValue = DataSourceEnum.Mock;
 
+        // Global default check-in/out time
         public string defaultTime = "-----";
     }
 }

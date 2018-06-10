@@ -8,6 +8,9 @@ using _5051.Backend;
 
 namespace _5051.Controllers 
 {
+    /// <summary>
+    /// The Admin controller handles all functionality related to the admin interface.
+    /// </summary>
     public class AdminController : Controller
     {
         // A ViewModel used for the Student that contains the StudentList
