@@ -6,6 +6,9 @@ using System.Web.Mvc;
 
 namespace _5051.Controllers
 {
+    /// <summary>
+    /// The home controller is the first page called via the website URL.
+    /// </summary>
     public class HomeController : Controller
     {
         /// <summary>

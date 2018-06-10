@@ -8,6 +8,10 @@ using _5051.Backend;
 
 namespace _5051.Controllers
 {
+    /// <summary>
+    /// Remote student controller handles the landing page the student will see
+    /// after logging in remotely.
+    /// </summary>
     public class RemoteStudentController : Controller
     {
         // A ViewModel used for the Student that contains the StudentList

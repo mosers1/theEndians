@@ -195,7 +195,6 @@
     <Compile Include="Backend\StudentInterface.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\ClassReportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KioskController.cs" />

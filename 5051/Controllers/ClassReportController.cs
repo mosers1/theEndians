@@ -6,6 +6,10 @@ using System.Web.Mvc;
 
 namespace _5051.Controllers
 {
+    /// <summary>
+    /// The Class Report controller is used for generating and rendering the class report
+    /// for the administrator.
+    /// </summary>
     public class ClassReportController : Controller
     {
         /// <summary>
@@ -22,7 +26,7 @@ namespace _5051.Controllers
         // Method to Go Back to previous page which is Admin by sitemap design
         /// </summary>
         /// <returns></returns>
-        // GET: ClassReport
+        // GET: ClassReport/GoBack
         public ActionResult GoBack()
         {
             return RedirectToAction("Index", "Admin");

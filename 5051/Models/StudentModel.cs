@@ -47,7 +47,6 @@ namespace _5051.Models
         /// The ID of the Avatar the student is associated with, this will convert to an avatar picture
         /// </summary>
         [Display(Name = "AvatarId", Description = "Avatar")]
-        //[Required(ErrorMessage = "Avatar is required")]
         public string AvatarId { get; set; }
 
         /// <summary>
@@ -55,7 +54,6 @@ namespace _5051.Models
         /// they can be brought back.
         /// </summary>
         [Display(Name = "IsActive", Description = "Is student active or archived?")]
-        //[Required(ErrorMessage = "Student status is required")]
         public bool IsActive { get; set; }
 
         /// <summary>
@@ -107,7 +105,7 @@ namespace _5051.Models
             Name = string.Empty;
             LoginStatus = StudentLoginStatusEnum.Out;
             DailyStatus = StudentDailyStatusEnum.Absent;
-            Username = Name;             // TODO: Better idea here? Leave for now.
+            Username = Name;             // TODO: Better idea here? Default to name for now.
             AvatarId = avatarUri[avatarUri.Length - 1];  // Default to last avatar icon in list
             IsActive = true;
             IsEdit = false;

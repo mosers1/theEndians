@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace _5051.Models
 {
+    /// <summary>
+    /// View Model for the credentials used on login screen.
+    /// </summary>
     public class CredentialsViewModel
     {
         [Required]
