@@ -6,9 +6,9 @@
     <div class="container">
         @foreach (var avatar in @Model.avatarUri)
         {
-            <div class="kiosk-avatar col-sm-2 icons">
+            <div class="kiosk-avatar col-sm-2 icons iconPic" avID="@avatar">
                 <!-- Change avatar opacity based on student login status -->
-                <img src="~/Content/images/@avatar" avID="@avatar" class="iconPic" width="75" height="75" alt="No not found image! :(" />
+                <img src="~/Content/images/@avatar"  width="75" height="75" alt="No not found image! :(" />
             </div>
         }
     </div>
@@ -41,7 +41,7 @@
                 icons[i].onclick = function () {
                     document.getElementById("avatarID").value = this.getAttribute("avID");
                     this.classList.add(toggle);
-                    if(selection) selection.classList.remove(toggle);
+                    if(selection && selection != this) selection.classList.remove(toggle);
                     selection = this;
                 }
             }
