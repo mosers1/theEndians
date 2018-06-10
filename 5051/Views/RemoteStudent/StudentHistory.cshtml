@@ -110,19 +110,30 @@
             data: [
                 {
                     type: "line", //change type to bar, line, area, pie, etc
+                    lineDashType: "dash",
+                    color: "#FF0000",
+                    markerType: "none",
+                    toolTipContent: "Trajectory <br/> Days: {x} <br/>  Hours: {y}",
                     dataPoints: [
-                        { x: 0, y: 0 },
-                        { x: 10, y: 70 },
-                        { x: 30, y: 120 },
-                        { x: 40, y: 150 },
-                        { x: 50, y: 200 },
-                        { x: 60, y: 240 },
-                        { x: 70, y: 270 },
-                        { x: 80, y: 300 },
-                        { x: 90, y: 340 }
+                        { x: 60, y: 160 },
+                        { x: 70, y: 185 },
+                        { x: 80, y: 210 },
+                        { x: 90, y: 235 }
                     ]
                 },
-
+                {
+                    type: "line", //change type to bar, line, area, pie, etc
+                    toolTipContent: "Achieved <br/> Days: {x} <br/>  Hours: {y}",
+                    dataPoints: [
+                        { x: 0, y: 0 },
+                        { x: 10, y: 25 },
+                        { x: 20, y: 40 },
+                        { x: 30, y: 80 },
+                        { x: 40, y: 100 },
+                        { x: 50, y: 130 },
+                        { x: 60, y: 160 }
+                    ]
+                }
             ]
         });
         var chart2 = new CanvasJS.Chart("chartContainer2", {
